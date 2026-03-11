@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import logo from '../assets/logo.png';
 import backgroundImage from '../assets/background.jpg';
+import MeetCRMSection from './MeetCRMSection';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,6 +12,7 @@ const Header = () => {
   const logoRef = useRef(null);             // FIXED positioned logo — always visible
   const backgroundRef = useRef(null);
   const backgroundOverlayRef = useRef(null);
+  const dashboardRef = useRef(null);
   const headerRef = useRef(null);
   const leftNavRef = useRef(null);
   const rightNavRef = useRef(null);
@@ -35,7 +37,7 @@ const Header = () => {
         left: '50%',
         xPercent: -50,
         yPercent: -50,
-        width: '650px',   // starting size — bada
+        width: vw > 768 ? '650px' : '300px',   // starting size — bada (responsive)
         zIndex: 100,
         opacity: 1,
       });
@@ -48,6 +50,11 @@ const Header = () => {
       gsap.set([leftNavRef.current, rightNavRef.current], {
         opacity: 0,
         x: 0,
+      });
+
+      gsap.set(dashboardRef.current, {
+        opacity: 0,
+        y: 50
       });
 
       // ── Scroll timeline ─────────────────────────────────────────────
@@ -76,12 +83,20 @@ const Header = () => {
         duration: 2,
       }, 0);
 
+      // Reveal Dashboard Image
+      tl.to(dashboardRef.current, {
+        opacity: 1,
+        y: vw > 768 ? 0 : 20, // Slightly lower on mobile to avoid header
+        ease: 'power2.out',
+        duration: 1.5
+      }, 0.5);
+
       // Logo: header ke bilkul center mein
       tl.to(logoRef.current, {
         top: '50%',         // header ki poori height ka center
         y: () => -(vh / 2) + 32,  // screen center se header center tak
         yPercent: -25,      // logo apne aap ke center se align
-        width: '180px',
+        width: vw > 768 ? '180px' : '140px',
         ease: 'power1.inOut',
         duration: 2,
         opacity: 1,
@@ -209,9 +224,19 @@ const Header = () => {
 
       {/* Hero Section — background animation ke liye */}
       <div ref={heroSectionRef} className="relative h-screen w-full overflow-hidden">
+        {/* Dashboard Section (Hidden initially, revealed on scroll) */}
+        <div
+          ref={dashboardRef}
+          className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none"
+        >
+          <div className="w-full max-w-[1400px] pointer-events-auto">
+            <MeetCRMSection />
+          </div>
+        </div>
+
         <div
           ref={backgroundRef}
-          className="absolute inset-0 bg-cover bg-center will-change-transform"
+          className="absolute inset-0 bg-cover bg-center will-change-transform z-20"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         >
           <div
