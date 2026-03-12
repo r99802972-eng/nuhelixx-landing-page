@@ -48,7 +48,7 @@ const Header = () => {
       });
 
       gsap.set(backgroundRef.current, {
-        y: 160, // Fixed: 160px matches the -top-40 (-160px) to perfectly align with top
+        y: 400, // Matches the -top-[400px] to perfectly align with top, no white space
       });
 
       gsap.set([leftNavRef.current, rightNavRef.current], {
@@ -145,7 +145,11 @@ const Header = () => {
         ref={logoRef}
         src={logo}
         alt="NuHelixRE"
-        style={{ position: 'fixed', zIndex: 100 }}
+        style={{
+          position: 'fixed',
+          zIndex: 100,
+          filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.4))' // Added subtle glow for visibility
+        }}
       />
 
       {/* Fixed Header — nav items ke liye */}
@@ -240,13 +244,13 @@ const Header = () => {
 
         <div
           ref={backgroundRef}
-          className="absolute -top-40 inset-x-0 h-[calc(100vh+160px)] bg-cover bg-center will-change-transform z-20"
+          className="absolute -top-[400px] inset-x-0 h-[calc(100vh+400px)] bg-cover bg-[center_top] will-change-transform z-20"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         >
           <div
             ref={backgroundOverlayRef}
             className="absolute inset-0"
-            style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
+            style={{ backgroundColor: 'rgba(0, 0, 0, 0)' }}
           />
         </div>
       </div>

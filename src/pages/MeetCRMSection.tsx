@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { Search, MessageSquare, Users, Home, BarChart3, MousePointer2 } from "lucide-react";
+import { MessageSquare, Users, Home, BarChart3, Paperclip, LayoutGrid, Globe, SendHorizontal, Sparkles } from "lucide-react";
 import oldCrmImage from "../assets/Dashboard.png";
 
 export function MeetCRMSection() {
   const [isOn, setIsOn] = useState(true);
-  const [query, setQuery] = useState("");
 
   const features = [
     { icon: <MessageSquare className="w-5 h-5 text-green-500" />, title: "Automated Follow-Ups" },
@@ -63,27 +62,63 @@ export function MeetCRMSection() {
           MEET YOUR NEW <span className="text-[#BCBF4F]">CMS</span>
         </h2>
 
-        {/* Search Bar & Toggle Container */}
-        <div className="w-full max-w-lg bg-white rounded-full shadow-[0_4px_20px_rgb(0,0,0,0.05)] border border-gray-100 p-1.5 flex items-center gap-2 md:gap-3 mb-8 hover:shadow-[0_4px_25px_rgb(0,0,0,0.08)] transition-all">
-          <div className="pl-3">
-            <Search className="w-5 h-5 text-gray-800" />
-          </div>
-          <input 
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="What can I help you with today?"
-            className="flex-1 bg-transparent border-none outline-none text-sm md:text-base text-gray-700 placeholder-gray-400 font-medium"
-          />
-          <button 
-            onClick={() => setIsOn(!isOn)}
-            className={`flex items-center gap-2 p-1 pr-3 rounded-full transition-all duration-300 ${isOn ? 'bg-green-500' : 'bg-gray-300'}`}
-          >
-            <div className={`w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center transition-transform duration-300 ${isOn ? 'translate-x-12 md:translate-x-14' : 'translate-x-0'}`}>
-               <MousePointer2 className={`w-3 h-3 transition-colors ${isOn ? 'text-green-500' : 'text-gray-400'}`} />
+        {/* Premium AI Input Box (Light Theme) */}
+        <div className="w-full max-w-xl group relative">
+          {/* Main Container */}
+          <div className="w-full bg-white rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 transition-all group-hover:border-gray-200 group-hover:shadow-[0_8px_35px_rgb(0,0,0,0.06)]">
+            {/* Header / Placeholder Area */}
+            <div className="flex items-center gap-2 mb-8">
+              <span className="text-xl md:text-2xl font-bold text-gray-900">Imagine Something...</span>
+              <Sparkles className="w-5 h-5 text-[#BCBF4F]" />
             </div>
-            <span className={`text-[10px] font-bold text-white transition-opacity hidden md:inline ${isOn ? 'opacity-100' : 'opacity-0'}`}>AI ON</span>
-          </button>
+
+            {/* Content Area (Input simulation) */}
+            <div className="min-h-[40px] mb-8">
+              <p className="text-gray-400 text-lg font-medium">What can I help you with today?</p>
+            </div>
+
+            {/* Bottom Toolbar */}
+            <div className="flex items-center justify-between mt-auto">
+              {/* Left Icons */}
+              <div className="flex items-center gap-4 text-gray-400">
+                <button className="hover:text-gray-900 transition-colors">
+                  <Paperclip className="w-6 h-6" />
+                </button>
+                <button className="hover:text-gray-900 transition-colors">
+                  <LayoutGrid className="w-6 h-6" />
+                </button>
+                <button className="hover:text-gray-900 transition-colors">
+                  <Globe className="w-6 h-6" />
+                </button>
+              </div>
+
+              {/* Send Button */}
+              <button 
+                onClick={() => setIsOn(!isOn)}
+                className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all custom-glossy-button group/btn shadow-md ${isOn ? 'bg-green-500' : 'bg-gray-200'}`}
+              >
+                <SendHorizontal className={`w-6 h-6 transition-colors ${isOn ? 'text-white' : 'text-gray-400'}`} />
+                {/* Glossy highlight */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-white/20 to-transparent pointer-events-none" />
+              </button>
+            </div>
+          </div>
+
+          {/* Quick Action Pills */}
+          <div className="flex flex-wrap items-center gap-3 mt-6">
+            <button className="px-5 py-2.5 rounded-2xl bg-gray-50 border border-gray-100 text-gray-700 text-sm font-bold hover:bg-white hover:shadow-sm hover:border-gray-200 transition-all flex items-center gap-2">
+              Create An Image
+            </button>
+            <button className="px-5 py-2.5 rounded-2xl bg-gray-50 border border-gray-100 text-gray-700 text-sm font-bold hover:bg-white hover:shadow-sm hover:border-gray-200 transition-all flex items-center gap-2">
+              Analyse Data
+            </button>
+            <button className="px-5 py-2.5 rounded-2xl bg-gray-50 border border-gray-100 text-gray-700 text-sm font-bold hover:bg-white hover:shadow-sm hover:border-gray-200 transition-all flex items-center gap-2">
+              More
+            </button>
+          </div>
+          
+          {/* Subtle Glow Background */}
+          <div className="absolute -inset-4 bg-gray-100/50 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
         </div>
 
         <div className="space-y-2 md:space-y-3 mb-8 px-4 lg:px-0">

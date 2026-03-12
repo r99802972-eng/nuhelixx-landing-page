@@ -1,4 +1,4 @@
-import { ArrowUpRight, ChevronDown, ArrowDown } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ArrowDown, Cpu, Zap, RotateCw } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -45,7 +45,7 @@ function HeroSection() {
   const costDescRef = useRef<HTMLDivElement | null>(null);
   const heroContentRef = useRef<HTMLDivElement | null>(null);
   const headlineRef = useRef<HTMLDivElement | null>(null);
-  
+
   // New refs for mobile/tablet
   const mobileCardsContainerRef = useRef<HTMLDivElement | null>(null);
   const mobileHeadlineRef = useRef<HTMLDivElement | null>(null);
@@ -142,7 +142,7 @@ function HeroSection() {
         const costCardVerticalDelay = cardDelay + 1.2;
         master.to(
           cardRef.current,
-          { 
+          {
             y: 300,
             ease: "power1.out",
             duration: 1
@@ -202,10 +202,10 @@ function HeroSection() {
         // Animate each card in sequence
         if (mobileCardsContainerRef.current) {
           const cards = mobileCardsContainerRef.current.querySelectorAll('.mobile-card');
-          
+
           cards.forEach((card, index) => {
             gsap.set(card, { opacity: 0, y: 60 });
-            
+
             ScrollTrigger.create({
               trigger: card,
               start: "top 85%",
@@ -281,52 +281,78 @@ function HeroSection() {
                             {/* Layer 1 - AI in our DNA */}
                             <div
                               ref={layer1}
-                              className="absolute w-[200px] h-[240px] left-[10px] xl:w-[280px] xl:h-[280px] rounded-[28px] bg-[#B8A3F8] transform rotate-[4deg] shadow-2xl z-0"
+                              className="absolute w-[200px] h-[240px] left-[10px] xl:w-[280px] xl:h-[280px] rounded-[28px] bg-white border border-gray-100 transform rotate-[4deg] shadow-xl z-0 overflow-hidden group flex flex-col items-center p-6 text-center"
                             >
-                              <h2 className="absolute inset-0 flex justify-center text-center font-[Duck-cry] tracking-[1px] leading-[1.5] xl:text-[2.5rem] pt-4">
+                              {/* Icon Box */}
+                              <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-purple-50 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
+                                <Cpu size={32} className="text-purple-600" />
+                              </div>
+
+                              <h2 className="font-[Duck-cry] tracking-tight leading-[1.2] xl:text-[2.2rem] mb-3 text-gray-900 relative z-10">
                                 AI in our DNA
                               </h2>
-                              <p className="absolute font-light bottom-4 left-4 font-[poppins] right-4 text-sm xl:text-base">
-                                NuHelixX RE is AI-first — built with
-                                intelligence at its core. Automation drives
-                                every step: real-time lead scoring, smart
+                              <p className="font-[poppins] font-normal text-xs xl:text-sm leading-relaxed text-gray-500 relative z-10">
+                                NuHelixX RE is AI-first — built with intelligence at its core. Automation drives every step : real-time lead scoring, smart
                                 follow-ups, and behavior-based property
                                 matching. Smarter insights. Stronger
                                 connections.
                               </p>
+
+                              {/* Watermark Icon */}
+                              <div className="absolute -bottom-8 -right-8 text-purple-600 opacity-[0.12] transform rotate-12 group-hover:scale-110 transition-transform">
+                                <Cpu size={140} />
+                              </div>
                             </div>
 
                             {/* Layer 2 - Smart Automation */}
                             <div
                               ref={layer2}
-                              className="absolute w-[200px] h-[240px] -left-[13px] xl:w-[280px] xl:h-[280px] rounded-[24px] bg-[#BCBF4F] transform rotate-[-4deg] shadow-lg z-0"
+                              className="absolute w-[200px] h-[240px] -left-[13px] xl:w-[280px] xl:h-[280px] rounded-[24px] bg-white border border-gray-100 transform rotate-[-4deg] shadow-xl z-0 overflow-hidden group flex flex-col items-center p-6 text-center"
                             >
-                              <h2 className="absolute inset-0 flex justify-center text-center font-[Duck-cry] tracking-[1px] leading-[1.5] xl:text-[2.5rem] pt-4">
+                              {/* Icon Box */}
+                              <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-[#BCBF4F]/10 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
+                                <Zap size={32} className="text-[#BCBF4F]" />
+                              </div>
+
+                              <h2 className="font-[Duck-cry] tracking-tight leading-[1.2] xl:text-[2.2rem] mb-3 text-gray-900 relative z-10">
                                 Smart Automation
                               </h2>
-                              <p className="absolute font-light bottom-11 left-4 font-[poppins] right-4 text-sm xl:text-base">
-                                NuHelixX RE automates the busywork — from
-                                tagging leads to scheduling follow-ups. Its AI
+                              <p className="font-[poppins] font-normal text-xs xl:text-sm leading-relaxed text-gray-500 relative z-10">
+                                NuHelixX RE automates busywork — from tagging leads to follow-ups. Its AI
                                 learns your habits, prioritizes tasks, and keeps
                                 your pipeline on track. Less admin. More sales.
                               </p>
+
+                              {/* Watermark Icon */}
+                              <div className="absolute -bottom-8 -right-8 text-[#BCBF4F] opacity-[0.12] transform -rotate-12 group-hover:scale-110 transition-transform">
+                                <Zap size={140} />
+                              </div>
                             </div>
 
                             {/* Layer 3 - Seamless Transactions */}
                             <div
                               ref={layer3}
-                              className="absolute w-[200px] h-[240px] xl:w-[280px] xl:h-[280px] rounded-[28px] bg-[#00bfa5] transform z-0"
+                              className="absolute w-[200px] h-[240px] xl:w-[280px] xl:h-[280px] rounded-[28px] bg-white border border-gray-100 transform z-0 overflow-hidden group flex flex-col items-center p-6 text-center"
                             >
-                              <h2 className="absolute inset-0 flex justify-center text-center font-[Duck-cry] tracking-[1px] leading-[1.5] xl:text-[2.5rem] pt-4">
+                              {/* Icon Box */}
+                              <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-teal-50 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
+                                <RotateCw size={32} className="text-teal-600" />
+                              </div>
+
+                              <h2 className="font-[Duck-cry] tracking-tight leading-[1.2] xl:text-[2.2rem] mb-3 text-gray-900 relative z-10">
                                 Seamless Transactions
                               </h2>
-                              <p className="absolute bottom-5 left-4 font-[poppins] font-light right-4 text-sm xl:text-base">
-                                Manage offers, inspections, and closings in one
-                                dashboard. Stay on top of deadlines, documents,
+                              <p className="font-[poppins] font-normal text-xs xl:text-sm leading-relaxed text-gray-500 relative z-10">
+                                Manage offers, inspections, and closings in one dashboard. Stay on top of deadlines, documents,
                                 and deals — effortlessly. NuHelixX RE gives you
                                 clarity, confidence, and a smoother client
                                 experience.
                               </p>
+
+                              {/* Watermark Icon */}
+                              <div className="absolute -bottom-8 -right-8 text-teal-600 opacity-[0.2] transform rotate-45 group-hover:scale-110 transition-transform">
+                                <RotateCw size={140} />
+                              </div>
                             </div>
 
                             {/* Cost Card */}
@@ -414,7 +440,7 @@ function HeroSection() {
                           alt="Rocket"
                           className="h-[30px] sm:h-[40px] md:h-[50px] lg:h-[60px]"
                         />
-                        
+
                       </div>
                       Features
                     </span>
@@ -483,33 +509,54 @@ function HeroSection() {
                 {/* Phase 2: Cards in Column */}
                 <div ref={mobileCardsContainerRef} className="max-w-md md:max-w-none mx-auto md:mx-0 space-y-10 md:space-y-12 pb-12 md:pb-16">
                   {/* Card 1 - AI in our DNA */}
-                  <div className="mobile-card w-full min-h-[320px] sm:min-h-[360px] md:min-h-[450px] rounded-[28px] bg-[#B8A3F8] shadow-xl p-8 sm:p-10 md:p-14">
-                    <h3 className="text-3xl sm:text-4xl md:text-7xl font-[Duck-cry] tracking-wide mb-6 text-center">
+                  <div className="mobile-card w-full min-h-[320px] rounded-[28px] bg-white border border-gray-100 shadow-xl p-8 flex flex-col items-center text-center relative overflow-hidden group">
+                    <div className="w-20 h-20 rounded-2xl bg-purple-50 flex items-center justify-center mb-6 relative z-10">
+                      <Cpu size={40} className="text-purple-600" />
+                    </div>
+                    <h3 className="text-3xl font-[Duck-cry] tracking-tight mb-6 text-gray-900 relative z-10">
                       AI in our DNA
                     </h3>
-                    <p className="font-[poppins] font-light text-base sm:text-lg md:text-3xl md:leading-tight leading-normal mt-8 md:mt-12">
-                      NuHelixX RE is AI-first — built with intelligence at its core. Automation drives every step: real-time lead scoring, smart follow-ups, and behavior-based property matching. Smarter insights. Stronger connections.
+                    <p className="font-[poppins] font-normal text-base leading-relaxed text-gray-500 relative z-10">
+                      NuHelixX RE is AI-first — built with intelligence at its core. Automation drives every step: real-time lead scoring, smart follow-ups, and behavior-based property matching.
                     </p>
+                    {/* Watermark */}
+                    <div className="absolute -bottom-10 -right-10 text-purple-600 opacity-[0.15] transform rotate-12">
+                      <Cpu size={180} />
+                    </div>
                   </div>
 
                   {/* Card 2 - Smart Automation */}
-                  <div className="mobile-card w-full min-h-[320px] sm:min-h-[360px] md:min-h-[450px] rounded-[28px] bg-[#BCBF4F] shadow-xl p-8 sm:p-10 md:p-14">
-                    <h3 className="text-3xl sm:text-4xl md:text-7xl font-[Duck-cry] tracking-wide mb-6 text-center">
+                  <div className="mobile-card w-full min-h-[320px] rounded-[28px] bg-white border border-gray-100 shadow-xl p-8 flex flex-col items-center text-center relative overflow-hidden group">
+                    <div className="w-20 h-20 rounded-2xl bg-[#BCBF4F]/10 flex items-center justify-center mb-6 relative z-10">
+                      <Zap size={40} className="text-[#BCBF4F]" />
+                    </div>
+                    <h3 className="text-3xl font-[Duck-cry] tracking-tight mb-6 text-gray-900 relative z-10">
                       Smart Automation
                     </h3>
-                    <p className="font-[poppins] font-light text-base sm:text-lg md:text-3xl md:leading-tight leading-normal mt-8 md:mt-12">
-                      NuHelixX RE automates the busywork — from tagging leads to scheduling follow-ups. Its AI learns your habits, prioritizes tasks, and keeps your pipeline on track. Less admin. More sales.
+                    <p className="font-[poppins] font-normal text-base leading-relaxed text-gray-500 relative z-10">
+                      NuHelixX RE automates the busywork — from tagging leads to scheduling follow-ups. Its AI learns your habits, prioritizes tasks, and keeps your pipeline on track. Less admin.
                     </p>
+                    {/* Watermark */}
+                    <div className="absolute -bottom-10 -right-10 text-[#BCBF4F] opacity-[0.25] transform -rotate-12">
+                      <Zap size={180} />
+                    </div>
                   </div>
 
                   {/* Card 3 - Seamless Transactions */}
-                  <div className="mobile-card w-full min-h-[320px] sm:min-h-[360px] md:min-h-[450px] rounded-[28px] bg-[#00bfa5] shadow-xl p-8 sm:p-10 md:p-14">
-                    <h3 className="text-3xl sm:text-4xl md:text-7xl font-[Duck-cry] tracking-wide mb-6 text-center">
+                  <div className="mobile-card w-full min-h-[320px] rounded-[28px] bg-white border border-gray-100 shadow-xl p-8 flex flex-col items-center text-center relative overflow-hidden group">
+                    <div className="w-20 h-20 rounded-2xl bg-teal-50 flex items-center justify-center mb-6 relative z-10">
+                      <RotateCw size={40} className="text-teal-600" />
+                    </div>
+                    <h3 className="text-3xl font-[Duck-cry] tracking-tight mb-6 text-gray-900 relative z-10">
                       Seamless Transactions
                     </h3>
-                    <p className="font-[poppins] font-light text-base sm:text-lg md:text-3xl md:leading-tight leading-normal mt-8 md:mt-12">
-                      Manage offers, inspections, and closings in one dashboard. Stay on top of deadlines, documents, and deals — effortlessly. NuHelixX RE gives you clarity, confidence, and a smoother client experience.
+                    <p className="font-[poppins] font-normal text-base leading-relaxed text-gray-500 relative z-10">
+                      Manage offers, inspections, and closings in one dashboard. Stay on top of deadlines, documents, and deals — effortlessly. NuHelixX RE gives you clarity and confidence.
                     </p>
+                    {/* Watermark */}
+                    <div className="absolute -bottom-10 -right-10 text-teal-600 opacity-[0.25] transform rotate-45">
+                      <RotateCw size={180} />
+                    </div>
                   </div>
 
                   {/* Card 4 - Cost (with image) */}
