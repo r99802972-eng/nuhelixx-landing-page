@@ -17,7 +17,7 @@ export function MeetCRMSection() {
     <div className="w-full max-w-[1400px] mx-auto py-8 md:py-12 lg:py-14 px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 overflow-hidden">
 
       {/* --- Left Side: "OLD" CRM Comparison --- */}
-      <div className="relative w-full max-w-lg lg:w-[45%] flex flex-col items-center scale-[0.75] sm:scale-85 lg:scale-90 transition-transform duration-500 origin-center lg:origin-right">
+      <div className="relative w-full max-w-lg lg:w-[45%] flex flex-col items-center scale-[0.85] sm:scale-95 lg:scale-105 transition-transform duration-500 origin-center lg:origin-right">
         <div className="absolute -top-6 font-bold text-gray-400 tracking-[0.2em] text-[10px] md:text-xs uppercase">LEGACY SYSTEM</div>
 
         <div className="relative group">
@@ -60,7 +60,7 @@ export function MeetCRMSection() {
       {/* --- Right Side: NEW CMS --- */}
       <div className="w-full max-w-xl lg:w-[50%] flex flex-col items-center lg:items-start text-center lg:text-left scale-90 sm:scale-100 origin-center lg:origin-left">
         <h2 className="text-[2rem] md:text-[3rem] lg:text-[3.5rem] font-black leading-tight tracking-tighter text-[#1F1F1F] mb-4">
-          MEET THE <span className="text-[#BCBF4F]">NEW</span>
+          MEET THE <span className="text-[#BCBF4F]">NEW CMS</span>
         </h2>
 
         {/* Premium AI Input Box (Light Theme - Compact) */}
