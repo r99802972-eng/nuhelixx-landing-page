@@ -47,6 +47,10 @@ const Header = () => {
         boxShadow: 'none',
       });
 
+      gsap.set(backgroundRef.current, {
+        y: 160, // Fixed: 160px matches the -top-40 (-160px) to perfectly align with top
+      });
+
       gsap.set([leftNavRef.current, rightNavRef.current], {
         opacity: 0,
         x: 0,
@@ -65,7 +69,7 @@ const Header = () => {
           end: '+=200%',
           scrub: 1.5,
           pin: true,
-          pinSpacing: false,
+          pinSpacing: true,
         },
       });
 
@@ -83,20 +87,20 @@ const Header = () => {
         duration: 2,
       }, 0);
 
-      // Reveal Dashboard Image
+      // Reveal Dashboard Image (Wait for background to move all the way up)
       tl.to(dashboardRef.current, {
         opacity: 1,
         y: vw > 768 ? 0 : 20, // Slightly lower on mobile to avoid header
         ease: 'power2.out',
-        duration: 1.5
-      }, 0.5);
+        duration: 1.0
+      }, 1.3);
 
       // Logo: header ke bilkul center mein
       tl.to(logoRef.current, {
-        top: '50%',         // header ki poori height ka center
-        y: () => -(vh / 2) + 32,  // screen center se header center tak
-        yPercent: -25,      // logo apne aap ke center se align
-        width: vw > 768 ? '180px' : '140px',
+        top: vw > 768 ? '44px' : '40px', // Direct top position in header
+        y: 0,
+        yPercent: -50,
+        width: vw > 1536 ? '200px' : (vw > 768 ? '180px' : '140px'),
         ease: 'power1.inOut',
         duration: 2,
         opacity: 1,
@@ -229,14 +233,14 @@ const Header = () => {
           ref={dashboardRef}
           className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none"
         >
-          <div className="w-full max-w-[1400px] pointer-events-auto">
+          <div className="w-full max-w-[1600px] pointer-events-auto">
             <MeetCRMSection />
           </div>
         </div>
 
         <div
           ref={backgroundRef}
-          className="absolute inset-0 bg-cover bg-center will-change-transform z-20"
+          className="absolute -top-40 inset-x-0 h-[calc(100vh+160px)] bg-cover bg-center will-change-transform z-20"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         >
           <div

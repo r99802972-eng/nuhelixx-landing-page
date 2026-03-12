@@ -34,7 +34,7 @@ export function Bracket({
 }
 
 function HeroSection() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const innerRef = useRef<HTMLDivElement | null>(null);
   const stackRef = useRef<HTMLDivElement | null>(null);
@@ -232,7 +232,7 @@ function HeroSection() {
     <main
       id="analytics"
       ref={containerRef}
-      className="w-full overflow-x-hidden mt-[110vh]"
+      className="w-full overflow-x-hidden"
     >
       <div ref={innerRef} className="flex flex-col lg:flex-row">
         {/* First Screen */}
