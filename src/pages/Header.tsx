@@ -62,14 +62,21 @@ const Header = () => {
       });
 
       // ── Scroll timeline ─────────────────────────────────────────────
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: heroSectionRef.current,
-          start: 'top top',
-          end: '+=200%',
-          scrub: 1.5,
-          pin: true,
-          pinSpacing: true,
+      const tl = gsap.timeline({ paused: true });
+
+      let headerMaxProgress = 0;
+      ScrollTrigger.create({
+        trigger: heroSectionRef.current,
+        start: 'top top',
+        end: '+=200%',
+        pin: true,
+        pinSpacing: true,
+        onUpdate: (self) => {
+          if (self.progress > headerMaxProgress) {
+            headerMaxProgress = self.progress;
+            // Manually tween the timeline's progress forward, never backward
+            gsap.to(tl, { progress: headerMaxProgress, duration: 0.5, ease: "none", overwrite: true });
+          }
         },
       });
 

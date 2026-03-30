@@ -64,20 +64,22 @@ function HeroSection() {
         gsap.set(layer2.current, { x: 0, rotation: -2 });
         gsap.set(layer3.current, { x: 0, rotation: 2 });
         gsap.set(cardRef.current, { x: 0, y: 0 });
+        gsap.set(costDescRef.current, { x: 0, y: -120, opacity: 0 });
         gsap.set(stackRef.current, { x: 0, scale: 1, y: 0 });
 
         const cardSpacing = 290;
         const horizontalDistance = window.innerWidth;
         const totalScrollHeight = window.innerHeight * 8;
 
-        const master = gsap.timeline({
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top top",
-            end: () => "+=" + totalScrollHeight,
-            scrub: 1,
-            pin: true,
-          },
+        const master = gsap.timeline({ paused: true });
+
+        ScrollTrigger.create({
+          trigger: containerRef.current,
+          start: "top top",
+          end: () => "+=" + totalScrollHeight,
+          pin: true,
+          scrub: true, // ✅ IMPORTANT
+          animation: master, // ✅ LINK TIMELINE
         });
 
         // Headline animation
@@ -87,6 +89,7 @@ function HeroSection() {
           ScrollTrigger.create({
             trigger: headlineRef.current,
             start: "top 80%",
+            once: true,
             onEnter: () => {
               if (headlineTween) headlineTween.kill();
               headlineTween = gsap.fromTo(
@@ -141,26 +144,9 @@ function HeroSection() {
 
         const costCardVerticalDelay = cardDelay + 1.2;
         master.to(
-          cardRef.current,
-          {
-            y: 300,
-            ease: "power1.out",
-            duration: 1
-          },
-          costCardVerticalDelay
-        );
-
-        master.to(
           costDescRef.current,
-          {
-            x: cardSpacing * 1,
-            rotation: 0,
-            opacity: 1,
-            y: 0,
-            ease: "power1.out",
-            duration: 1.5,
-          },
-          costCardVerticalDelay + 0.1
+          { y: 0, opacity: 1, duration: 0.7, ease: "power2.out" },
+          cardDelay + 0.9
         );
 
         master.to(
@@ -383,7 +369,7 @@ function HeroSection() {
                             {/* Cost Description */}
                             <div
                               ref={costDescRef}
-                              className="absolute top-[395px] left-4 w-[200px] xl:w-[800px] bg-[#BCBF4F] shadow-[0_20px_40px_rgba(0,0,0,0.15),0_8px_16px_rgba(0,0,0,0.1)] rounded-2xl p-4 xl:p-8 z-0 opacity-0 text-left"
+                              className="absolute top-[395px] left-4 w-[200px] xl:w-[800px] bg-[#BCBF4F] shadow-[0_20px_40px_rgba(0,0,0,0.15),0_8px_16px_rgba(0,0,0,0.1)] rounded-2xl p-4 xl:p-8 z-[-1] opacity-0 text-left"
                             >
                               <p className="font-[poppins] font-light text-xs xl:text-xl leading-relaxed tracking-wide">
                                 NuHelixX RE saves both time and money by replacing multiple tools with one platform. Data being entered once and AI handling training, tagging, and follow-ups, agents cut hours of admin work every week — turning wasted time into more revenue and measurable cost savings.

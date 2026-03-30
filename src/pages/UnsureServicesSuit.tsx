@@ -265,7 +265,7 @@ export default function UnsureServicesSuit() {
               {
                 key: "Pricing",
                 values: [
-                  "$250/user/month—everything included; no tiers or upsells.",
+                  "$399 per user/month (annual billing), $499 per user/month (monthly billing), All features included.",
                   "$499+/user/month; add-on fees.",
                   "$1,000+/month; features gated.",
                   "~$299/month base; limited automation.",
