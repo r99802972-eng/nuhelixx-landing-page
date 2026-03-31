@@ -242,7 +242,7 @@ const Header = () => {
         {/* Dashboard Section (Hidden initially, revealed on scroll) */}
         <div
           ref={dashboardRef}
-          className="absolute top-[100px] bottom-0 inset-x-0 flex items-center justify-center z-10 pointer-events-none"
+          className="absolute top-[140px] bottom-0 inset-x-0 flex items-center justify-center z-10 pointer-events-none"
         >
           <div className="w-full max-w-[1600px] pointer-events-auto">
             <MeetCRMSection />
