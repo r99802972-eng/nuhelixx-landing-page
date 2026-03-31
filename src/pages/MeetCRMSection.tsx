@@ -184,13 +184,13 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         ref={topHeaderRef}
         className="flex flex-wrap items-center justify-center gap-1.5 md:gap-2 h-6"
       >
-        <h2 className={`font-black uppercase leading-none tracking-[-0.04em] text-[#111111] transition-all duration-500 ${searchComplete ? 'text-[0.8rem] sm:text-[0.9rem] lg:text-[1rem]' : 'text-[1.1rem] sm:text-[1.3rem] lg:text-[1.6rem]'}`}>
+        <h2 className="font-black uppercase leading-none tracking-[-0.04em] text-[#111111] transition-all duration-500 text-[1.1rem] sm:text-[1.3rem] lg:text-[1.6rem]">
           MEET <span className="text-[#B7E78A]">YOUR</span> NEW CRM
         </h2>
 
         <div
           ref={toggleTrackRef}
-          className={`relative h-4 w-[28px] rounded-full bg-[#22c55e] shadow-inner shadow-black/10 transition-all duration-500 ${searchComplete ? 'scale-75' : 'scale-100'}`}
+          className="relative h-4 w-[28px] rounded-full bg-[#22c55e] shadow-inner shadow-black/10 transition-all duration-500 scale-100"
         >
           <div
             ref={toggleKnobRef}
@@ -199,7 +199,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         </div>
       </div>
 
-      <p className={`mt-1 font-extrabold text-[#111111] transition-all duration-500 ${searchComplete ? 'text-[8px] sm:text-[9px] lg:text-[0.7rem]' : 'text-[10px] sm:text-[11px] lg:text-[0.85rem]'}`}>
+      <p className="mt-1 font-extrabold text-[#111111] transition-all duration-500 text-[10px] sm:text-[11px] lg:text-[0.85rem]">
         The Complete Real Estate Workflow. One Platform.
       </p>
 
@@ -264,6 +264,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         <h3 className={`font-black leading-[1.2] tracking-[-0.04em] text-[#111111] transition-all duration-500 ${searchComplete ? 'text-[1rem] lg:text-[1.1rem]' : 'text-[1.2rem] lg:text-[1.5rem]'}`}>
           The Future of CRM is Here.
         </h3>
+        <h4 className="text-sm font-semibold text-gray-900">We’ve decoded the DNA of your traditional software stack and re-engineered it into a unified, evolutionary platform.  </h4>
 
         <p className={`mx-auto transition-all duration-500 text-[#444444] ${searchComplete ? 'max-w-[440px] text-[10px] sm:text-[11px]' : 'max-w-[540px] text-xs sm:text-[0.95rem]'}`}>
           {searchComplete

@@ -354,51 +354,51 @@ function HeroSection() {
                               </div>
                             </div>
 
-                            {/* Layer 4 - Data & Insights */}
+                            {/* Layer 4 - Cost (Original Image Look) */}
                             <div
                               ref={layer4}
-                              className="absolute w-[200px] h-[240px] xl:w-[280px] xl:h-[280px] rounded-[28px] bg-white border border-gray-100 transform z-0 overflow-hidden group flex flex-col items-center p-6 text-center"
+                              className="absolute w-[200px] h-[200px] xl:w-[280px] xl:h-[280px] rounded-3xl overflow-hidden shadow-xl transform z-0"
                             >
-                              <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-blue-50 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
-                                <TrendingUp size={32} className="text-blue-600" />
-                              </div>
-
-                              <h2 className="font-[Duck-cry] tracking-tight leading-[1.2] xl:text-[2.2rem] mb-3 text-gray-900 relative z-10">
-                                Data & Insights
-                              </h2>
-                              <p className="font-[poppins] font-normal text-xs xl:text-sm leading-relaxed text-gray-500 relative z-10">
-                                Track your performance, forecast revenue, and optimize your operations with full transparency. Transform your business with actionable metrics.
-                              </p>
-
-                              {/* Watermark Icon */}
-                              <div className="absolute -bottom-8 -right-8 text-blue-600 opacity-[0.2] transform rotate-12 group-hover:scale-110 transition-transform">
-                                <TrendingUp size={140} />
-                              </div>
+                                <div className="w-full h-full relative">
+                                    <img
+                                      src={property_1}
+                                      alt="Cost savings"
+                                      className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute bottom-4 xl:bottom-8 left-4 xl:left-6 text-white text-left">
+                                      <div className="text-3xl xl:text-5xl font-bold mb-1">
+                                        Cost
+                                      </div>
+                                      <div className="text-sm xl:text-lg font-medium">
+                                        Save-time-and
+                                      </div>
+                                      <div className="text-sm xl:text-lg font-medium">
+                                        money
+                                      </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            {/* Cost Card */}
+                            {/* Main Card - Data & Insights */}
                             <div
                               ref={cardRef}
-                              className="w-[200px] h-[200px] xl:w-[280px] xl:h-[280px] rounded-3xl overflow-hidden relative p-1 z-10"
+                              className="w-[200px] h-[200px] xl:w-[280px] xl:h-[280px] rounded-3xl overflow-hidden relative p-1 z-10 bg-white border border-gray-100 shadow-xl group flex flex-col items-center justify-center text-center p-6"
                             >
-                              <div className="w-full h-full rounded-3xl overflow-hidden relative">
-                                <img
-                                  src={property_1}
-                                  alt="Cost savings"
-                                  className="w-full h-full object-cover"
-                                />
-                                <div className="absolute bottom-4 xl:bottom-8 left-4 xl:left-6 text-white">
-                                  <div className="text-3xl xl:text-5xl font-bold mb-1">
-                                    Cost
-                                  </div>
-                                  <div className="text-sm xl:text-lg font-medium">
-                                    Save-time-and
-                                  </div>
-                                  <div className="text-sm xl:text-lg font-medium">
-                                    money
-                                  </div>
+                                <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-blue-50 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
+                                  <TrendingUp size={32} className="text-blue-600" />
                                 </div>
-                              </div>
+
+                                <h2 className="font-[Duck-cry] tracking-tight leading-[1.2] xl:text-[2.2rem] mb-3 text-gray-900 relative z-10">
+                                  Data & Insights
+                                </h2>
+                                <p className="font-[poppins] font-normal text-xs xl:text-sm leading-relaxed text-gray-500 relative z-10">
+                                  NuHelixX RE provides deep visibility into every deal, allowing you to track performance, forecast upcoming revenue with AI-driven precision, and identify growth opportunities before they arise.
+                                </p>
+
+                                {/* Watermark Icon */}
+                                <div className="absolute -bottom-8 -right-8 text-blue-600 opacity-[0.1] transform rotate-12 group-hover:scale-110 transition-transform">
+                                  <TrendingUp size={140} />
+                                </div>
                             </div>
 
                             {/* Cost Description */}
@@ -580,24 +580,7 @@ function HeroSection() {
                     </div>
                   </div>
 
-                  {/* Card 4 - Data & Insights */}
-                  <div className="mobile-card w-full min-h-[320px] rounded-[28px] bg-white border border-gray-100 shadow-xl p-8 flex flex-col items-center text-center relative overflow-hidden group">
-                    <div className="w-20 h-20 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 relative z-10">
-                      <TrendingUp size={40} className="text-blue-600" />
-                    </div>
-                    <h3 className="text-3xl font-[Duck-cry] tracking-tight mb-6 text-gray-900 relative z-10">
-                      Data & Insights
-                    </h3>
-                    <p className="font-[poppins] font-normal text-base leading-relaxed text-gray-500 relative z-10">
-                      Track your performance, forecast revenue, and optimize your operations with full transparency. Transform your business with actionable metrics.
-                    </p>
-                    {/* Watermark */}
-                    <div className="absolute -bottom-10 -right-10 text-blue-600 opacity-[0.25] transform rotate-12">
-                      <TrendingUp size={180} />
-                    </div>
-                  </div>
-
-                  {/* Card 5 - Cost (with image) */}
+                  {/* Card 4 - Cost (Original Image Look) */}
                   <div className="mobile-card w-full h-[320px] sm:h-[360px] md:h-[450px] rounded-[28px] overflow-hidden shadow-xl">
                     <div className="w-full h-full relative">
                       <img
@@ -605,7 +588,7 @@ function HeroSection() {
                         alt="Cost savings"
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute bottom-6 left-6 text-white">
+                      <div className="absolute bottom-6 left-6 text-white text-left">
                         <div className="text-4xl sm:text-5xl md:text-7xl font-bold mb-1">
                           Cost
                         </div>
@@ -616,6 +599,23 @@ function HeroSection() {
                           money
                         </div>
                       </div>
+                    </div>
+                  </div>
+
+                  {/* Card 5 - Data & Insights */}
+                  <div className="mobile-card w-full min-h-[320px] rounded-[28px] bg-white border border-gray-100 shadow-xl p-8 flex flex-col items-center text-center relative overflow-hidden group">
+                    <div className="w-20 h-20 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 relative z-10">
+                      <TrendingUp size={40} className="text-blue-600" />
+                    </div>
+                    <h3 className="text-3xl font-[Duck-cry] tracking-tight mb-6 text-gray-900 relative z-10">
+                      Data & Insights
+                    </h3>
+                    <p className="font-[poppins] font-normal text-base leading-relaxed text-gray-500 relative z-10">
+                      NuHelixX RE provides deep visibility into every deal, allowing you to track performance, forecast upcoming revenue with AI-driven precision, and identify growth opportunities before they arise. Transform your data into actionable insights that drive measurable results.
+                    </p>
+                    {/* Watermark */}
+                    <div className="absolute -bottom-10 -right-10 text-blue-600 opacity-[0.25] transform rotate-12">
+                      <TrendingUp size={180} />
                     </div>
                   </div>
 
