@@ -175,7 +175,7 @@ function ServiceItem({ service }: { service: Service }) {
                       ref={xLogoRef}
                       src={logo}
                       alt="NuHelixX logo mark"
-                      className="absolute inset-0 h-[138px] w-full object-contain"
+                      className="absolute inset-0 h-[138px] w-full object-contain translate-y-[10px]"
                     />
                   </span>
                   <span>{experienceSuffix}</span>

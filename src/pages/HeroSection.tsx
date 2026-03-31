@@ -1,4 +1,4 @@
-import { ArrowUpRight, ChevronDown, ArrowDown, Cpu, Zap, RotateCw } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ArrowDown, Cpu, Zap, RotateCw, TrendingUp } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -42,6 +42,7 @@ function HeroSection() {
   const layer2 = useRef<HTMLDivElement | null>(null);
   const layer3 = useRef<HTMLDivElement | null>(null);
   const cardRef = useRef<HTMLDivElement | null>(null);
+  const layer4 = useRef<HTMLDivElement | null>(null);
   const costDescRef = useRef<HTMLDivElement | null>(null);
   const heroContentRef = useRef<HTMLDivElement | null>(null);
   const headlineRef = useRef<HTMLDivElement | null>(null);
@@ -63,8 +64,9 @@ function HeroSection() {
         gsap.set(layer1.current, { x: 0, rotation: 4 });
         gsap.set(layer2.current, { x: 0, rotation: -2 });
         gsap.set(layer3.current, { x: 0, rotation: 2 });
+        gsap.set(layer4.current, { x: 0, y: 0, rotation: -3 });
         gsap.set(cardRef.current, { x: 0, y: 0 });
-        gsap.set(costDescRef.current, { x: 0, y: -120, opacity: 0 });
+        gsap.set(costDescRef.current, { x: 0, y: 300, opacity: 0 });
         gsap.set(stackRef.current, { x: 0, scale: 1, y: 0 });
 
         const cardSpacing = 290;
@@ -126,28 +128,39 @@ function HeroSection() {
           0
         );
 
+        const tile1Delay = cardDelay;
+        const tile2Delay = cardDelay;
+        const tile3Delay = cardDelay;
+        const tile4Delay = cardDelay + 0.5;
+        const descRevealDelay = tile4Delay + 0.5;
+
         master.to(
           layer1.current,
           { x: cardSpacing * 1, rotation: 0, left: 0, ease: "power1.out" },
-          cardDelay
+          tile1Delay
         );
         master.to(
           layer2.current,
           { x: cardSpacing * 2, rotation: 0, left: 0, ease: "power1.out" },
-          cardDelay
+          tile2Delay
         );
         master.to(
           layer3.current,
           { x: cardSpacing * 3, rotation: 0, zIndex: 0, ease: "power1.out" },
-          cardDelay
+          tile3Delay
         );
-
-        const costCardVerticalDelay = cardDelay + 1.2;
+        master.to(
+          layer4.current,
+          { y: 300, rotation: 0, zIndex: 0, ease: "power1.out" },
+          tile4Delay
+        );
         master.to(
           costDescRef.current,
-          { y: 0, opacity: 1, duration: 0.7, ease: "power2.out" },
-          cardDelay + 0.9
+          { x: 300, opacity: 1, duration: 0.75, ease: "power2.out" },
+          descRevealDelay
         );
+
+        const costCardVerticalDelay = descRevealDelay + 0.7;
 
         master.to(
           innerRef.current,
@@ -160,7 +173,7 @@ function HeroSection() {
       } else {
         // ==================== MOBILE & TABLET ====================
         // Clear desktop styles
-        gsap.set([layer1.current, layer2.current, layer3.current, cardRef.current, stackRef.current, costDescRef.current], {
+        gsap.set([layer1.current, layer2.current, layer3.current, layer4.current, cardRef.current, stackRef.current, costDescRef.current], {
           clearProps: "all",
         });
 
@@ -341,6 +354,28 @@ function HeroSection() {
                               </div>
                             </div>
 
+                            {/* Layer 4 - Data & Insights */}
+                            <div
+                              ref={layer4}
+                              className="absolute w-[200px] h-[240px] xl:w-[280px] xl:h-[280px] rounded-[28px] bg-white border border-gray-100 transform z-0 overflow-hidden group flex flex-col items-center p-6 text-center"
+                            >
+                              <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-blue-50 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
+                                <TrendingUp size={32} className="text-blue-600" />
+                              </div>
+
+                              <h2 className="font-[Duck-cry] tracking-tight leading-[1.2] xl:text-[2.2rem] mb-3 text-gray-900 relative z-10">
+                                Data & Insights
+                              </h2>
+                              <p className="font-[poppins] font-normal text-xs xl:text-sm leading-relaxed text-gray-500 relative z-10">
+                                Track your performance, forecast revenue, and optimize your operations with full transparency. Transform your business with actionable metrics.
+                              </p>
+
+                              {/* Watermark Icon */}
+                              <div className="absolute -bottom-8 -right-8 text-blue-600 opacity-[0.2] transform rotate-12 group-hover:scale-110 transition-transform">
+                                <TrendingUp size={140} />
+                              </div>
+                            </div>
+
                             {/* Cost Card */}
                             <div
                               ref={cardRef}
@@ -369,7 +404,7 @@ function HeroSection() {
                             {/* Cost Description */}
                             <div
                               ref={costDescRef}
-                              className="absolute top-[395px] left-4 w-[200px] xl:w-[800px] bg-[#BCBF4F] shadow-[0_20px_40px_rgba(0,0,0,0.15),0_8px_16px_rgba(0,0,0,0.1)] rounded-2xl p-4 xl:p-8 z-[-1] opacity-0 text-left"
+                              className="absolute top-0 left-0 xl:left-4 w-[200px] xl:w-[800px] bg-[#BCBF4F] shadow-[0_20px_40px_rgba(0,0,0,0.15),0_8px_16px_rgba(0,0,0,0.1)] rounded-2xl p-4 xl:p-8 z-[-1] opacity-0 text-left"
                             >
                               <p className="font-[poppins] font-light text-xs xl:text-xl leading-relaxed tracking-wide">
                                 NuHelixX RE saves both time and money by replacing multiple tools with one platform. Data being entered once and AI handling training, tagging, and follow-ups, agents cut hours of admin work every week — turning wasted time into more revenue and measurable cost savings.
@@ -545,7 +580,24 @@ function HeroSection() {
                     </div>
                   </div>
 
-                  {/* Card 4 - Cost (with image) */}
+                  {/* Card 4 - Data & Insights */}
+                  <div className="mobile-card w-full min-h-[320px] rounded-[28px] bg-white border border-gray-100 shadow-xl p-8 flex flex-col items-center text-center relative overflow-hidden group">
+                    <div className="w-20 h-20 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 relative z-10">
+                      <TrendingUp size={40} className="text-blue-600" />
+                    </div>
+                    <h3 className="text-3xl font-[Duck-cry] tracking-tight mb-6 text-gray-900 relative z-10">
+                      Data & Insights
+                    </h3>
+                    <p className="font-[poppins] font-normal text-base leading-relaxed text-gray-500 relative z-10">
+                      Track your performance, forecast revenue, and optimize your operations with full transparency. Transform your business with actionable metrics.
+                    </p>
+                    {/* Watermark */}
+                    <div className="absolute -bottom-10 -right-10 text-blue-600 opacity-[0.25] transform rotate-12">
+                      <TrendingUp size={180} />
+                    </div>
+                  </div>
+
+                  {/* Card 5 - Cost (with image) */}
                   <div className="mobile-card w-full h-[320px] sm:h-[360px] md:h-[450px] rounded-[28px] overflow-hidden shadow-xl">
                     <div className="w-full h-full relative">
                       <img

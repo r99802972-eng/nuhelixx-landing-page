@@ -8,6 +8,7 @@ import MeetCRMSection from './MeetCRMSection';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [crmAutoplayStarted, setCrmAutoplayStarted] = useState(false);
 
   const logoRef = useRef(null);             // FIXED positioned logo — always visible
   const backgroundRef = useRef(null);
@@ -17,9 +18,13 @@ const Header = () => {
   const leftNavRef = useRef(null);
   const rightNavRef = useRef(null);
   const heroSectionRef = useRef(null);
+  const crmAutoplayTriggeredRef = useRef(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+
+    setCrmAutoplayStarted(false);
+    crmAutoplayTriggeredRef.current = false;
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -102,6 +107,13 @@ const Header = () => {
         duration: 1.0
       }, 1.3);
 
+      ScrollTrigger.create({
+        trigger: heroSectionRef.current,
+        start: 'top top-=35%',
+        onEnter: () => setCrmAutoplayStarted(true),
+        once: true
+      });
+
       // Logo: header ke bilkul center mein
       tl.to(logoRef.current, {
         top: vw > 768 ? '44px' : '40px', // Direct top position in header
@@ -117,7 +129,7 @@ const Header = () => {
       tl.to(headerRef.current, {
         backgroundColor: 'rgba(255, 255, 255, 1)',
         duration: 0.3,
-      }, 1.8);
+      }, 1.95);
 
       // Nav items — screen size ke hisaab se dynamic x
       const isTablet = vw < 1024;
@@ -127,13 +139,13 @@ const Header = () => {
       tl.fromTo(leftNavRef.current,
         { x: 0, opacity: 0 },
         { x: leftX, opacity: 1, ease: 'power2.out', duration: 0.7 },
-        2.2
+        2.6
       );
 
       tl.fromTo(rightNavRef.current,
         { x: 0, opacity: 0 },
         { x: rightX, opacity: 1, ease: 'power2.out', duration: 0.7 },
-        2.2
+        2.6
       );
 
     });
@@ -242,10 +254,10 @@ const Header = () => {
         {/* Dashboard Section (Hidden initially, revealed on scroll) */}
         <div
           ref={dashboardRef}
-          className="absolute top-[140px] bottom-0 inset-x-0 flex items-center justify-center z-10 pointer-events-none"
+          className="absolute top-[90px] bottom-0 inset-x-0 flex items-start justify-center z-30 pointer-events-none"
         >
           <div className="w-full max-w-[1600px] pointer-events-auto">
-            <MeetCRMSection />
+            <MeetCRMSection autoplayOnReveal={crmAutoplayStarted} />
           </div>
         </div>
 
