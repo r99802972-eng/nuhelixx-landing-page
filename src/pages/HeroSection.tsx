@@ -1,9 +1,11 @@
-import { ArrowUpRight, ChevronDown, ArrowDown, Cpu, Zap, RotateCw, TrendingUp } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ArrowDown, Cpu, Zap, RotateCw } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import property_1 from "../assets/property_2.jpg";
+import data_insights_bg from "../assets/data_insights_bg.png";
+import cost_savings_bg from "../assets/cost_savings_bg.png";
 import { OurServices } from "./OurServices";
+import BackgroundOrnaments from "./components/BackgroundOrnaments";
 
 export function Bracket({
   side = "left",
@@ -231,12 +233,13 @@ function HeroSection() {
     <main
       id="analytics"
       ref={containerRef}
-      className="w-full overflow-x-hidden"
+      className="w-full overflow-x-hidden relative"
     >
-      <div ref={innerRef} className="flex flex-col lg:flex-row">
+      <div ref={innerRef} className="flex flex-col lg:flex-row relative z-10">
         {/* First Screen */}
-        <div className="w-full lg:w-screen lg:h-screen flex-shrink-0">
-          <div className="min-h-screen bg-[#f5f5f5]">
+        <div className="w-full lg:w-screen lg:h-screen flex-shrink-0 relative overflow-hidden">
+          <BackgroundOrnaments />
+          <div className="min-h-screen bg-[#f5f5f5]/50 relative z-10">
             {mobileMenuOpen && (
               <div className="lg:hidden bg-white border-t border-gray-200 px-4 py-4">
                 <nav className="flex flex-col gap-2">
@@ -361,7 +364,7 @@ function HeroSection() {
                             >
                                 <div className="w-full h-full relative">
                                     <img
-                                      src={property_1}
+                                      src={cost_savings_bg}
                                       alt="Cost savings"
                                       className="w-full h-full object-cover"
                                     />
@@ -382,22 +385,19 @@ function HeroSection() {
                             {/* Main Card - Data & Insights */}
                             <div
                               ref={cardRef}
-                              className="w-[200px] h-[200px] xl:w-[280px] xl:h-[280px] rounded-3xl overflow-hidden relative p-1 z-10 bg-white border border-gray-100 shadow-xl group flex flex-col items-center justify-center text-center p-6"
+                              className="w-[200px] h-[200px] xl:w-[280px] xl:h-[280px] rounded-3xl overflow-hidden relative shadow-xl z-20"
                             >
-                                <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-blue-50 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
-                                  <TrendingUp size={32} className="text-blue-600" />
-                                </div>
-
-                                <h2 className="font-[Duck-cry] tracking-tight leading-[1.2] xl:text-[2.2rem] mb-3 text-gray-900 relative z-10">
-                                  Data & Insights
-                                </h2>
-                                <p className="font-[poppins] font-normal text-xs xl:text-sm leading-relaxed text-gray-500 relative z-10">
-                                  NuHelixX RE provides deep visibility into every deal, allowing you to track performance, forecast upcoming revenue with AI-driven precision, and identify growth opportunities before they arise.
-                                </p>
-
-                                {/* Watermark Icon */}
-                                <div className="absolute -bottom-8 -right-8 text-blue-600 opacity-[0.1] transform rotate-12 group-hover:scale-110 transition-transform">
-                                  <TrendingUp size={140} />
+                                <div className="w-full h-full relative">
+                                    <img
+                                      src={data_insights_bg}
+                                      alt="Data & Insights"
+                                      className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute bottom-4 xl:bottom-8 left-4 xl:left-6 text-white text-left">
+                                      <div className="text-2xl xl:text-4xl font-bold mb-1">
+                                        Data & Insights
+                                      </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -584,7 +584,7 @@ function HeroSection() {
                   <div className="mobile-card w-full h-[320px] sm:h-[360px] md:h-[450px] rounded-[28px] overflow-hidden shadow-xl">
                     <div className="w-full h-full relative">
                       <img
-                        src={property_1}
+                        src={cost_savings_bg}
                         alt="Cost savings"
                         className="w-full h-full object-cover"
                       />
@@ -603,19 +603,18 @@ function HeroSection() {
                   </div>
 
                   {/* Card 5 - Data & Insights */}
-                  <div className="mobile-card w-full min-h-[320px] rounded-[28px] bg-white border border-gray-100 shadow-xl p-8 flex flex-col items-center text-center relative overflow-hidden group">
-                    <div className="w-20 h-20 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 relative z-10">
-                      <TrendingUp size={40} className="text-blue-600" />
-                    </div>
-                    <h3 className="text-3xl font-[Duck-cry] tracking-tight mb-6 text-gray-900 relative z-10">
-                      Data & Insights
-                    </h3>
-                    <p className="font-[poppins] font-normal text-base leading-relaxed text-gray-500 relative z-10">
-                      NuHelixX RE provides deep visibility into every deal, allowing you to track performance, forecast upcoming revenue with AI-driven precision, and identify growth opportunities before they arise. Transform your data into actionable insights that drive measurable results.
-                    </p>
-                    {/* Watermark */}
-                    <div className="absolute -bottom-10 -right-10 text-blue-600 opacity-[0.25] transform rotate-12">
-                      <TrendingUp size={180} />
+                  <div className="mobile-card w-full h-[320px] rounded-[28px] overflow-hidden shadow-xl relative transition-all group">
+                    <div className="w-full h-full relative">
+                      <img
+                        src={data_insights_bg}
+                        alt="Data & Insights"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute bottom-6 left-6 text-white text-left">
+                        <div className="text-4xl sm:text-5xl md:text-7xl font-bold mb-1">
+                          Data & Insights
+                        </div>
+                      </div>
                     </div>
                   </div>
 

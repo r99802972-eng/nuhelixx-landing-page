@@ -73,7 +73,7 @@ const Header = () => {
       ScrollTrigger.create({
         trigger: heroSectionRef.current,
         start: 'top top',
-        end: '+=200%',
+        end: '+=150%', // Reduced for a snappier feel
         pin: true,
         pinSpacing: true,
         onUpdate: (self) => {
@@ -81,6 +81,14 @@ const Header = () => {
             headerMaxProgress = self.progress;
             // Manually tween the timeline's progress forward, never backward
             gsap.to(tl, { progress: headerMaxProgress, duration: 0.5, ease: "none", overwrite: true });
+          }
+
+          // Fast-Reverse: If scrolling UP through the pinned area, boost the scroll speed
+          if (self.direction === -1 && self.progress < 1 && self.progress > 0) {
+            const scrollBoost = Math.abs(self.getVelocity()) * 0.008; 
+            if (scrollBoost > 2) {
+              window.scrollTo(0, window.scrollY - scrollBoost);
+            }
           }
         },
       });
