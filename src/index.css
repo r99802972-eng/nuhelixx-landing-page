@@ -15,9 +15,9 @@
 }
 /* no scroll bar */
     body {
-      margin: 0;
-      overflow-x: hidden;
-    }
+  margin: 0;
+  overflow-x: hidden;
+}
 
 /* Mobile optimizations */
 @media (max-width: 768px) {

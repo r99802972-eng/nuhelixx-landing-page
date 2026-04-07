@@ -32,7 +32,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
 
     const ctx = gsap.context(() => {
       // Initial states
-      gsap.set(sectionRef.current, { maxWidth: "780px" }); // Start large for search
+      gsap.set(sectionRef.current, { maxWidth: "540px" }); // Start reduced
       gsap.set(searchStageRef.current, { autoAlpha: 1, y: 0, display: "flex" });
       gsap.set(replyBubbleRef.current, { autoAlpha: 0, y: 10, display: "none" });
       gsap.set(actionButtonsRef.current, { autoAlpha: 0, y: 10, display: "none" });
@@ -57,7 +57,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
       });
 
       // 1. Reset states
-      tl.to(sectionRef.current, { maxWidth: "780px", duration: 0.4 }, 0);
+      tl.to(sectionRef.current, { maxWidth: "540px", duration: 0.1 }, 0);
       tl.to(topHeaderRef.current, { autoAlpha: 1, duration: 0.1 }, 0);
 
       // 2. Typing animation
@@ -110,10 +110,10 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         display: "none",
       }, "+=3.0");
 
-      // Shrink container width for the image phase
+      // Container width stays reduced
       tl.to(sectionRef.current, {
         maxWidth: "540px",
-        duration: 0.5,
+        duration: 0.1,
         ease: "power2.inOut"
       }, "<");
 
@@ -177,7 +177,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
     ];
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#fafafa]">
+    <div className="relative w-full bg-[#fafafa]">
       <BackgroundOrnaments />
 
       <section
@@ -208,7 +208,8 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         </p>
 
         {/* Main container for the search/reply/dashboard UI */}
-        <div className={`relative w-full flex flex-col items-center transition-all duration-500 ${searchComplete ? 'mt-1 max-w-[480px]' : 'mt-4 max-w-[620px]'}`}>
+        <div className="relative w-full flex flex-col items-center mt-4 h-[280px] sm:h-[320px] lg:h-[360px]">
+          <div className="w-full flex flex-col items-center transition-all duration-500 max-w-[480px]">
 
           {/* Simple Search Bar UI */}
           <div ref={searchStageRef} className="flex flex-col items-center w-full mb-3">
@@ -263,35 +264,36 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
             </div>
           </div>
         </div>
+      </div>
 
-        <div className={`transition-all duration-500 ${searchComplete ? 'mt-2 space-y-1' : 'mt-8 space-y-2'}`}>
-          <h3 className={`font-black leading-[1.2] tracking-[-0.04em] text-[#111111] transition-all duration-500 ${searchComplete ? 'text-[1rem] lg:text-[1.1rem]' : 'text-[1.2rem] lg:text-[1.5rem]'}`}>
+        <div className="mt-8 space-y-1">
+          <h3 className="font-black leading-[1.2] tracking-[-0.04em] text-[#111111] transition-all duration-500 text-[1rem] lg:text-[1.1rem]">
             The Future of CRM is Here.
           </h3>
-          <h4 className="text-sm font-semibold text-gray-900">We’ve decoded the DNA of your traditional software stack and re-engineered it into a unified, evolutionary platform.  </h4>
+          <h4 className="text-sm font-semibold text-gray-900">We’ve decoded the DNA of your traditional software stack and re-engineered it into a unified, evolutionary platform.</h4>
 
-          <p className={`mx-auto transition-all duration-500 text-[#444444] ${searchComplete ? 'max-w-[440px] text-[10px] sm:text-[11px]' : 'max-w-[540px] text-xs sm:text-[0.95rem]'}`}>
+          <p className="mx-auto transition-all duration-500 text-[#444444] max-w-[440px] text-[10px] sm:text-[11px]">
             {searchComplete
               ? "Experience a revolutionary, AI-powered platform that takes input from a simple bar and manages your entire real estate desk across all devices."
               : "Say goodbye to software overload. NuHelixX RE powers your entire real estate workflow from one AI-driven command bar."}
           </p>
         </div>
 
-        <div className={`grid w-full transition-all duration-500 gap-2 sm:grid-cols-2 ${searchComplete ? 'mt-3 max-w-[480px]' : 'mt-6 max-w-[620px]'}`}>
+        <div className="grid w-full transition-all duration-500 gap-2 sm:grid-cols-2 mt-4 max-w-[480px]">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className={`flex items-center gap-3 rounded-xl border border-[#ececf1] bg-white text-left shadow-[0_8px_16px_rgba(0,0,0,0.03)] transition-all duration-500 ${searchComplete ? 'px-2 py-2' : 'px-3 py-3'}`}
+              className="flex items-center gap-3 rounded-xl border border-[#ececf1] bg-white text-left shadow-[0_8px_16px_rgba(0,0,0,0.03)] transition-all duration-500 px-2 py-2"
             >
-              <div className={`flex shrink-0 items-center justify-center rounded-lg border border-[#ededf0] bg-white transition-all duration-500 ${searchComplete ? 'h-7 w-7' : 'h-9 w-10'}`}>
+              <div className="flex shrink-0 items-center justify-center rounded-lg border border-[#ededf0] bg-white transition-all duration-500 h-7 w-7">
                 {feature.icon}
               </div>
-              <span className={`font-medium text-[#444444] transition-all duration-500 ${searchComplete ? 'text-[10px] sm:text-[11px]' : 'text-[11px] sm:text-[12.5px]'}`}>{feature.title}</span>
+              <span className="font-medium text-[#444444] transition-all duration-500 text-[10px] sm:text-[11px]">{feature.title}</span>
             </div>
           ))}
         </div>
 
-        <p className={`mt-4 font-extrabold text-[#111111] transition-all duration-500 ${searchComplete ? 'text-[8.5px] sm:text-[9.5px]' : 'text-[10px] sm:text-[11.5px] px-2'}`}>
+        <p className="mt-4 font-extrabold text-[#111111] transition-all duration-500 text-[8.5px] sm:text-[9.5px]">
           {searchComplete
             ? "Effortlessly manage your whole workflow from one application."
             : "Simply tell the platform what you want to accomplish and NuHelixX RE intelligently handles the rest."}

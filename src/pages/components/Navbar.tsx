@@ -1,5 +1,5 @@
 "use client"
-import logo from "../../assets/logo.png";
+import logo from "../../assets/transparent_2.png";
 import { useCallback, useRef, useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 

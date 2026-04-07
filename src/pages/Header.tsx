@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Menu } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import logo from '../assets/logo.png';
+import logo from '../assets/transparent_2.png';
 import backgroundImage from '../assets/background.jpg';
 import MeetCRMSection from './MeetCRMSection';
 
@@ -53,7 +53,7 @@ const Header = () => {
       });
 
       gsap.set(backgroundRef.current, {
-        y: 400, // Matches the -top-[400px] to perfectly align with top, no white space
+        y: 0, 
       });
 
       gsap.set([leftNavRef.current, rightNavRef.current], {
@@ -258,11 +258,11 @@ const Header = () => {
       )}
 
       {/* Hero Section — background animation ke liye */}
-      <div ref={heroSectionRef} className="relative h-screen w-full overflow-hidden">
+      <div ref={heroSectionRef} className="relative min-h-screen w-full">
         {/* Dashboard Section (Hidden initially, revealed on scroll) */}
         <div
           ref={dashboardRef}
-          className="absolute top-[90px] bottom-0 inset-x-0 flex items-start justify-center z-30 pointer-events-none"
+          className="absolute top-[70px] bottom-0 inset-x-0 flex items-start justify-center z-30 pointer-events-none"
         >
           <div className="w-full max-w-[1600px] pointer-events-auto">
             <MeetCRMSection autoplayOnReveal={crmAutoplayStarted} />
@@ -271,7 +271,7 @@ const Header = () => {
 
         <div
           ref={backgroundRef}
-          className="absolute -top-[400px] inset-x-0 h-[calc(100vh+400px)] bg-cover bg-[center_top] will-change-transform z-20"
+          className="absolute top-0 inset-x-0 h-screen bg-cover bg-[center_top] will-change-transform z-20"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         >
           <div

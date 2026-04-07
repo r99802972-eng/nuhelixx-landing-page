@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Dna } from "lucide-react";
 import gsap from "gsap";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/transparent_2.png";
 
 const BackgroundOrnaments = () => {
   const ornamentsRef = useRef<HTMLDivElement>(null);
