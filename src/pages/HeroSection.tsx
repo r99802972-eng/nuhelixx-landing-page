@@ -126,7 +126,7 @@ function HeroSection() {
         const cardDelay = 0.5;
         master.to(
           stackRef.current,
-          { y: 450, scale: 0.9, ease: "power1.out" },
+          { x: -20, y: 450, scale: 0.9, ease: "power1.out" },
           0
         );
 
@@ -362,24 +362,24 @@ function HeroSection() {
                               ref={layer4}
                               className="absolute w-[200px] h-[200px] xl:w-[280px] xl:h-[280px] rounded-3xl overflow-hidden shadow-xl transform z-0"
                             >
-                                <div className="w-full h-full relative">
-                                    <img
-                                      src={cost_savings_bg}
-                                      alt="Cost savings"
-                                      className="w-full h-full object-cover"
-                                    />
-                                    <div className="absolute bottom-4 xl:bottom-8 left-4 xl:left-6 text-white text-left">
-                                      <div className="text-3xl xl:text-5xl font-bold mb-1">
-                                        Cost
-                                      </div>
-                                      <div className="text-sm xl:text-lg font-medium">
-                                        Save-time-and
-                                      </div>
-                                      <div className="text-sm xl:text-lg font-medium">
-                                        money
-                                      </div>
-                                    </div>
+                              <div className="w-full h-full relative">
+                                <img
+                                  src={cost_savings_bg}
+                                  alt="Cost savings"
+                                  className="w-full h-full object-cover"
+                                />
+                                <div className="absolute bottom-4 xl:bottom-8 left-4 xl:left-6 text-white text-left">
+                                  <div className="text-3xl xl:text-5xl font-bold mb-1">
+                                    Cost
+                                  </div>
+                                  <div className="text-sm xl:text-lg font-medium">
+                                    Save-time-and
+                                  </div>
+                                  <div className="text-sm xl:text-lg font-medium">
+                                    money
+                                  </div>
                                 </div>
+                              </div>
                             </div>
 
                             {/* Main Card - Data & Insights */}
@@ -387,18 +387,18 @@ function HeroSection() {
                               ref={cardRef}
                               className="w-[200px] h-[200px] xl:w-[280px] xl:h-[280px] rounded-3xl overflow-hidden relative shadow-xl z-20"
                             >
-                                <div className="w-full h-full relative">
-                                    <img
-                                      src={data_insights_bg}
-                                      alt="Data & Insights"
-                                      className="w-full h-full object-cover"
-                                    />
-                                    <div className="absolute bottom-4 xl:bottom-8 left-4 xl:left-6 text-white text-left">
-                                      <div className="text-2xl xl:text-4xl font-bold mb-1">
-                                        Data & Insights
-                                      </div>
-                                    </div>
+                              <div className="w-full h-full relative">
+                                <img
+                                  src={data_insights_bg}
+                                  alt="Data & Insights"
+                                  className="w-full h-full object-cover"
+                                />
+                                <div className="absolute bottom-4 xl:bottom-8 left-4 xl:left-6 text-white text-left">
+                                  <div className="text-2xl xl:text-4xl font-bold mb-1">
+                                    Data & Insights
+                                  </div>
                                 </div>
+                              </div>
                             </div>
 
                             {/* Cost Description */}
@@ -449,7 +449,7 @@ function HeroSection() {
                 </div>
 
                 {/* Desktop Headline */}
-                <div ref={headlineRef} className="transform-gpu opacity-[0] -mt-14">
+                <div ref={headlineRef} className="transform-gpu opacity-[0] -mt-14 xl:-ml-10">
                   <p>
                     <span className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-[Duck-cry] leading-none font-[600]">
                       One <br />

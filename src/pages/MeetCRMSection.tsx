@@ -177,12 +177,12 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
     ];
 
   return (
-    <div className="relative w-full bg-[#fafafa]">
+    <div className="relative w-full bg-transparent">
       <BackgroundOrnaments />
 
       <section
         ref={sectionRef}
-        className="relative z-10 mx-auto flex w-full flex-col items-center px-4 py-0.5 text-center sm:px-4 md:py-1 lg:px-5 lg:py-1"
+        className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-4 text-center sm:px-4 md:pt-4 lg:px-5 lg:pt-4"
       >
         <div
           ref={topHeaderRef}
@@ -211,62 +211,62 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         <div className="relative w-full flex flex-col items-center mt-4 h-[280px] sm:h-[320px] lg:h-[360px]">
           <div className="w-full flex flex-col items-center transition-all duration-500 max-w-[480px]">
 
-          {/* Simple Search Bar UI */}
-          <div ref={searchStageRef} className="flex flex-col items-center w-full mb-3">
-            <div className="flex w-full items-center gap-2 rounded-full border-[2px] border-[#111111] bg-white px-3 py-1.5 shadow-[0_8px_20px_rgba(0,0,0,0.04)] sm:px-4 sm:py-2.5">
-              <Search className="h-3.5 w-3.5 shrink-0 text-[#111111] sm:h-4 sm:w-4" strokeWidth={2.5} />
-              <div className="flex min-h-[20px] flex-1 items-center text-left text-[10px] font-medium text-[#111111] sm:text-[12px] md:text-[13px]">
-                <span ref={typingTextRef} className="min-h-[1.5em]" />
-                <span className="ml-0.5 inline-block h-[1em] w-[1.5px] animate-pulse bg-[#111111]" />
-              </div>
-              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[#111111]">
-                <Mic className="h-3 w-3 sm:h-3.5 sm:w-3.5" strokeWidth={2.5} />
+            {/* Simple Search Bar UI */}
+            <div ref={searchStageRef} className="flex flex-col items-center w-full mb-3">
+              <div className="flex w-full items-center gap-2 rounded-full border-[2px] border-[#111111] bg-white px-3 py-1.5 shadow-[0_8px_20px_rgba(0,0,0,0.04)] sm:px-4 sm:py-2.5">
+                <Search className="h-3.5 w-3.5 shrink-0 text-[#111111] sm:h-4 sm:w-4" strokeWidth={2.5} />
+                <div className="flex min-h-[20px] flex-1 items-center text-left text-[10px] font-medium text-[#111111] sm:text-[12px] md:text-[13px]">
+                  <span ref={typingTextRef} className="min-h-[1.5em]" />
+                  <span className="ml-0.5 inline-block h-[1em] w-[1.5px] animate-pulse bg-[#111111]" />
+                </div>
+                <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[#111111]">
+                  <Mic className="h-3 w-3 sm:h-3.5 sm:w-3.5" strokeWidth={2.5} />
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* AI Reply Bubble */}
-          <div
-            ref={replyBubbleRef}
-            className="flex items-center gap-3 bg-green-50/60 border border-green-100 rounded-2xl p-4 mb-3 self-center sm:self-start max-w-[95%] text-left"
-          >
-            <div className="w-8 h-8 rounded-xl bg-green-200/40 flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-green-600 fill-green-600" />
+            {/* AI Reply Bubble */}
+            <div
+              ref={replyBubbleRef}
+              className="flex items-center gap-3 bg-green-50/60 border border-green-100 rounded-2xl p-4 mb-3 self-center sm:self-start max-w-[95%] text-left"
+            >
+              <div className="w-8 h-8 rounded-xl bg-green-200/40 flex items-center justify-center">
+                <Sparkles className="w-4 h-4 text-green-600 fill-green-600" />
+              </div>
+              <p className="text-sm font-semibold text-gray-800">
+                No problem! I've already done that.
+              </p>
             </div>
-            <p className="text-sm font-semibold text-gray-800">
-              No problem! I've already done that.
-            </p>
-          </div>
 
-          {/* Action Buttons Pills */}
-          <div
-            ref={actionButtonsRef}
-            className="flex flex-wrap gap-2 justify-center py-1 mb-2"
-          >
-            {["Create Task", "Analyse Meetings", "More"].map(btn => (
-              <button key={btn} className="px-4 py-2 rounded-xl bg-gray-50/80 border border-gray-100 text-[11px] font-bold text-gray-600">
-                {btn}
-              </button>
-            ))}
-          </div>
+            {/* Action Buttons Pills */}
+            <div
+              ref={actionButtonsRef}
+              className="flex flex-wrap gap-2 justify-center py-1 mb-2"
+            >
+              {["Create Task", "Analyse Meetings", "More"].map(btn => (
+                <button key={btn} className="px-4 py-2 rounded-xl bg-gray-50/80 border border-gray-100 text-[11px] font-bold text-gray-600">
+                  {btn}
+                </button>
+              ))}
+            </div>
 
-          {/* Dashboard Stage (Image) - Increased scale for visibility */}
-          <div
-            ref={dashboardStageRef}
-            className="w-full flex flex-col items-center"
-          >
-            <div className="w-full overflow-hidden rounded-[0.8rem] bg-[#f7f8fb] p-1 shadow-[0_12px_32px_rgba(17,17,17,0.08)] ring-1 ring-black/5">
-              <img
-                src={dashboardImage}
-                alt="NuHelixX CRM dashboard"
-                className="w-full mx-auto rounded-[0.6rem] object-cover object-top"
-              />
+            {/* Dashboard Stage (Image) - Increased scale for visibility */}
+            <div
+              ref={dashboardStageRef}
+              className="w-full flex flex-col items-center"
+            >
+              <div className="w-full overflow-hidden rounded-[0.8rem] bg-[#f7f8fb] p-1 shadow-[0_12px_32px_rgba(17,17,17,0.08)] ring-1 ring-black/5">
+                <img
+                  src={dashboardImage}
+                  alt="NuHelixX CRM dashboard"
+                  className="w-full mx-auto rounded-[0.6rem] object-cover object-top"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-        <div className="mt-8 space-y-1">
+        <div className="mt-0 space-y-1">
           <h3 className="font-black leading-[1.2] tracking-[-0.04em] text-[#111111] transition-all duration-500 text-[1rem] lg:text-[1.1rem]">
             The Future of CRM is Here.
           </h3>

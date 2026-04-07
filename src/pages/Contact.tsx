@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { Bracket } from "./HeroSection";
-import property_1 from "../assets/property_1.jpg";
+// import { Bracket } from "./HeroSection";
+import contact_house_hero from "../assets/contact_house_hero.png";
 
 // Comprehensive list of countries with their codes and flags
 const countries = [
@@ -216,7 +216,6 @@ const countries = [
   { code: "+966", flag: "🇸🇦", name: "Saudi Arabia" },
   { code: "+967", flag: "🇾🇪", name: "Yemen" },
   { code: "+968", flag: "🇴🇲", name: "Oman" },
-  { code: "+970", flag: "🇵🇸", name: "Palestine" },
   { code: "+971", flag: "🇦🇪", name: "UAE" },
   { code: "+972", flag: "🇮🇱", name: "Israel" },
   { code: "+973", flag: "🇧🇭", name: "Bahrain" },
@@ -234,7 +233,6 @@ const countries = [
 
 export default function Contact() {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -251,14 +249,13 @@ export default function Contact() {
     
     if (recaptchaRef.current) {
       const token = await recaptchaRef.current.executeAsync();
-      setRecaptchaToken(token);
       
       if (!token) {
         alert('reCAPTCHA verification failed. Please try again.');
         return;
       }
       
-      console.log('Form submitted with token:', token);
+      console.log('Form submitted with reCAPTCHA token', token);
       console.log('Form data:', formData);
       
       setFormData({
@@ -297,7 +294,7 @@ export default function Contact() {
             {/* Contact Image */}
             <div className="rounded-2xl lg:rounded-3xl overflow-hidden order-2 lg:order-1">
               <img 
-                src={property_1} 
+                src={contact_house_hero} 
                 alt="Contact Us" 
                 className="w-full h-[300px] lg:h-full object-cover"
               />
@@ -367,16 +364,25 @@ export default function Contact() {
                     Phone Number *
                   </label>
                   <div className="flex items-center gap-2">
-                    <div className="px-4  py-3 font-[poppins] bg-background border border-input rounded-full text-foreground text-sm font-medium whitespace-nowrap">
-                      +1 (US)
-                    </div>
+                    <select
+                      name="countryCode"
+                      value={formData.countryCode}
+                      onChange={handleChange}
+                      className="px-3 py-3 bg-background border border-input rounded-full text-foreground text-sm font-medium outline-none cursor-pointer hover:border-[#6b7c4f]/40 transition-colors"
+                    >
+                      {countries.map((c) => (
+                        <option key={`${c.code}-${c.name}`} value={c.code}>
+                          {c.flag} {c.code} ({c.name})
+                        </option>
+                      ))}
+                    </select>
                     <input 
                       type="tel" 
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
                       required 
-                      className="flex-1 font-[poppins] px-4 py-3 outline-none border border-input rounded-full text-foreground" 
+                      className="flex-1 font-[poppins] px-4 py-3 outline-none border border-input rounded-full text-foreground hover:border-[#6b7c4f]/40 transition-colors" 
                       placeholder="(555) 123-4567"
                       data-testid="input-phone"
                     />

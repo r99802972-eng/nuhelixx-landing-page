@@ -53,7 +53,7 @@ const Header = () => {
       });
 
       gsap.set(backgroundRef.current, {
-        y: 0, 
+        y: 0,
       });
 
       gsap.set([leftNavRef.current, rightNavRef.current], {
@@ -85,7 +85,7 @@ const Header = () => {
 
           // Fast-Reverse: If scrolling UP through the pinned area, boost the scroll speed
           if (self.direction === -1 && self.progress < 1 && self.progress > 0) {
-            const scrollBoost = Math.abs(self.getVelocity()) * 0.008; 
+            const scrollBoost = Math.abs(self.getVelocity()) * 0.008;
             if (scrollBoost > 2) {
               window.scrollTo(0, window.scrollY - scrollBoost);
             }
@@ -182,7 +182,7 @@ const Header = () => {
       {/* Fixed Header — nav items ke liye */}
       <div
         ref={headerRef}
-        className="fixed top-0 left-0 right-0 z-50 py-3 md:py-4"
+        className="fixed top-0 left-0 right-0 z-50 py-2 md:py-2.5"
       >
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-center relative h-14">
@@ -259,19 +259,9 @@ const Header = () => {
 
       {/* Hero Section — background animation ke liye */}
       <div ref={heroSectionRef} className="relative min-h-screen w-full">
-        {/* Dashboard Section (Hidden initially, revealed on scroll) */}
-        <div
-          ref={dashboardRef}
-          className="absolute top-[70px] bottom-0 inset-x-0 flex items-start justify-center z-30 pointer-events-none"
-        >
-          <div className="w-full max-w-[1600px] pointer-events-auto">
-            <MeetCRMSection autoplayOnReveal={crmAutoplayStarted} />
-          </div>
-        </div>
-
         <div
           ref={backgroundRef}
-          className="absolute top-0 inset-x-0 h-screen bg-cover bg-[center_top] will-change-transform z-20"
+          className="absolute top-0 inset-x-0 h-screen bg-cover bg-[center_top] will-change-transform z-10"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         >
           <div
@@ -279,6 +269,16 @@ const Header = () => {
             className="absolute inset-0"
             style={{ backgroundColor: 'rgba(0, 0, 0, 0)' }}
           />
+        </div>
+
+        {/* Dashboard Section (Hidden initially, revealed on scroll) */}
+        <div
+          ref={dashboardRef}
+          className="absolute top-[70px] bottom-0 inset-x-0 flex items-start justify-center z-40 pointer-events-none"
+        >
+          <div className="w-full max-w-[1600px] pointer-events-auto">
+            <MeetCRMSection autoplayOnReveal={crmAutoplayStarted} />
+          </div>
         </div>
       </div>
     </>
