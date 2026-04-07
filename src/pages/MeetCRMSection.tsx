@@ -216,7 +216,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
 
         <div
           ref={topHeaderRef}
-          className="flex flex-col items-center justify-center gap-6"
+          className="flex flex-row items-center justify-center gap-4 sm:gap-8"
         >
           <h2 className="font-['Duck-cry'] uppercase leading-[0.9] tracking-[-0.02em] text-[#111111] transition-all duration-500 text-[2.8rem] sm:text-[5rem] lg:text-[7.5rem]">
             Meet <span className="text-[#B7E78A]">Your</span> New CRM
@@ -224,7 +224,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
 
           <div
             ref={toggleTrackRef}
-            className="relative h-8 w-[58px] rounded-full bg-[#22c55e] shadow-inner shadow-black/10 transition-all duration-500"
+            className="relative h-8 w-[58px] rounded-full bg-[#22c55e] shadow-inner shadow-black/10 transition-all duration-500 shrink-0"
           >
             <div
               ref={toggleKnobRef}
