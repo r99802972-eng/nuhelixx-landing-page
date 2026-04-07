@@ -73,7 +73,7 @@ const Header = () => {
       ScrollTrigger.create({
         trigger: heroSectionRef.current,
         start: 'top top',
-        end: '+=150%', // Reduced for a snappier feel
+        end: '+=80%', // Tighter scroll for a snappier feel
         pin: true,
         pinSpacing: true,
         onUpdate: (self) => {
@@ -258,7 +258,7 @@ const Header = () => {
       )}
 
       {/* Hero Section — background animation ke liye */}
-      <div ref={heroSectionRef} className="relative min-h-screen w-full">
+      <div ref={heroSectionRef} className="relative min-h-[265vh] w-full">
         <div
           ref={backgroundRef}
           className="absolute top-0 inset-x-0 h-screen bg-cover bg-[center_top] will-change-transform z-10"
@@ -274,7 +274,7 @@ const Header = () => {
         {/* Dashboard Section (Hidden initially, revealed on scroll) */}
         <div
           ref={dashboardRef}
-          className="absolute top-[70px] bottom-0 inset-x-0 flex items-start justify-center z-40 pointer-events-none"
+          className="relative top-[70px] bottom-0 inset-x-0 flex items-start justify-center z-40 pointer-events-none"
         >
           <div className="w-full max-w-[1600px] pointer-events-auto">
             <MeetCRMSection autoplayOnReveal={crmAutoplayStarted} />

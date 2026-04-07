@@ -15,8 +15,8 @@ function App() {
       {/* Route outlet - different pages rendered by react-router */}
       <Routes>
         <Route path="/" element={<>
-        <Header />        
-        <HeroSection />
+          <Header />
+          <HeroSection />
         </>} />
         {/* Home: keep the analytics anchors + HeroSection as before */}
         <Route

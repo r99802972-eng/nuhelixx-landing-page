@@ -23,6 +23,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
   const toggleKnobRef = useRef<HTMLDivElement>(null);
   const actionButtonsRef = useRef<HTMLDivElement>(null);
   const topHeaderRef = useRef<HTMLDivElement>(null);
+  const bottomContentRef = useRef<HTMLDivElement>(null);
   const animationTimelineRef = useRef<gsap.core.Timeline | null>(null);
   const autoplayStartedRef = useRef(false);
 
@@ -32,7 +33,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
 
     const ctx = gsap.context(() => {
       // Initial states
-      gsap.set(sectionRef.current, { maxWidth: "540px" }); // Start reduced
+      gsap.set(sectionRef.current, { maxWidth: "1100px" }); // Start expanded
       gsap.set(searchStageRef.current, { autoAlpha: 1, y: 0, display: "flex" });
       gsap.set(replyBubbleRef.current, { autoAlpha: 0, y: 10, display: "none" });
       gsap.set(actionButtonsRef.current, { autoAlpha: 0, y: 10, display: "none" });
@@ -40,7 +41,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
       gsap.set(topHeaderRef.current, { autoAlpha: 1 });
 
       gsap.set(toggleTrackRef.current, { backgroundColor: "#22c55e" });
-      gsap.set(toggleKnobRef.current, { x: 14 });
+      gsap.set(toggleKnobRef.current, { x: 26 });
 
       const tl = gsap.timeline({
         defaults: { ease: "power2.inOut" },
@@ -54,10 +55,13 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         if (typingTextRef.current) {
           typingTextRef.current.textContent = "";
         }
+        // Reset toggle
+        gsap.set(toggleTrackRef.current, { backgroundColor: "#22c55e" });
+        gsap.set(toggleKnobRef.current, { x: 26 });
       });
 
       // 1. Reset states
-      tl.to(sectionRef.current, { maxWidth: "540px", duration: 0.1 }, 0);
+      tl.to(sectionRef.current, { maxWidth: "1100px", duration: 0.1 }, 0);
       tl.to(topHeaderRef.current, { autoAlpha: 1, duration: 0.1 }, 0);
 
       // 2. Typing animation
@@ -110,9 +114,9 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         display: "none",
       }, "+=3.0");
 
-      // Container width stays reduced
+      // Container width stays expanded
       tl.to(sectionRef.current, {
-        maxWidth: "540px",
+        maxWidth: "1100px",
         duration: 0.1,
         ease: "power2.inOut"
       }, "<");
@@ -142,6 +146,19 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
               tl.restart();
             }
           },
+        });
+
+        // Bottom section reveal animation
+        gsap.from(bottomContentRef.current, {
+          y: 60,
+          autoAlpha: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: bottomContentRef.current,
+            start: "top bottom-=100",
+            toggleActions: "play none none none",
+          }
         });
       }
     }, sectionRef);
@@ -177,127 +194,145 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
     ];
 
   return (
-    <div className="relative w-full bg-transparent">
+    <div className="relative w-full bg-white text-[#111111] overflow-hidden">
+      {/* Subtle Grid Background */}
+      <div 
+        className="absolute inset-0 z-0 opacity-[0.4]" 
+        style={{ backgroundImage: "radial-gradient(#e5e7eb 1px, transparent 1px)", backgroundSize: "40px 40px" }} 
+      />
       <BackgroundOrnaments />
 
       <section
         ref={sectionRef}
-        className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-4 text-center sm:px-4 md:pt-4 lg:px-5 lg:pt-4"
+        className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-12 text-center sm:px-6 lg:pt-16"
       >
+        {/* Top Banner Pill */}
+        <div className="mb-8 flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-4 py-1.5 shadow-sm backdrop-blur-sm">
+          <div className="h-2 w-2 rounded-full bg-[#60d394] animate-pulse" />
+          <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500 sm:text-[11px]">
+            Now live — AI-powered real estate platform
+          </span>
+        </div>
+
         <div
           ref={topHeaderRef}
-          className="flex flex-wrap items-center justify-center gap-1.5 md:gap-2 h-6"
+          className="flex flex-col items-center justify-center gap-6"
         >
-          <h2 className="font-black uppercase leading-none tracking-[-0.04em] text-[#111111] transition-all duration-500 text-[1.1rem] sm:text-[1.3rem] lg:text-[1.6rem]">
-            MEET <span className="text-[#B7E78A]">YOUR</span> NEW CRM
+          <h2 className="font-['Duck-cry'] uppercase leading-[0.9] tracking-[-0.02em] text-[#111111] transition-all duration-500 text-[2.8rem] sm:text-[5rem] lg:text-[7.5rem]">
+            Meet <span className="text-[#B7E78A]">Your</span> New CRM
           </h2>
 
           <div
             ref={toggleTrackRef}
-            className="relative h-4 w-[28px] rounded-full bg-[#22c55e] shadow-inner shadow-black/10 transition-all duration-500 scale-100"
+            className="relative h-8 w-[58px] rounded-full bg-[#22c55e] shadow-inner shadow-black/10 transition-all duration-500"
           >
             <div
               ref={toggleKnobRef}
-              className="absolute left-[2px] top-[2px] h-[12px] w-[12px] rounded-full bg-white shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
+              className="absolute left-[4px] top-[4px] h-[24px] w-[24px] rounded-full bg-white shadow-[0_2px_8px_rgba(0,0,0,0.18)]"
             />
           </div>
         </div>
 
-        <p className="mt-1 font-extrabold text-[#111111] transition-all duration-500 text-[10px] sm:text-[11px] lg:text-[0.85rem]">
+        <p className="mt-8 font-bold text-gray-500 transition-all duration-500 text-[14px] sm:text-[18px] lg:text-[1.2rem] max-w-[600px] leading-relaxed">
           The Complete Real Estate Workflow. One Platform.
         </p>
 
-        {/* Main container for the search/reply/dashboard UI */}
-        <div className="relative w-full flex flex-col items-center mt-4 h-[280px] sm:h-[320px] lg:h-[360px]">
-          <div className="w-full flex flex-col items-center transition-all duration-500 max-w-[480px]">
+        {/* Main container for the searchbar UI - Fixed height to prevent layout shift */}
+        <div className="relative w-full flex flex-col items-center mt-10 min-h-[450px] sm:min-h-[580px] lg:min-h-[750px]">
+          <div className="w-full flex flex-col items-center transition-all duration-500 max-w-[900px]">
 
-            {/* Simple Search Bar UI */}
-            <div ref={searchStageRef} className="flex flex-col items-center w-full mb-3">
-              <div className="flex w-full items-center gap-2 rounded-full border-[2px] border-[#111111] bg-white px-3 py-1.5 shadow-[0_8px_20px_rgba(0,0,0,0.04)] sm:px-4 sm:py-2.5">
-                <Search className="h-3.5 w-3.5 shrink-0 text-[#111111] sm:h-4 sm:w-4" strokeWidth={2.5} />
-                <div className="flex min-h-[20px] flex-1 items-center text-left text-[10px] font-medium text-[#111111] sm:text-[12px] md:text-[13px]">
+            {/* Simple Search Bar UI - New Inspiration Style */}
+            <div ref={searchStageRef} className="flex flex-col items-center w-full mb-8">
+              <div className="flex w-full items-center gap-4 rounded-full border border-gray-200 bg-white px-6 py-4 shadow-[0_15px_40px_rgba(0,0,0,0.05)] sm:px-8 sm:py-5">
+                <Search className="h-5 w-5 shrink-0 text-gray-300 sm:h-6 sm:w-6" />
+                <div className="flex min-h-[30px] flex-1 items-center text-left text-[14px] font-medium text-gray-400 sm:text-[18px] md:text-[20px]">
                   <span ref={typingTextRef} className="min-h-[1.5em]" />
-                  <span className="ml-0.5 inline-block h-[1em] w-[1.5px] animate-pulse bg-[#111111]" />
+                  <span className="ml-1 inline-block h-[1em] w-[1px] animate-pulse bg-gray-400" />
                 </div>
-                <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[#111111]">
-                  <Mic className="h-3 w-3 sm:h-3.5 sm:w-3.5" strokeWidth={2.5} />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#111111] text-white">
+                  <Mic className="h-5 w-5 sm:h-5 sm:w-5" strokeWidth={2.5} />
                 </div>
               </div>
             </div>
 
-            {/* AI Reply Bubble */}
+            {/* AI Reply Bubble - Pill Style */}
             <div
               ref={replyBubbleRef}
-              className="flex items-center gap-3 bg-green-50/60 border border-green-100 rounded-2xl p-4 mb-3 self-center sm:self-start max-w-[95%] text-left"
+              className="flex items-center gap-3 bg-white border border-gray-100 rounded-full px-6 py-3 mb-6 self-center shadow-lg shadow-black/[0.02]"
             >
-              <div className="w-8 h-8 rounded-xl bg-green-200/40 flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-green-600 fill-green-600" />
+              <div className="w-8 h-8 rounded-full bg-[#B7E78A] flex items-center justify-center">
+                <Sparkles className="w-4 h-4 text-white fill-white" />
               </div>
-              <p className="text-sm font-semibold text-gray-800">
+              <p className="text-[14px] sm:text-[16px] font-bold text-gray-800">
                 No problem! I've already done that.
               </p>
             </div>
 
-            {/* Action Buttons Pills */}
+            {/* Action Buttons Pills - Light Style */}
             <div
               ref={actionButtonsRef}
-              className="flex flex-wrap gap-2 justify-center py-1 mb-2"
+              className="flex flex-wrap gap-3 justify-center py-2 mb-4"
             >
               {["Create Task", "Analyse Meetings", "More"].map(btn => (
-                <button key={btn} className="px-4 py-2 rounded-xl bg-gray-50/80 border border-gray-100 text-[11px] font-bold text-gray-600">
+                <button key={btn} className="px-6 py-3 rounded-full bg-white border border-gray-100 text-[13px] sm:text-[15px] font-bold text-gray-600 shadow-sm transition-all hover:border-[#B7E78A] hover:text-[#111111]">
                   {btn}
                 </button>
               ))}
             </div>
 
-            {/* Dashboard Stage (Image) - Increased scale for visibility */}
+            {/* Dashboard Stage (Image) */}
             <div
               ref={dashboardStageRef}
-              className="w-full flex flex-col items-center"
+              className="w-full flex flex-col items-center mt-4"
             >
-              <div className="w-full overflow-hidden rounded-[0.8rem] bg-[#f7f8fb] p-1 shadow-[0_12px_32px_rgba(17,17,17,0.08)] ring-1 ring-black/5">
+              <div className="w-full overflow-hidden rounded-[2rem] bg-[#f7f8fb] p-3 shadow-[0_25px_60px_rgba(17,17,17,0.15)] ring-1 ring-black/5">
                 <img
                   src={dashboardImage}
                   alt="NuHelixX CRM dashboard"
-                  className="w-full mx-auto rounded-[0.6rem] object-cover object-top"
+                  className="w-full mx-auto rounded-[1.8rem] object-cover object-top"
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-0 space-y-1">
-          <h3 className="font-black leading-[1.2] tracking-[-0.04em] text-[#111111] transition-all duration-500 text-[1rem] lg:text-[1.1rem]">
-            The Future of CRM is Here.
-          </h3>
-          <h4 className="text-sm font-semibold text-gray-900">We’ve decoded the DNA of your traditional software stack and re-engineered it into a unified, evolutionary platform.</h4>
 
-          <p className="mx-auto transition-all duration-500 text-[#444444] max-w-[440px] text-[10px] sm:text-[11px]">
-            {searchComplete
-              ? "Experience a revolutionary, AI-powered platform that takes input from a simple bar and manages your entire real estate desk across all devices."
-              : "Say goodbye to software overload. NuHelixX RE powers your entire real estate workflow from one AI-driven command bar."}
+
+        <div ref={bottomContentRef} className="mt-12 flex flex-col items-center">
+          <span className="text-[11px] font-black tracking-[0.2em] uppercase text-[#60d394] mb-4">PLATFORM</span>
+          <h3 className="font-['Duck-cry'] uppercase leading-[0.9] tracking-[-0.02em] text-[#111111] transition-all duration-500 text-[2.5rem] sm:text-[4rem] lg:text-[6.5rem] mb-8">
+            The Future of CRM <br className="hidden sm:block" /> is <span className="text-gray-200">Here.</span>
+          </h3>
+
+          <div className="flex flex-col gap-4 text-center mb-16">
+            <p className="mx-auto text-gray-400 max-w-[600px] text-[15px] sm:text-[17px] leading-relaxed">
+              We’ve decoded the DNA of your traditional software stack and re-engineered it into a unified, evolutionary platform.
+            </p>
+            <p className="mx-auto text-gray-400 max-w-[600px] text-[15px] sm:text-[17px] leading-relaxed">
+              Say goodbye to software overload. NuHelixX RE powers your entire real estate workflow from one AI-driven command bar.
+            </p>
+          </div>
+
+          <div className="grid w-full transition-all duration-500 gap-6 sm:grid-cols-2 max-w-[1000px]">
+            {features.map((feature, idx) => (
+              <div
+              key={idx}
+              className="group flex items-center gap-6 rounded-3xl border border-gray-100 bg-white p-8 text-left shadow-[0_20px_50px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_30px_70px_rgba(0,0,0,0.05)] hover:-translate-y-1"
+              >
+                <div className="flex shrink-0 items-center justify-center rounded-2xl bg-gray-50 transition-all duration-500 h-14 w-14 group-hover:bg-[#B7E78A]/10">
+                  <div className="scale-125">
+                    {feature.icon}
+                  </div>
+                </div>
+                <span className="text-lg font-bold text-gray-800 transition-all duration-500 line-clamp-2">{feature.title}</span>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-16 font-medium text-gray-400 text-center text-[15px] sm:text-[17px] max-w-[600px]">
+            Simply tell the platform what you want to accomplish and <span className="font-bold text-[#111111]">NuHelixX RE</span> intelligently handles the rest.
           </p>
         </div>
-
-        <div className="grid w-full transition-all duration-500 gap-2 sm:grid-cols-2 mt-4 max-w-[480px]">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="flex items-center gap-3 rounded-xl border border-[#ececf1] bg-white text-left shadow-[0_8px_16px_rgba(0,0,0,0.03)] transition-all duration-500 px-2 py-2"
-            >
-              <div className="flex shrink-0 items-center justify-center rounded-lg border border-[#ededf0] bg-white transition-all duration-500 h-7 w-7">
-                {feature.icon}
-              </div>
-              <span className="font-medium text-[#444444] transition-all duration-500 text-[10px] sm:text-[11px]">{feature.title}</span>
-            </div>
-          ))}
-        </div>
-
-        <p className="mt-4 font-extrabold text-[#111111] transition-all duration-500 text-[8.5px] sm:text-[9.5px]">
-          {searchComplete
-            ? "Effortlessly manage your whole workflow from one application."
-            : "Simply tell the platform what you want to accomplish and NuHelixX RE intelligently handles the rest."}
-        </p>
       </section>
     </div>
   );
