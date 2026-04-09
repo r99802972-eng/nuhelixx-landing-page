@@ -52,7 +52,7 @@ export default function TechnologyInnovation() {
               />
               <Item
                 title="AI-Powered Employee Training"
-                text="NuHelixX RE trains your team as they work. Real-time coaching, personalizedrecommendations, and micro-lessons improve adoption and reduce the training burden for brokers."
+                text="NuHelixX RE trains your team as they work. Real-time coaching, personalized recommendations, and micro-lessons improve adoption and reduce the training burden for brokers."
               />
              <Item
                 title="Smarter Brokerage Oversight"

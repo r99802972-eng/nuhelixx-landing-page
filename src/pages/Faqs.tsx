@@ -8,7 +8,7 @@ export default function FAQSection() {
     {
       question: "What services do you offer?",
       answer:
-        "We offer a range of services including CRM consulting, optimization, and bespoke marketing solutions. Our packages are designed to cater to various business needs, from entry-level support to comprehensive revenue operations leadership. Each service is tailored to help you achieve your growth objectives.",
+        "We offer a range of services including CRM consulting, optimization, and custom marketing solutions. Our packages are designed to cater to various business needs, from entry-level support to comprehensive revenue operations leadership. Each service is tailored to help you achieve your growth objectives.",
     },
     {
       question: "How can I get started?",

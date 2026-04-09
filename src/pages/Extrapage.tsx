@@ -27,7 +27,7 @@ const services: Service[] = [
   { id: "01", number: "/01", title: "CRM CONSULTANT", description: "Great for businesses needing optimal guidance.", img: property_1, section: "brokerage" },
   { id: "02", number: "/02", title: "CRM OPTIMIZER", description: "Ideal for companies that require continuous project support.", img: property_2, section: "agent" },
   { id: "03", number: "/03", title: "CRM LEADER", description: "Ideal for companies requiring ownership of HubSpot CRM.", img: property_3, section: "client" },
-  { id: "04", number: "/04", title: "Bespoke Marketing", description: "Ideal for companies requiring ownership of HubSpot CRM.", img: property_1, section: null },
+  { id: "04", number: "/04", title: "Custom Marketing", description: "Ideal for companies requiring ownership of HubSpot CRM.", img: property_1, section: null },
 ];
 
 function ServiceItem({

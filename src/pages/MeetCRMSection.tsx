@@ -196,9 +196,9 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
   return (
     <div className="relative w-full bg-white text-[#111111] overflow-hidden">
       {/* Subtle Grid Background */}
-      <div 
-        className="absolute inset-0 z-0 opacity-[0.4]" 
-        style={{ backgroundImage: "radial-gradient(#e5e7eb 1px, transparent 1px)", backgroundSize: "40px 40px" }} 
+      <div
+        className="absolute inset-0 z-0 opacity-[0.4]"
+        style={{ backgroundImage: "radial-gradient(#e5e7eb 1px, transparent 1px)", backgroundSize: "40px 40px" }}
       />
       <BackgroundOrnaments />
 
@@ -273,7 +273,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
               ref={actionButtonsRef}
               className="flex flex-wrap gap-3 justify-center py-2 mb-4"
             >
-              {["Create Task", "Analyse Meetings", "More"].map(btn => (
+              {["Create Task", "Analyze Meetings", "More"].map(btn => (
                 <button key={btn} className="px-6 py-3 rounded-full bg-white border border-gray-100 text-[13px] sm:text-[15px] font-bold text-gray-600 shadow-sm transition-all hover:border-[#B7E78A] hover:text-[#111111]">
                   {btn}
                 </button>
@@ -316,8 +316,8 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
           <div className="grid w-full transition-all duration-500 gap-6 sm:grid-cols-2 max-w-[1000px]">
             {features.map((feature, idx) => (
               <div
-              key={idx}
-              className="group flex items-center gap-6 rounded-3xl border border-gray-100 bg-white p-8 text-left shadow-[0_20px_50px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_30px_70px_rgba(0,0,0,0.05)] hover:-translate-y-1"
+                key={idx}
+                className="group flex items-center gap-6 rounded-3xl border border-gray-100 bg-white p-8 text-left shadow-[0_20px_50px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_30px_70px_rgba(0,0,0,0.05)] hover:-translate-y-1"
               >
                 <div className="flex shrink-0 items-center justify-center rounded-2xl bg-gray-50 transition-all duration-500 h-14 w-14 group-hover:bg-[#B7E78A]/10">
                   <div className="scale-125">
