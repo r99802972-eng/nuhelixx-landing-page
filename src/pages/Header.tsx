@@ -38,7 +38,7 @@ const Header = () => {
       // GSAP se header center tak move karega
       gsap.set(logoRef.current, {
         position: 'fixed',
-        top: '50%',
+        top: '46%',
         left: '50%',
         xPercent: -50,
         yPercent: -50,
@@ -68,6 +68,9 @@ const Header = () => {
 
       // ── Scroll timeline ─────────────────────────────────────────────
       const tl = gsap.timeline({ paused: true });
+
+      // Trigger CRM animation at the very start of the timeline
+      tl.call(() => setCrmAutoplayStarted(true), [], 1.3);
 
       let headerMaxProgress = 0;
       ScrollTrigger.create({
@@ -110,19 +113,11 @@ const Header = () => {
       // Reveal Dashboard Image (Wait for background to move all the way up)
       tl.to(dashboardRef.current, {
         opacity: 1,
-        y: vw > 768 ? 0 : 20, // Slightly lower on mobile to avoid header
+        y: vw > 768 ? 0 : 20, // lower on mobile to avoid header
         ease: 'power2.out',
         duration: 1.0
       }, 1.3);
 
-      ScrollTrigger.create({
-        trigger: heroSectionRef.current,
-        start: 'top top-=35%',
-        onEnter: () => setCrmAutoplayStarted(true),
-        once: true
-      });
-
-      // Logo: header ke bilkul center mein
       tl.to(logoRef.current, {
         top: vw > 768 ? '44px' : '40px', // Direct top position in header
         y: 0,

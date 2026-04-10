@@ -179,19 +179,16 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
   }, [autoplayOnReveal]);
 
   // Phase 1 (Search) and Phase 2 (Dashboard) labels
-  const features = searchComplete
-    ? [
-      { icon: <MessageSquare className="h-3 w-3 text-[#60d394]" />, title: "Contract management" },
-      { icon: <Users className="h-3 w-3 text-[#60d394]" />, title: "Transaction Management" },
-      { icon: <Home className="h-3 w-3 text-[#ffb26b]" />, title: "Lead vetting and scoring" },
-      { icon: <BarChart3 className="h-3 w-3 text-[#8c92ff]" />, title: "Social Style lead page" },
-    ]
-    : [
-      { icon: <MessageSquare className="h-3 w-3 text-[#60d394]" />, title: "AI Conversational Command Interface" },
-      { icon: <Users className="h-3 w-3 text-[#60d394]" />, title: "Real-Time AI Call Transcription" },
-      { icon: <Home className="h-3 w-3 text-[#ffb26b]" />, title: "Post-Call AI Meeting Detection" },
-      { icon: <BarChart3 className="h-3 w-3 text-[#8c92ff]" />, title: "AI Tonal Detection & Analytics" },
-    ];
+  const features = [
+    { icon: <MessageSquare className="h-3 w-3 text-[#60d394]" />, title: "AI Conversational Command Interface" },
+    { icon: <Users className="h-3 w-3 text-[#60d394]" />, title: "Real-Time AI Call Transcription" },
+    { icon: <Home className="h-3 w-3 text-[#ffb26b]" />, title: "Post-Call AI Meeting Detection" },
+    { icon: <BarChart3 className="h-3 w-3 text-[#8c92ff]" />, title: "AI Tonal Detection & Analytics" },
+    { icon: <MessageSquare className="h-3 w-3 text-[#60d394]" />, title: "Contract management" },
+    { icon: <Users className="h-3 w-3 text-[#60d394]" />, title: "Transaction Management" },
+    { icon: <Home className="h-3 w-3 text-[#ffb26b]" />, title: "Lead vetting and scoring" },
+    { icon: <BarChart3 className="h-3 w-3 text-[#8c92ff]" />, title: "Social Style lead page" },
+  ];
 
   return (
     <div className="relative w-full bg-white text-[#111111] overflow-hidden">
@@ -313,18 +310,18 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
             </p>
           </div>
 
-          <div className="grid w-full transition-all duration-500 gap-6 sm:grid-cols-2 max-w-[1000px]">
+          <div className="grid w-full transition-all duration-500 gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-[1200px]">
             {features.map((feature, idx) => (
               <div
                 key={idx}
-                className="group flex items-center gap-6 rounded-3xl border border-gray-100 bg-white p-8 text-left shadow-[0_20px_50px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_30px_70px_rgba(0,0,0,0.05)] hover:-translate-y-1"
+                className="group flex items-center gap-4 rounded-2xl border border-gray-100 bg-white p-4 text-left shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:-translate-y-1"
               >
-                <div className="flex shrink-0 items-center justify-center rounded-2xl bg-gray-50 transition-all duration-500 h-14 w-14 group-hover:bg-[#B7E78A]/10">
-                  <div className="scale-125">
+                <div className="flex shrink-0 items-center justify-center rounded-xl bg-gray-50 transition-all duration-500 h-10 w-10 group-hover:bg-[#B7E78A]/10">
+                  <div className="scale-110">
                     {feature.icon}
                   </div>
                 </div>
-                <span className="text-lg font-bold text-gray-800 transition-all duration-500 line-clamp-2">{feature.title}</span>
+                <span className="text-sm font-bold text-gray-800 transition-all duration-500 line-clamp-2">{feature.title}</span>
               </div>
             ))}
           </div>
