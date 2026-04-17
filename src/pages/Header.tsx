@@ -38,7 +38,7 @@ const Header = () => {
       // GSAP se header center tak move karega
       gsap.set(logoRef.current, {
         position: 'fixed',
-        top: '46%',
+        top: '42%',
         left: '50%',
         xPercent: -50,
         yPercent: -50,

@@ -46,7 +46,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
       const tl = gsap.timeline({
         defaults: { ease: "power2.inOut" },
         paused: true,
-        repeat: -1,
+        repeat: 1,
         repeatDelay: 3,
       });
 
