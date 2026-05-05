@@ -163,7 +163,7 @@ function ServiceItem({ service }: { service: Service }) {
             <div ref={leftBracketRef} className="absolute left-8 top-1/2 -translate-y-1/2 text-[160px] font-black text-purple-200 pointer-events-none" />
             <div ref={rightBracketRef} className="absolute right-8 top-1/2 -translate-y-1/2 text-[160px] font-black text-purple-200 pointer-events-none" />
             <div ref={titleRef} className="absolute inset-0 z-10 flex items-center justify-center text-center">
-              <div className="flex items-center justify-center gap-2 -top-14 relative normal-case">
+              <div className="flex items-center justify-center gap-12 -top-14 relative normal-case">
                 <span className="text-[120px] lg:text-[120px]">{leftWord}</span>
                 <span className="text-[120px] lg:text-[120px] inline-flex items-center">
                   <span>{experiencePrefix}</span>
