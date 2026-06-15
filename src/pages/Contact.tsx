@@ -368,7 +368,7 @@ export default function Contact() {
                       name="countryCode"
                       value={formData.countryCode}
                       onChange={handleChange}
-                      className="px-3 py-3 bg-background border border-input rounded-full text-foreground text-sm font-medium outline-none cursor-pointer hover:border-[#6b7c4f]/40 transition-colors"
+                      className="px-3 py-3 bg-background border border-input rounded-full text-foreground text-sm font-medium outline-none cursor-pointer hover:border-[#84B900]/40 transition-colors"
                     >
                       {countries.map((c) => (
                         <option key={`${c.code}-${c.name}`} value={c.code}>
@@ -382,7 +382,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       required 
-                      className="flex-1 font-[poppins] px-4 py-3 outline-none border border-input rounded-full text-foreground hover:border-[#6b7c4f]/40 transition-colors" 
+                      className="flex-1 font-[poppins] px-4 py-3 outline-none border border-input rounded-full text-foreground hover:border-[#84B900]/40 transition-colors" 
                       placeholder="(555) 123-4567"
                       data-testid="input-phone"
                     />

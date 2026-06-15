@@ -187,10 +187,10 @@ const Header = () => {
               ref={leftNavRef}
               className="absolute left-1/2 flex items-center gap-2 md:gap-4 lg:gap-6"
             >
-              <a href="#home" className="text-gray-800 hover:text-[#BCBF4F] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">
+              <a href="#home" className="text-gray-800 hover:text-[#84B900] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">
                 Home
               </a>
-              <a href="#analytics" className="text-gray-800 hover:text-[#BCBF4F] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">
+              <a href="#analytics" className="text-gray-800 hover:text-[#84B900] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">
                 Analytics
               </a>
             </div>
@@ -200,10 +200,10 @@ const Header = () => {
               ref={rightNavRef}
               className="absolute left-1/2 flex items-center gap-2 md:gap-4 lg:gap-6"
             >
-              <a href="#services" className="text-gray-800 hover:text-[#BCBF4F] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">
+              <a href="#services" className="text-gray-800 hover:text-[#84B900] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">
                 Services
               </a>
-              <a href="#contact" className="text-gray-800 hover:text-[#BCBF4F] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">
+              <a href="#contact" className="text-gray-800 hover:text-[#84B900] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">
                 Contact Us
               </a>
 
@@ -212,7 +212,7 @@ const Header = () => {
             {/* Sign In — bilkul right corner mein fixed */}
             <a
               href="#signin"
-              className="hidden md:block absolute -right-6 lg:right-4 px-3 md:px-5 lg:px-6 py-2 lg:py-2.5 rounded-full bg-[#BCBF4F] text-gray-900 font-[500] transition-all text-xs md:text-sm lg:text-base hover:bg-yellow-500 whitespace-nowrap"
+              className="hidden md:block absolute -right-6 lg:right-4 px-3 md:px-5 lg:px-6 py-2 lg:py-2.5 rounded-full bg-[#84B900] text-gray-900 font-[500] transition-all text-xs md:text-sm lg:text-base hover:bg-[#407700] whitespace-nowrap"
             >
               Sign In
             </a>
@@ -236,14 +236,14 @@ const Header = () => {
             </button>
             {['Home', 'Analytics', 'Services', 'Contact Us'].map((item) => (
               <a key={item} href={`#${item.toLowerCase().replace(' ', '')}`}
-                className="text-2xl text-gray-800 hover:text-[#BCBF4F] font-[500] transition-colors"
+                className="text-2xl text-gray-800 hover:text-[#84B900] font-[500] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item}
               </a>
             ))}
             <a href="#signin"
-              className="px-8 py-3 rounded-full bg-[#BCBF4F] text-gray-900 font-[500] transition-all text-xl hover:bg-yellow-500"
+              className="px-8 py-3 rounded-full bg-[#84B900] text-gray-900 font-[500] transition-all text-xl hover:bg-[#407700]"
               onClick={() => setMobileMenuOpen(false)}
             >
               Sign In

@@ -29,7 +29,7 @@
 //           {/* Main Heading */}
 //           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
 //             Meet Your New{' '}
-//             <span className="bg-gradient-to-r from-[#BCBF4F] to-green-500 bg-clip-text text-transparent">
+//             <span className="bg-gradient-to-r from-[#84B900] to-[#006CFF] bg-clip-text text-transparent">
 //               CRM
 //             </span>
 //           </h1>
@@ -63,10 +63,10 @@
 
 //           {/* CTA Buttons */}
 //           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-//             <button className="px-8 py-3 bg-[#BCBF4F] hover:bg-yellow-500 text-gray-900 font-semibold rounded-full transition-colors">
+//             <button className="px-8 py-3 bg-[#84B900] hover:bg-[#407700] text-gray-900 font-semibold rounded-full transition-colors">
 //               Start Free Trial
 //             </button>
-//             <button className="px-8 py-3 border-2 border-gray-300 hover:border-[#BCBF4F] text-gray-900 font-semibold rounded-full transition-colors">
+//             <button className="px-8 py-3 border-2 border-gray-300 hover:border-[#84B900] text-gray-900 font-semibold rounded-full transition-colors">
 //               Watch Demo
 //             </button>
 //           </div>
@@ -74,15 +74,15 @@
 //           {/* Stats Section */}
 //           <div className="mt-16 grid grid-cols-3 gap-8 md:gap-12">
 //             <div>
-//               <p className="text-3xl md:text-4xl font-bold text-[#BCBF4F] mb-2">500+</p>
+//               <p className="text-3xl md:text-4xl font-bold text-[#84B900] mb-2">500+</p>
 //               <p className="text-sm md:text-base text-gray-600">Active Businesses</p>
 //             </div>
 //             <div>
-//               <p className="text-3xl md:text-4xl font-bold text-[#BCBF4F] mb-2">98%</p>
+//               <p className="text-3xl md:text-4xl font-bold text-[#84B900] mb-2">98%</p>
 //               <p className="text-sm md:text-base text-gray-600">Satisfaction Rate</p>
 //             </div>
 //             <div>
-//               <p className="text-3xl md:text-4xl font-bold text-[#BCBF4F] mb-2">24/7</p>
+//               <p className="text-3xl md:text-4xl font-bold text-[#84B900] mb-2">24/7</p>
 //               <p className="text-sm md:text-base text-gray-600">Support Available</p>
 //             </div>
 //           </div>

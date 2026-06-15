@@ -256,7 +256,7 @@ function HeroSection() {
                   <button className="px-6 py-3 rounded-full text-gray-800 hover:bg-gray-100 transition-colors text-left">
                     Packages
                   </button>
-                  <button className="mt-4 px-6 py-3 bg-[#BCBF4F] hover:bg-[#00d066] text-black font-medium rounded-full transition-colors">
+                  <button className="mt-4 px-6 py-3 bg-[#84B900] hover:bg-[#407700] text-black font-medium rounded-full transition-colors">
                     Book a call
                   </button>
                 </nav>
@@ -312,8 +312,8 @@ function HeroSection() {
                               className="absolute w-[200px] h-[240px] -left-[13px] xl:w-[280px] xl:h-[280px] rounded-[24px] bg-white border border-gray-100 transform rotate-[-4deg] shadow-xl z-0 overflow-hidden group flex flex-col items-center p-6 text-center"
                             >
                               {/* Icon Box */}
-                              <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-[#BCBF4F]/10 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
-                                <Zap size={32} className="text-[#BCBF4F]" />
+                              <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-[#84B900]/10 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
+                                <Zap size={32} className="text-[#84B900]" />
                               </div>
 
                               <h2 className="font-[Duck-cry] tracking-tight leading-[1.2] xl:text-[2.2rem] mb-3 text-gray-900 relative z-10">
@@ -326,7 +326,7 @@ function HeroSection() {
                               </p>
 
                               {/* Watermark Icon */}
-                              <div className="absolute -bottom-8 -right-8 text-[#BCBF4F] opacity-[0.12] transform -rotate-12 group-hover:scale-110 transition-transform">
+                              <div className="absolute -bottom-8 -right-8 text-[#006CFF] opacity-[0.12] transform -rotate-12 group-hover:scale-110 transition-transform">
                                 <Zap size={140} />
                               </div>
                             </div>
@@ -404,7 +404,7 @@ function HeroSection() {
                             {/* Cost Description */}
                             <div
                               ref={costDescRef}
-                              className="absolute top-0 left-0 xl:left-4 w-[200px] xl:w-[800px] bg-[#BCBF4F] shadow-[0_20px_40px_rgba(0,0,0,0.15),0_8px_16px_rgba(0,0,0,0.1)] rounded-2xl p-4 xl:p-8 z-[-1] opacity-0 text-left"
+                              className="absolute top-0 left-0 xl:left-4 w-[200px] xl:w-[800px] bg-[#84B900] shadow-[0_20px_40px_rgba(0,0,0,0.15),0_8px_16px_rgba(0,0,0,0.1)] rounded-2xl p-4 xl:p-8 z-[-1] opacity-0 text-left"
                             >
                               <p className="font-[poppins] font-light text-xs xl:text-xl leading-relaxed tracking-wide">
                                 NuHelixX RE saves both time and money by replacing multiple tools with one platform. Data being entered once and AI handling training, tagging, and follow-ups, agents cut hours of admin work every week — turning wasted time into more revenue and measurable cost savings.
@@ -436,10 +436,10 @@ function HeroSection() {
                         </p>
 
                         <div className="flex items-center gap-3">
-                          <button className="px-6 md:px-8 py-3 md:py-4 bg-[#BCBF4F] hover:bg-[#bbbf4fc8] text-black font-medium rounded-full transition-colors text-sm md:text-base">
+                          <button className="px-6 md:px-8 py-3 md:py-4 bg-[#84B900] hover:bg-[#407700] text-black font-medium rounded-full transition-colors text-sm md:text-base">
                             Get started
                           </button>
-                          <button className="w-12 h-12 md:w-14 md:h-14 bg-[#BCBF4F] hover:bg-[#bbbf4fc8] rounded-full flex items-center justify-center transition-colors">
+                          <button className="w-12 h-12 md:w-14 md:h-14 bg-[#84B900] hover:bg-[#407700] rounded-full flex items-center justify-center transition-colors">
                             <ArrowUpRight size={20} className="text-black md:w-6 md:h-6" />
                           </button>
                         </div>
@@ -491,10 +491,10 @@ function HeroSection() {
                   </p>
 
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                    <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-[#BCBF4F] hover:bg-[#bbbf4fc8] text-black font-medium rounded-full transition-colors text-sm md:text-base">
+                    <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-[#84B900] hover:bg-[#407700] text-black font-medium rounded-full transition-colors text-sm md:text-base">
                       Get started
                     </button>
-                    <button className="w-12 h-12 md:w-14 md:h-14 bg-[#BCBF4F] hover:bg-[#bbbf4fc8] rounded-full flex items-center justify-center transition-colors">
+                    <button className="w-12 h-12 md:w-14 md:h-14 bg-[#84B900] hover:bg-[#407700] rounded-full flex items-center justify-center transition-colors">
                       <ArrowUpRight size={20} className="text-black md:w-6 md:h-6" />
                     </button>
                   </div>
@@ -548,8 +548,8 @@ function HeroSection() {
 
                   {/* Card 2 - Smart Automation */}
                   <div className="mobile-card w-full min-h-[320px] rounded-[28px] bg-white border border-gray-100 shadow-xl p-8 flex flex-col items-center text-center relative overflow-hidden group">
-                    <div className="w-20 h-20 rounded-2xl bg-[#BCBF4F]/10 flex items-center justify-center mb-6 relative z-10">
-                      <Zap size={40} className="text-[#BCBF4F]" />
+                    <div className="w-20 h-20 rounded-2xl bg-[#84B900]/10 flex items-center justify-center mb-6 relative z-10">
+                      <Zap size={40} className="text-[#84B900]" />
                     </div>
                     <h3 className="text-3xl font-[Duck-cry] tracking-tight mb-6 text-gray-900 relative z-10">
                       Smart Automation
@@ -558,7 +558,7 @@ function HeroSection() {
                       NuHelixX RE automates the busywork — from tagging leads to scheduling follow-ups. Its AI learns your habits, prioritizes tasks, and keeps your pipeline on track. Less admin.
                     </p>
                     {/* Watermark */}
-                    <div className="absolute -bottom-10 -right-10 text-[#BCBF4F] opacity-[0.25] transform -rotate-12">
+                    <div className="absolute -bottom-10 -right-10 text-[#006CFF] opacity-[0.25] transform -rotate-12">
                       <Zap size={180} />
                     </div>
                   </div>
@@ -619,7 +619,7 @@ function HeroSection() {
                   </div>
 
                   {/* Cost Description */}
-                  <div className="mobile-card w-full bg-[#BCBF4F] shadow-xl rounded-[28px] p-8 sm:p-10 md:p-14">
+                  <div className="mobile-card w-full bg-[#84B900] shadow-xl rounded-[28px] p-8 sm:p-10 md:p-14">
                     <p className="font-[poppins] font-light text-base sm:text-lg md:text-3xl leading-tight">
                       NuHelixX RE saves both time and money by replacing multiple tools with one platform. Data being entered once and AI handling training, tagging, and follow-ups, agents cut hours of admin work every week — turning wasted time into more revenue and measurable cost savings.
                     </p>

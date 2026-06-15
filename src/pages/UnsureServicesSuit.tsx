@@ -171,7 +171,7 @@ export default function UnsureServicesSuit() {
         </p>
    <button
   onClick={downloadPDF}
-  className="mx-auto lg:absolute lg:top-24 lg:right-14 bg-[#BCBF4F] hover:bg-[#bbbf4fc8] text-black px-4 sm:px-6 md:px-6 py-2 sm:py-2.5 md:py-2.5 rounded-xl sm:rounded-2xl flex items-center gap-2 transition-colors shadow-lg text-sm sm:text-base md:text-lg lg:text-xl font-semibold mt-6 mb-12 lg:mt-0 lg:mb-0"
+  className="mx-auto lg:absolute lg:top-24 lg:right-14 bg-[#84B900] hover:bg-[#407700] text-black px-4 sm:px-6 md:px-6 py-2 sm:py-2.5 md:py-2.5 rounded-xl sm:rounded-2xl flex items-center gap-2 transition-colors shadow-lg text-sm sm:text-base md:text-lg lg:text-xl font-semibold mt-6 mb-12 lg:mt-0 lg:mb-0"
   style={{ fontFamily: 'Barlow, sans-serif' }}
 >
   <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

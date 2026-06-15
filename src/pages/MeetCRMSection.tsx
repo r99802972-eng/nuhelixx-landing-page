@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { BarChart3, Home, MessageSquare, Mic, Search, Users, Sparkles } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,8 +12,6 @@ type MeetCRMSectionProps = {
 };
 
 export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
-  const [searchComplete, setSearchComplete] = useState(false);
-
   const sectionRef = useRef<HTMLDivElement>(null);
   const typingTextRef = useRef<HTMLSpanElement>(null);
   const searchStageRef = useRef<HTMLDivElement>(null);
@@ -40,7 +38,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
       gsap.set(dashboardStageRef.current, { autoAlpha: 0, scale: 0.95, y: 10, display: "none" });
       gsap.set(topHeaderRef.current, { autoAlpha: 1 });
 
-      gsap.set(toggleTrackRef.current, { backgroundColor: "#22c55e" });
+      gsap.set(toggleTrackRef.current, { backgroundColor: "#84B900" });
       gsap.set(toggleKnobRef.current, { x: 26 });
 
       const tl = gsap.timeline({
@@ -51,12 +49,11 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
       });
 
       tl.call(() => {
-        setSearchComplete(false);
         if (typingTextRef.current) {
           typingTextRef.current.textContent = "";
         }
         // Reset toggle
-        gsap.set(toggleTrackRef.current, { backgroundColor: "#22c55e" });
+        gsap.set(toggleTrackRef.current, { backgroundColor: "#84B900" });
         gsap.set(toggleKnobRef.current, { x: 26 });
       });
 
@@ -121,9 +118,6 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         ease: "power2.inOut"
       }, "<");
 
-      // Set searchComplete true for background text and feature label change
-      tl.call(() => setSearchComplete(true));
-
       // 7. Transition in Dashboard Image
       tl.set(dashboardStageRef.current, { display: "flex" });
       tl.to(dashboardStageRef.current, {
@@ -180,14 +174,14 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
 
   // Phase 1 (Search) and Phase 2 (Dashboard) labels
   const features = [
-    { icon: <MessageSquare className="h-3 w-3 text-[#60d394]" />, title: "AI Conversational Command Interface" },
-    { icon: <Users className="h-3 w-3 text-[#60d394]" />, title: "Real-Time AI Call Transcription" },
-    { icon: <Home className="h-3 w-3 text-[#ffb26b]" />, title: "Post-Call AI Meeting Detection" },
-    { icon: <BarChart3 className="h-3 w-3 text-[#8c92ff]" />, title: "AI Tonal Detection & Analytics" },
-    { icon: <MessageSquare className="h-3 w-3 text-[#60d394]" />, title: "Contract management" },
-    { icon: <Users className="h-3 w-3 text-[#60d394]" />, title: "Transaction Management" },
-    { icon: <Home className="h-3 w-3 text-[#ffb26b]" />, title: "Lead vetting and scoring" },
-    { icon: <BarChart3 className="h-3 w-3 text-[#8c92ff]" />, title: "Social Style lead page" },
+    { icon: <MessageSquare className="h-3 w-3 text-[#84B900]" />, title: "AI Conversational Command Interface" },
+    { icon: <Users className="h-3 w-3 text-[#84B900]" />, title: "Real-Time AI Call Transcription" },
+    { icon: <Home className="h-3 w-3 text-[#006CFF]" />, title: "Post-Call AI Meeting Detection" },
+    { icon: <BarChart3 className="h-3 w-3 text-[#006CFF]" />, title: "AI Tonal Detection & Analytics" },
+    { icon: <MessageSquare className="h-3 w-3 text-[#84B900]" />, title: "Contract management" },
+    { icon: <Users className="h-3 w-3 text-[#84B900]" />, title: "Transaction Management" },
+    { icon: <Home className="h-3 w-3 text-[#006CFF]" />, title: "Lead vetting and scoring" },
+    { icon: <BarChart3 className="h-3 w-3 text-[#006CFF]" />, title: "Social Style lead page" },
   ];
 
   return (
@@ -205,7 +199,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
       >
         {/* Top Banner Pill */}
         <div className="mb-8 flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-4 py-1.5 shadow-sm backdrop-blur-sm">
-          <div className="h-2 w-2 rounded-full bg-[#60d394] animate-pulse" />
+          <div className="h-2 w-2 rounded-full bg-[#84B900] animate-pulse" />
           <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500 sm:text-[11px]">
             Now live — AI-powered real estate platform
           </span>
@@ -216,12 +210,12 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
           className="flex flex-row items-center justify-center gap-4 sm:gap-8"
         >
           <h2 className="font-['Duck-cry'] uppercase leading-[0.9] tracking-[-0.02em] text-[#111111] transition-all duration-500 text-[2.8rem] sm:text-[5rem] lg:text-[7.5rem]">
-            Meet <span className="text-[#B7E78A]">Your</span> New CRM
+            Meet <span className="text-[#84B900]">Your</span> New CRM
           </h2>
 
           <div
             ref={toggleTrackRef}
-            className="relative h-8 w-[58px] rounded-full bg-[#22c55e] shadow-inner shadow-black/10 transition-all duration-500 shrink-0"
+            className="relative h-8 w-[58px] rounded-full bg-[#84B900] shadow-inner shadow-black/10 transition-all duration-500 shrink-0"
           >
             <div
               ref={toggleKnobRef}
@@ -257,7 +251,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
               ref={replyBubbleRef}
               className="flex items-center gap-3 bg-white border border-gray-100 rounded-full px-6 py-3 mb-6 self-center shadow-lg shadow-black/[0.02]"
             >
-              <div className="w-8 h-8 rounded-full bg-[#B7E78A] flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-[#84B900] flex items-center justify-center">
                 <Sparkles className="w-4 h-4 text-white fill-white" />
               </div>
               <p className="text-[14px] sm:text-[16px] font-bold text-gray-800">
@@ -271,7 +265,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
               className="flex flex-wrap gap-3 justify-center py-2 mb-4"
             >
               {["Create Task", "Analyze Meetings", "More"].map(btn => (
-                <button key={btn} className="px-6 py-3 rounded-full bg-white border border-gray-100 text-[13px] sm:text-[15px] font-bold text-gray-600 shadow-sm transition-all hover:border-[#B7E78A] hover:text-[#111111]">
+                <button key={btn} className="px-6 py-3 rounded-full bg-white border border-gray-100 text-[13px] sm:text-[15px] font-bold text-gray-600 shadow-sm transition-all hover:border-[#84B900] hover:text-[#111111]">
                   {btn}
                 </button>
               ))}
@@ -296,7 +290,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
 
 
         <div ref={bottomContentRef} className="mt-12 flex flex-col items-center">
-          <span className="text-[11px] font-black tracking-[0.2em] uppercase text-[#60d394] mb-4">PLATFORM</span>
+          <span className="text-[11px] font-black tracking-[0.2em] uppercase text-[#006CFF] mb-4">PLATFORM</span>
           <h3 className="font-['Duck-cry'] uppercase leading-[0.9] tracking-[-0.02em] text-[#111111] transition-all duration-500 text-[2.5rem] sm:text-[4rem] lg:text-[6.5rem] mb-8">
             The Future of CRM <br className="hidden sm:block" /> is <span className="text-gray-200">Here.</span>
           </h3>
@@ -316,7 +310,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
                 key={idx}
                 className="group flex items-center gap-4 rounded-2xl border border-gray-100 bg-white p-4 text-left shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:-translate-y-1"
               >
-                <div className="flex shrink-0 items-center justify-center rounded-xl bg-gray-50 transition-all duration-500 h-10 w-10 group-hover:bg-[#B7E78A]/10">
+                <div className="flex shrink-0 items-center justify-center rounded-xl bg-gray-50 transition-all duration-500 h-10 w-10 group-hover:bg-[#84B900]/10">
                   <div className="scale-110">
                     {feature.icon}
                   </div>

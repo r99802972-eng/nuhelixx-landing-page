@@ -38,8 +38,8 @@ const BackgroundOrnaments = () => {
   return (
     <div ref={ornamentsRef} className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
       {/* Mesh Gradients - Subtle blobs of color */}
-      <div className="absolute -top-[15%] -left-[10%] w-[50%] h-[50%] bg-[#B7E78A]/10 blur-[140px] rounded-full hidden lg:block" />
-      <div className="absolute -bottom-[15%] -right-[10%] w-[50%] h-[50%] bg-blue-100/30 blur-[140px] rounded-full hidden lg:block" />
+      <div className="absolute -top-[15%] -left-[10%] w-[50%] h-[50%] bg-[#84B900]/10 blur-[140px] rounded-full hidden lg:block" />
+      <div className="absolute -bottom-[15%] -right-[10%] w-[50%] h-[50%] bg-[#006CFF]/10 blur-[140px] rounded-full hidden lg:block" />
       
       {/* DNA Helix Ornaments - Left */}
       <div className="absolute left-[-5%] top-1/4 opacity-[0.03] ornament-floating helix-rotate hidden lg:block">
@@ -85,7 +85,7 @@ const BackgroundOrnaments = () => {
       {[...Array(8)].map((_, i) => (
         <div 
           key={i}
-          className="ornament-floating absolute w-2 h-2 rounded-full bg-[#B7E78A] opacity-[0.2] blur-[1px] hidden lg:block"
+          className="ornament-floating absolute w-2 h-2 rounded-full bg-[#84B900] opacity-[0.2] blur-[1px] hidden lg:block"
           style={{
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,

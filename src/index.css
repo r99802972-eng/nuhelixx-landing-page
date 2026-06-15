@@ -14,9 +14,17 @@
     src: url("./Fonts/DrukCyr-Medium.ttf");
 }
 /* no scroll bar */
-    body {
+html,
+body {
   margin: 0;
   overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* Mobile optimizations */

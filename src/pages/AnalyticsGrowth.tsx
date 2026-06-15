@@ -44,7 +44,7 @@ const StatCard = ({ number, suffix, label, delay = 0 }: { number: number | strin
   return (
     <div className="relative group bg-white/40 backdrop-blur-md border border-white/20 rounded-[2rem] p-8 md:p-12 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:shadow-[0_20px_50px_rgba(107,124,79,0.15)] transition-all duration-500 hover:-translate-y-2 overflow-hidden">
       <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-        <TrendingUp size={120} className="text-[#6b7c4f]" />
+        <TrendingUp size={120} className="text-[#84B900]" />
       </div>
       <div className="relative z-10 text-center">
         <div className="flex items-center justify-center font-[Duck-cry] text-5xl md:text-7xl font-bold text-[#1F1F1F] mb-4">
@@ -55,7 +55,7 @@ const StatCard = ({ number, suffix, label, delay = 0 }: { number: number | strin
           {label}
         </p>
       </div>
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#6b7c4f]/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#006CFF]/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
     </div>
   );
 };
@@ -129,7 +129,7 @@ const AnalyticsGrowth = () => {
     <section className="relative py-32 bg-[#f5f5f5] overflow-hidden">
       {/* Background ambient glows */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
-        <div className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] bg-[#6b7c4f]/10 rounded-full blur-[100px]" />
+        <div className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] bg-[#84B900]/10 rounded-full blur-[100px]" />
         <div className="absolute bottom-[0%] left-[-10%] w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-[120px]" />
       </div>
 
@@ -163,10 +163,10 @@ const AnalyticsGrowth = () => {
                 return (
                   <div
                     key={idx}
-                    className="w-[320px] bg-white/70 backdrop-blur-sm border border-white/50 rounded-[2.5rem] p-10 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(107,124,79,0.12)] hover:border-[#6b7c4f]/20 transition-all duration-500 group flex-shrink-0"
+                    className="w-[320px] bg-white/70 backdrop-blur-sm border border-white/50 rounded-[2.5rem] p-10 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(132,185,0,0.12)] hover:border-[#84B900]/20 transition-all duration-500 group flex-shrink-0"
                   >
-                    <div className="bg-[#6b7c4f]/10 w-16 h-16 rounded-[1.25rem] flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner">
-                      <Icon className="text-[#6b7c4f] w-8 h-8" />
+                    <div className="bg-[#84B900]/10 w-16 h-16 rounded-[1.25rem] flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner">
+                      <Icon className="text-[#84B900] w-8 h-8" />
                     </div>
                     <h3 className="text-2xl font-bold text-[#1F1F1F] mb-4 font-[poppins] whitespace-normal">
                       {feature.title}
@@ -185,10 +185,10 @@ const AnalyticsGrowth = () => {
                 return (
                   <div
                     key={`clone-${idx}`}
-                    className="w-[320px] bg-white/70 backdrop-blur-sm border border-white/50 rounded-[2.5rem] p-10 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(107,124,79,0.12)] hover:border-[#6b7c4f]/20 transition-all duration-500 group flex-shrink-0"
+                    className="w-[320px] bg-white/70 backdrop-blur-sm border border-white/50 rounded-[2.5rem] p-10 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(132,185,0,0.12)] hover:border-[#84B900]/20 transition-all duration-500 group flex-shrink-0"
                   >
-                    <div className="bg-[#6b7c4f]/10 w-16 h-16 rounded-[1.25rem] flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner">
-                      <Icon className="text-[#6b7c4f] w-8 h-8" />
+                    <div className="bg-[#84B900]/10 w-16 h-16 rounded-[1.25rem] flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-inner">
+                      <Icon className="text-[#84B900] w-8 h-8" />
                     </div>
                     <h3 className="text-2xl font-bold text-[#1F1F1F] mb-4 font-[poppins] whitespace-normal">
                       {feature.title}

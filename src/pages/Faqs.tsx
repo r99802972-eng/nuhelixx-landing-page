@@ -54,7 +54,7 @@ export default function FAQSection() {
             <div
               key={index}
               data-testid={`faq-item-${index}`}
-              className={`faq-item mb-6 lg:mb-10 bg-white shadow-sm px-4 lg:px-6 transition-all duration-300 hover:bg-[#BCBF4F] rounded-2xl py-4 lg:py-6 ${
+              className={`faq-item mb-6 lg:mb-10 bg-white shadow-sm px-4 lg:px-6 transition-all duration-300 hover:bg-[#84B900]/10 rounded-2xl py-4 lg:py-6 ${
                 openFAQ === index ? "active" : ""
               }`}
             >
