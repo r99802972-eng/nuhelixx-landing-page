@@ -45,7 +45,7 @@ const products: Product[] = [
     dotColor: "#0D5A7A",
   },
   {
-    name: "kvCORE",
+    name: "BoldTrail (formerly kvCORE)",
     headerColor: "#C41E3A",
     columnBgColor: "#F5E8E8",
     platforms: ["Windows", "Mac"],
@@ -93,7 +93,7 @@ const products: Product[] = [
     dotColor: "#2B7A8F",
   },
   {
-    name: "	Real Geeks",
+    name: "Real Geeks",
     headerColor: "#C41E3A",
     columnBgColor: "#F5E8E8",
     platforms: ["Windows", "Mac"],
@@ -183,7 +183,7 @@ export default function UnsureServicesSuit() {
       <table id="comparison-table" className="w-full border-collapse mt-[50px] font-[poppins]">
         <thead>
           <tr>
-            <th className="w-1/5 bg- border border-gray-200 p-4 text-left font-semibold text-sm">Feature / Benefit</th>
+            <th className="w-1/5 border border-gray-200 p-4 text-left font-semibold text-sm">Feature / Capability</th>
             {products.map((product) => (
               <th
                 key={product.name}
@@ -200,84 +200,129 @@ export default function UnsureServicesSuit() {
           {(
             [
               {
-                key: "AI Foundation",
+                key: "Platform Type",
                 values: [
-                  "AI-first, built into the DNA—auto-tagging, follow-ups, property matching, client insights.",
-                  "AI add-ons; limited native integration.",
-                  "Some automation; not AI-first.",
-                  "Minimal automation; no AI-first design.",
+                  "Single unified system (built as one)",
+                  "Ecosystem platform (merged products)",
+                  "Lead-gen + CRM platform",
+                  "Website + CRM combo",
                 ],
               },
               {
-                key: "Single-Entry Data Flow",
+                key: "Architecture Reality",
                 values: [
-                  "Enter once; flows across CRM, MLS, contracts, and dashboards.",
-                  "Agent-siloed; manual syncs common.",
-                  "Team/agent silos; limited sharing.",
-                  "Agent-owned; manual re-entry.",
+                  "Single database (true unified)",
+                  "Integrated stack (kvCORE core + add-ons)",
+                  "Integrated system",
+                  "Connected tools",
                 ],
               },
               {
-                key: "Client Experience",
+                key: "AI Positioning",
                 values: [
-                  "Buyer & Seller Portals: alerts, favorites, property views, secure messaging, real-time updates.",
-                  "Buyer alerts; limited seller tools.",
-                  "Basic portals; limited seller transparency.",
-                  "Mostly IDX; limited client features.",
+                  "Core system (AI-native)",
+                  "AI-powered CRM + automation layers",
+                  "Predictive analytics",
+                  "Limited AI",
                 ],
               },
               {
-                key: "Smart Automation",
+                key: "Lead Generation",
                 values: [
-                  "AI handles follow-ups, drip campaigns, reminders, and lead scoring—saves 5–10 hrs/week.",
-                  "Generic email/SMS drips.",
-                  "Automations with limits.",
-                  "Templates; manual follow-ups.",
+                  "Built-in + AI optimized",
+                  "Built-in lead engine + marketplace",
+                  "Paid lead gen + services",
+                  "Built-in websites + capture",
                 ],
               },
               {
-                key: "From Lead to Close",
+                key: "Automation Type",
                 values: [
-                  "Offers, inspections, contracts, and closings in one dashboard with reminders.",
-                  "CRM-centric; partial transactions.",
-                  "Marketing-heavy; not end-to-end.",
-                  "Not designed for contracts/closings.",
+                  "Adaptive AI automation",
+                  "Behavioral + rule-based smart campaigns",
+                  "Structured automation",
+                  "Basic / trigger-based",
                 ],
               },
               {
-                key: "Analytics & Growth",
+                key: "Workflow (Lead → Close)",
                 values: [
-                  "Real-time dashboards, AI forecasts, trends by districts, ROI reports (PDF-ready).",
-                  "Analytics available; less client-facing.",
-                  "Good dashboards; no AI forecasts.",
-                  "Basic reporting; no predictive insights.",
+                  "Fully unified",
+                  "Expanding toward unified workflows",
+                  "Strong but segmented",
+                  "Agent-managed",
                 ],
               },
               {
-                key: "White-Labeling",
+                key: "Calling / Communication",
                 values: [
-                  "Full white-label branding, custom domains, templates.",
-                  "Limited branding.",
-                  "Some branding options.",
-                  "No true white-label.",
+                  "Native + AI parsing capable",
+                  "Multi-channel marketing tools",
+                  "Built-in + integrations",
+                  "External tools",
                 ],
               },
               {
-                key: "Pricing",
+                key: "Pricing Model",
                 values: [
-                  "$399 per user/month (annual billing), $499 per user/month (monthly billing), All features included.",
-                  "$499+/user/month; add-on fees.",
-                  "$1,000+/month; features gated.",
-                  "~$299/month base; limited automation.",
+                  "Flat, all-inclusive",
+                  "Quote-based / bundled ecosystem",
+                  "High-cost + ad spend",
+                  "Tiered",
+                ],
+              },
+              {
+                key: "Typical Cost",
+                values: [
+                  "~$399–$499/user",
+                  "~$499+/month starting",
+                  "$1k–$1.5k+/mo + ads",
+                  "~$250–$400/mo",
+                ],
+              },
+              {
+                key: "Ease of Use",
+                values: [
+                  "Single interface",
+                  "Improved UI but layered system",
+                  "Complex",
+                  "Simple",
                 ],
               },
               {
                 key: "Scalability",
                 values: [
-                  "Built for one agent or thousands.",
-                  "Team-oriented; costs rise quickly.",
-                  "Team-oriented; expensive to scale.",
-                  "OK for small teams; not enterprise.",
+                  "Built for teams + enterprise",
+                  "Strong brokerage ecosystem",
+                  "Enterprise-focused",
+                  "Agent → small teams",
+                ],
+              },
+              {
+                key: "Customization / Branding",
+                values: [
+                  "Full control",
+                  "Configurable within ecosystem",
+                  "Limited",
+                  "Moderate",
+                ],
+              },
+              {
+                key: "Dependency on Add-ons",
+                values: [
+                  "None",
+                  "Moderate–high (ecosystem model)",
+                  "Moderate",
+                  "Moderate",
+                ],
+              },
+              {
+                key: "Core Weakness",
+                values: [
+                  "New entrant",
+                  "Still a bundled stack, not truly unified",
+                  "Expensive",
+                  "Limited depth",
                 ],
               },
             ]

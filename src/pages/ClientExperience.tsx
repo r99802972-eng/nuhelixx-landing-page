@@ -50,10 +50,9 @@ const ClientExperience = ({ open = false }: { open?: boolean }) => {
                 <h3 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors">{experience.title}</h3>
                 <p className="text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">{experience.description}</p>
                 <div className="mt-6 flex items-center text-sm font-semibold text-gray-400 group-hover:text-gray-700 transition-colors">
-                  <span>Learn more</span>
-                  <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  {/* <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                  </svg> */}
                 </div>
               </div>
               <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full opacity-50 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700"></div>

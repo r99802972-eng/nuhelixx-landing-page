@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 
 export default function FAQSection() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
@@ -39,17 +39,7 @@ export default function FAQSection() {
   return (
     <section data-testid="faq-section" className="py-4 px-4 sm:px-8">
       <div className="max-w-[full] mx-auto border-t flex flex-col lg:flex-row gap-8 lg:gap-[50px]">
-        <div className="flex flex-col justify-around gap-[20px] lg:gap-[30px] mt-[20px] lg:mt-[30px] w-full lg:w-[40%] p-6 lg:p-8 h-auto lg:h-[200px] rounded-2xl bg-white">
-          <div className="flex justify-between items-start lg:items-center leading-[30px] lg:leading-[50px]">
-            <h2 className="font-[Duck-cry] text-[30px] sm:text-[40px] lg:text-[50px]">STILL HAVE QUESTIONS?</h2>
-            <ArrowUpRight size={"20px"} className="lg:w-[26px] lg:h-[26px] flex-shrink-0" />
-          </div>
-          <p className="font-[poppins] text-gray-500 flex items-center gap-2 text-sm lg:text-base">
-            <div className="h-2 bg-gray-500 w-2 flex-shrink-0"/>
-            We're here to help you.
-          </p>
-        </div>
-        <div className="faq-container mt-[20px] lg:mt-[30px] font-[poppins] w-full lg:w-auto">
+        <div className="faq-container mt-[20px] lg:mt-[30px] font-[poppins] w-full">
           {faqs.map((faq, index) => (
             <div
               key={index}

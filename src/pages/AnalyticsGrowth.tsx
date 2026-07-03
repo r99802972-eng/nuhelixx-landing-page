@@ -204,7 +204,7 @@ const AnalyticsGrowth = () => {
         </div>
 
         {/* Big Metrics Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-14 px-4 sm:px-0">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-14 px-4 sm:px-0">
           <StatCard 
             number={3} 
             suffix="x" 
@@ -223,7 +223,7 @@ const AnalyticsGrowth = () => {
             label="AI-powered forecasting accuracy" 
             delay={0.4}
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );
