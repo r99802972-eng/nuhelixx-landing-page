@@ -167,7 +167,7 @@ export default function UnsureServicesSuit() {
           Head to Head Comparison 
         </h1>
         <p className="text-[3rem] tracking-[0.02em]">
-          NuHelixX RE vs. Leading Real Estate CRMs
+          NuHelixX RE vs. Current Market (Post-kvCORE Rebrand)
         </p>
    <button
   onClick={downloadPDF}
