@@ -46,8 +46,8 @@ const products: Product[] = [
   },
   {
     name: "BoldTrail (formerly kvCORE)",
-    headerColor: "#C41E3A",
-    columnBgColor: "#F5E8E8",
+    headerColor: "#006CFF",
+    columnBgColor: "#eef4ff",
     platforms: ["Windows", "Mac"],
     features: {
       "Capture Images": false,
@@ -70,8 +70,8 @@ const products: Product[] = [
   },
   {
     name: "BoomTown",
-    headerColor: "#C41E3A",
-    columnBgColor: "#F5E8E8",
+    headerColor: "#006CFF",
+    columnBgColor: "#eef4ff",
     platforms: ["Windows"],
     features: {
       "Capture Images": false,
@@ -94,8 +94,8 @@ const products: Product[] = [
   },
   {
     name: "Real Geeks",
-    headerColor: "#C41E3A",
-    columnBgColor: "#F5E8E8",
+    headerColor: "#006CFF",
+    columnBgColor: "#eef4ff",
     platforms: ["Windows", "Mac"],
     features: {
       "Capture Images": false,
@@ -167,7 +167,7 @@ export default function UnsureServicesSuit() {
           Head to Head Comparison 
         </h1>
         <p className="text-[3rem] tracking-[0.02em]">
-          NuHelixX RE vs. Current Market (Post-kvCORE Rebrand)
+          NuHelixX RE vs. Current Market (Post-kvCORE Rebrand)cd
         </p>
    <button
   onClick={downloadPDF}

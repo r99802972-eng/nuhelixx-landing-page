@@ -421,8 +421,8 @@ function HeroSection() {
 
                     <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mt-8 md:mt-12 gap-8">
                       <div className="flex items-center xl:relative xl:-top-[220px] gap-3">
-                        <ArrowDown size={20} className="text-gray-800 md:w-6 md:h-6" />
-                        <span className="text-base font-[600] md:text-lg text-gray-800">
+                        <ArrowDown size={20} className="text-[#006CFF] md:w-6 md:h-6" />
+                        <span className="text-base font-[600] md:text-lg text-[#006CFF]">
                           Scroll for more
                         </span>
                       </div>
@@ -463,7 +463,7 @@ function HeroSection() {
                         />
 
                       </div>
-                      Features
+                      <span className="text-[#006CFF]">Features</span>
                     </span>
                   </p>
                 </div>
@@ -502,8 +502,8 @@ function HeroSection() {
 
                 {/* Scroll Indicator */}
                 <div className="flex items-center justify-center gap-3 mb-12 md:mb-16">
-                  <ArrowDown size={20} className="text-gray-800" />
-                  <span className="text-base font-[600] text-gray-800">
+                  <ArrowDown size={20} className="text-[#006CFF]" />
+                  <span className="text-base font-[600] text-[#006CFF]">
                     Scroll for more
                   </span>
                 </div>
@@ -523,7 +523,7 @@ function HeroSection() {
                         className="h-[32px] sm:h-[40px] md:h-[52px]"
                       />
                     </span>
-                    Features
+                    <span className="text-[#006CFF]">Features</span>
                   </h2>
                 </div>
 

@@ -200,7 +200,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         {/* Top Banner Pill */}
         <div className="mb-8 flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-4 py-1.5 shadow-sm backdrop-blur-sm">
           <div className="h-2 w-2 rounded-full bg-[#84B900] animate-pulse" />
-          <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500 sm:text-[11px]">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-[#006CFF] sm:text-[11px]">
             Now live — AI-powered real estate platform
           </span>
         </div>
@@ -224,7 +224,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
           </div>
         </div>
 
-        <p className="mt-8 font-bold text-gray-500 transition-all duration-500 text-[14px] sm:text-[18px] lg:text-[1.2rem] max-w-[600px] leading-relaxed">
+        <p className="mt-8 font-bold text-[#006CFF] transition-all duration-500 text-[14px] sm:text-[18px] lg:text-[1.2rem] max-w-[600px] leading-relaxed">
           The Complete Real Estate Workflow. One Platform.
         </p>
 
@@ -292,7 +292,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         <div ref={bottomContentRef} className="mt-12 flex flex-col items-center">
           <span className="text-[11px] font-black tracking-[0.2em] uppercase text-[#006CFF] mb-4">PLATFORM</span>
           <h3 className="font-['Duck-cry'] uppercase leading-[0.9] tracking-[-0.02em] text-[#111111] transition-all duration-500 text-[2.5rem] sm:text-[4rem] lg:text-[6.5rem] mb-8">
-            The Future of CRM <br className="hidden sm:block" /> is <span className="text-gray-200">Here.</span>
+            The Future of CRM <br className="hidden sm:block" /> is <span className="text-[#006CFF]">Here.</span>
           </h3>
 
           <div className="flex flex-col gap-4 text-center mb-16">
