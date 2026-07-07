@@ -212,7 +212,7 @@ const Header = () => {
             {/* Sign In — bilkul right corner mein fixed */}
             <a
               href="#signin"
-              className="hidden md:block absolute -right-6 lg:right-4 px-3 md:px-5 lg:px-6 py-2 lg:py-2.5 rounded-full bg-[#84B900] text-gray-900 font-[500] transition-all text-xs md:text-sm lg:text-base hover:bg-[#407700] whitespace-nowrap"
+              className="hidden md:block absolute -right-6 lg:right-4 px-3 md:px-5 lg:px-6 py-2 lg:py-2.5 rounded-full border border-gray-800 bg-transparent text-gray-800 font-[500] transition-all text-xs md:text-sm lg:text-base hover:bg-gray-100 whitespace-nowrap"
             >
               Sign In
             </a>
@@ -243,7 +243,7 @@ const Header = () => {
               </a>
             ))}
             <a href="#signin"
-              className="px-8 py-3 rounded-full bg-[#84B900] text-gray-900 font-[500] transition-all text-xl hover:bg-[#407700]"
+              className="px-8 py-3 rounded-full border border-gray-800 bg-transparent text-gray-800 font-[500] transition-all text-xl hover:bg-gray-100"
               onClick={() => setMobileMenuOpen(false)}
             >
               Sign In

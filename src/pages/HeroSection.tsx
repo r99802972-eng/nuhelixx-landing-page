@@ -451,10 +451,10 @@ function HeroSection() {
                 {/* Desktop Headline */}
                 <div ref={headlineRef} className="transform-gpu opacity-[0] -mt-14 xl:-ml-10">
                   <p>
-                    <span className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-[Duck-cry] leading-none font-[600]">
+                    <span className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-[Duck-cry] leading-none font-[580]">
                       One <br />
                       Subscription <br />
-                      <div className="flex gap-2 sm:gap-4 items-center leading-none">
+                      <div className="text-[#006CFF] flex gap-2 sm:gap-4 items-center leading-none">
                         <p>All</p>
                         <img
                           src="https://43675023.fs1.hubspotusercontent-na1.net/hubfs/43675023/raw_assets/public/ZipcioTheme/img/rocket.svg"
@@ -514,16 +514,18 @@ function HeroSection() {
                 <div ref={mobileHeadlineRef} className="mb-12 md:mb-20">
                   <h2 className="text-[40px] sm:text-[56px] md:text-[72px] font-[Duck-cry] font-[600] leading-tight text-[#1F1F1F] text-center">
                     One<br />
-                    Subscription<br />
+                    Subscription.<br />
                     <span className="flex items-center justify-center gap-2 md:gap-4">
-                      All
+                      <span className="!text-[#006CFF]">
+                        All
+                      </span>
                       <img
                         src="https://43675023.fs1.hubspotusercontent-na1.net/hubfs/43675023/raw_assets/public/ZipcioTheme/img/rocket.svg"
                         alt="Rocket"
                         className="h-[32px] sm:h-[40px] md:h-[52px]"
                       />
                     </span>
-                    <span className="text-[#006CFF]">Features</span>
+                    <span className="!text-[#006CFF]">Features.</span>
                   </h2>
                 </div>
 
