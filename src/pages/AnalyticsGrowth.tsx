@@ -126,7 +126,7 @@ const AnalyticsGrowth = () => {
   }, []);
 
   return (
-    <section className="relative py-32 bg-[#f5f5f5] overflow-hidden">
+    <section id="analytics-growth" className="relative py-32 bg-[#f5f5f5] overflow-hidden">
       {/* Background ambient glows */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
         <div className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] bg-[#84B900]/10 rounded-full blur-[100px]" />

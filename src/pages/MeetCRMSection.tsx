@@ -292,7 +292,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         <div ref={bottomContentRef} className="mt-12 flex flex-col items-center">
           <span className="text-[11px] font-black tracking-[0.2em] uppercase text-[#006CFF] mb-4">PLATFORM</span>
           <h3 className="font-['Duck-cry'] uppercase leading-[0.9] tracking-[-0.02em] text-[#111111] transition-all duration-500 text-[2.5rem] sm:text-[4rem] lg:text-[6.5rem] mb-8">
-            The Future of CRM <br className="hidden sm:block" /> is <span className="text-[#006CFF]">Here.</span>
+            The Future of CRM <br className="hidden sm:block" /> is <span className="text-[#006CFF]">Here</span>
           </h3>
 
           <div className="flex flex-col gap-4 text-center mb-16">

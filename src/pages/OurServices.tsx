@@ -203,7 +203,7 @@ function ServiceItem({ service }: { service: Service }) {
 
 export function OurServices() {
   return (
-    <section className="pt-2 lg:pt-10 font-[Duck-cry]">
+    <section id="services" className="pt-2 lg:pt-10 font-[Duck-cry]">
       <div className="max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="font-poppins flex flex-col lg:flex-row justify-between w-full lg:w-[80%] gap-4 lg:gap-0 mx-auto">
           <div className="flex items-center gap-4 mb-6">

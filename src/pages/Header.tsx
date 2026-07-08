@@ -1,16 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { Menu } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import logo from '../assets/transparent_2.png';
 import backgroundImage from '../assets/background.jpg';
 import MeetCRMSection from './MeetCRMSection';
+import { navLock, heroScrollTriggerRef } from './HeroSection';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [crmAutoplayStarted, setCrmAutoplayStarted] = useState(false);
 
-  const logoRef = useRef(null);             // FIXED positioned logo — always visible
+  const logoRef = useRef(null);
   const backgroundRef = useRef(null);
   const backgroundOverlayRef = useRef(null);
   const dashboardRef = useRef(null);
@@ -19,6 +20,50 @@ const Header = () => {
   const rightNavRef = useRef(null);
   const heroSectionRef = useRef(null);
   const crmAutoplayTriggeredRef = useRef(false);
+  const isNavigatingRef = useRef(false);
+
+  const handleNav = useCallback((e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+
+    if (id === 'home') {
+      isNavigatingRef.current = true;
+      navLock.active = true;
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      setTimeout(() => { isNavigatingRef.current = false; navLock.active = false; }, 600);
+      return;
+    }
+
+    const targetId = id === 'analytics' ? 'analytics-growth' : id;
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    isNavigatingRef.current = true;
+    navLock.active = true;
+
+    const heroST = heroScrollTriggerRef.current;
+    let scrollTarget: number;
+
+    if (heroST && window.innerWidth >= 1024) {
+      const servicesEl = document.getElementById('services');
+      let targetFromRoot = 0;
+      let el: HTMLElement | null = target;
+      while (el) { targetFromRoot += el.offsetTop; el = el.offsetParent as HTMLElement | null; }
+      let servicesFromRoot = 0;
+      let sel: HTMLElement | null = servicesEl;
+      while (sel) { servicesFromRoot += sel.offsetTop; sel = sel.offsetParent as HTMLElement | null; }
+      const offsetWithinServices = targetFromRoot - servicesFromRoot;
+      scrollTarget = heroST.end + offsetWithinServices - 80;
+    } else {
+      let top = 0;
+      let el: HTMLElement | null = target;
+      while (el) { top += el.offsetTop; el = el.offsetParent as HTMLElement | null; }
+      scrollTarget = top - 80;
+    }
+
+    window.scrollTo({ top: Math.max(0, scrollTarget), behavior: 'auto' });
+    setTimeout(() => { isNavigatingRef.current = false; navLock.active = false; }, 600);
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -76,17 +121,17 @@ const Header = () => {
       ScrollTrigger.create({
         trigger: heroSectionRef.current,
         start: 'top top',
-        end: '+=80%', // Tighter scroll for a snappier feel
+        end: '+=80%',
         pin: true,
         pinSpacing: true,
         onUpdate: (self) => {
+          if (isNavigatingRef.current) return;
+
           if (self.progress > headerMaxProgress) {
             headerMaxProgress = self.progress;
-            // Manually tween the timeline's progress forward, never backward
             gsap.to(tl, { progress: headerMaxProgress, duration: 0.5, ease: "none", overwrite: true });
           }
 
-          // Fast-Reverse: If scrolling UP through the pinned area, boost the scroll speed
           if (self.direction === -1 && self.progress < 1 && self.progress > 0) {
             const scrollBoost = Math.abs(self.getVelocity()) * 0.008;
             if (scrollBoost > 2) {
@@ -187,12 +232,8 @@ const Header = () => {
               ref={leftNavRef}
               className="absolute left-1/2 flex items-center gap-2 md:gap-4 lg:gap-6"
             >
-              <a href="#home" className="text-gray-800 hover:text-[#84B900] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">
-                Home
-              </a>
-              <a href="#analytics" className="text-gray-800 hover:text-[#84B900] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">
-                Analytics
-              </a>
+              <a href="#home" onClick={(e) => handleNav(e, 'home')} className="text-gray-800 hover:text-[#84B900] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">Home</a>
+              <a href="#analytics" onClick={(e) => handleNav(e, 'analytics')} className="text-gray-800 hover:text-[#84B900] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">Analytics</a>
             </div>
 
             {/* Right Nav */}
@@ -200,13 +241,8 @@ const Header = () => {
               ref={rightNavRef}
               className="absolute left-1/2 flex items-center gap-2 md:gap-4 lg:gap-6"
             >
-              <a href="#services" className="text-gray-800 hover:text-[#84B900] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">
-                Services
-              </a>
-              <a href="#contact" className="text-gray-800 hover:text-[#84B900] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">
-                Contact Us
-              </a>
-
+              <a href="#services" onClick={(e) => handleNav(e, 'services')} className="text-gray-800 hover:text-[#84B900] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">Services</a>
+              <a href="#contact" onClick={(e) => handleNav(e, 'contact')} className="text-gray-800 hover:text-[#84B900] font-[500] transition-colors text-xs md:text-sm lg:text-base whitespace-nowrap">Contact Us</a>
             </div>
 
             {/* Sign In — bilkul right corner mein fixed */}
@@ -237,7 +273,7 @@ const Header = () => {
             {['Home', 'Analytics', 'Services', 'Contact Us'].map((item) => (
               <a key={item} href={`#${item.toLowerCase().replace(' ', '')}`}
                 className="text-2xl text-gray-800 hover:text-[#84B900] font-[500] transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNav(e, item.toLowerCase().replace(' ', ''))}
               >
                 {item}
               </a>

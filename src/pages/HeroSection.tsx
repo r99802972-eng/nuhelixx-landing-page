@@ -2,6 +2,10 @@ import { ArrowUpRight, ChevronDown, ArrowDown, Cpu, Zap, RotateCw } from "lucide
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+export const navLock = { active: false };
+export const heroScrollTriggerRef: { current: ScrollTrigger | null } = { current: null };
+
 import data_insights_bg from "../assets/data_insights_bg.png";
 import cost_savings_bg from "../assets/cost_savings_bg.png";
 import { OurServices } from "./OurServices";
@@ -77,14 +81,19 @@ function HeroSection() {
 
         const master = gsap.timeline({ paused: true });
 
-        ScrollTrigger.create({
+        const st = ScrollTrigger.create({
           trigger: containerRef.current,
           start: "top top",
           end: () => "+=" + totalScrollHeight,
           pin: true,
-          scrub: true, // ✅ IMPORTANT
-          animation: master, // ✅ LINK TIMELINE
+          scrub: true,
+          animation: master,
+          onUpdate: () => {
+            if (navLock.active) master.pause();
+            else master.resume();
+          },
         });
+        heroScrollTriggerRef.current = st;
 
         // Headline animation
         if (headlineRef.current) {
@@ -450,22 +459,21 @@ function HeroSection() {
 
                 {/* Desktop Headline */}
                 <div ref={headlineRef} className="transform-gpu opacity-[0] -mt-14 xl:-ml-10">
-                  <p>
+                  <div>
                     <span className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-[Duck-cry] leading-none font-[580]">
                       One <br />
-                      Subscription <br />
+                      Subscription. <br />
                       <div className="text-[#006CFF] flex gap-2 sm:gap-4 items-center leading-none">
-                        <p>All</p>
+                        <span>All</span>
                         <img
                           src="https://43675023.fs1.hubspotusercontent-na1.net/hubfs/43675023/raw_assets/public/ZipcioTheme/img/rocket.svg"
                           alt="Rocket"
                           className="h-[30px] sm:h-[40px] md:h-[50px] lg:h-[60px]"
                         />
-
                       </div>
-                      <span className="text-[#006CFF]">Features</span>
+                      <span className="text-[#006CFF]">Features.</span>
                     </span>
-                  </p>
+                  </div>
                 </div>
               </main>
             </div>
