@@ -79,8 +79,8 @@ export default function Contact() {
                   Stop stitching together tools.
                 </h1>
                 <h2 className="font-[poppins] text-[16px] sm:text-[18px] lg:text-[20px] font-light text-gray-500 mt-2">
-                  Start running your business on a{" "}
-                  <span className="font-semibold text-[#84B900]">system.</span>
+                  Start running your business on one{" "}
+                  <span className="font-semibold text-[#84B900]">platform.</span>
                 </h2>
               </div>
               <form

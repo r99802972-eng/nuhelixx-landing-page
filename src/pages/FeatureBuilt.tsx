@@ -104,7 +104,7 @@ export default function TechnologyInnovation() {
                 title="For Agent–Brokers"
                 description="Balance production with leadership using:"
                 points={[
-                  "Routing controls",
+                  "Lead routing controls",
                   "Compliance oversight",
                   "Team analytics",
                   "Automated follow-up systems"

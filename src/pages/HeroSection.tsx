@@ -88,10 +88,6 @@ function HeroSection() {
           pin: true,
           scrub: true,
           animation: master,
-          onUpdate: () => {
-            if (navLock.active) master.pause();
-            else master.resume();
-          },
         });
         heroScrollTriggerRef.current = st;
 

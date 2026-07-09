@@ -167,7 +167,7 @@ export default function UnsureServicesSuit() {
           Head to Head Comparison 
         </h1>
         <p className="text-[3rem] tracking-[0.02em]">
-          NuHelixX RE vs. Current Market (Post-kvCORE Rebrand)cd
+          NuHelixX RE vs. Current Market
         </p>
    <button
   onClick={downloadPDF}
@@ -316,15 +316,15 @@ export default function UnsureServicesSuit() {
                   "Moderate",
                 ],
               },
-              {
-                key: "Core Weakness",
-                values: [
-                  "New entrant",
-                  "Still a bundled stack, not truly unified",
-                  "Expensive",
-                  "Limited depth",
-                ],
-              },
+              // {
+              //   key: "Core Weakness",
+              //   values: [
+              //     "New entrant",
+              //     "Still a bundled stack, not truly unified",
+              //     "Expensive",
+              //     "Limited depth",
+              //   ],
+              // },
             ]
           ).map((row) => (
             <tr key={row.key}>
