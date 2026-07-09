@@ -107,3 +107,12 @@ body::-webkit-scrollbar {
 }
 
 .scroll{scroll-behavior: smooth;}
+
+/* Preserve h1 visual styling on non-h1 elements */
+.h1-style {
+  display: block;
+  font-size: revert;
+  font-weight: revert;
+  line-height: revert;
+}
+

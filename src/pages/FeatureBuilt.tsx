@@ -13,8 +13,8 @@ export default function TechnologyInnovation() {
             onClick={() => setOpen(!open)}
             className="flex w-full items-center justify-center gap-4"
           >
-          <h1 
-  className="text-center mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[70px]"
+          <p 
+  className="h1-style text-center mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[70px]"
   style={{
     fontFamily: 'ITC, sans-serif',
     color: '#212529',
@@ -23,7 +23,7 @@ export default function TechnologyInnovation() {
 >
   FEATURES BUILT FOR <br />
    REAL ESTATE TEAMS
-</h1><ChevronRight
+</p><ChevronRight
   className={`h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 flex-shrink-0 transition-transform duration-300 ${
     open ? "rotate-90" : ""
   }`}

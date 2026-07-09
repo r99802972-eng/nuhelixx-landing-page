@@ -75,9 +75,9 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="bg-card rounded-2xl lg:rounded-3xl flex flex-col gap-[30px] lg:gap-[60px] p-6 lg:p-8 order-1 lg:order-2">
               <div>
-                <h1 className="font-[Duck-cry] text-[28px] sm:text-[36px] lg:text-[44px] leading-tight text-[#1F1F1F]">
+                <p className="h1-style font-[Duck-cry] text-[28px] sm:text-[36px] lg:text-[44px] leading-tight text-[#1F1F1F]">
                   Stop stitching together tools.
-                </h1>
+                </p>
                 <h2 className="font-[poppins] text-[16px] sm:text-[18px] lg:text-[20px] font-light text-gray-500 mt-2">
                   Start running your business on one{" "}
                   <span className="font-semibold text-[#84B900]">platform.</span>

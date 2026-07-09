@@ -137,9 +137,9 @@ const AnalyticsGrowth = () => {
         {/* Section Header */}
         <div className="text-center mb-24">
           <div className="font-[Duck-cry] mt-[150px]">
-            <h1 className="text-6xl md:text-[5.5rem] font-[Duck-cry] text-[#1F1F1F] mb-8 leading-[0.9] tracking-tight">
+            <p className="h1-style text-6xl md:text-[5.5rem] font-[Duck-cry] text-[#1F1F1F] mb-8 leading-[0.9] tracking-tight">
               Analytics & Growth 
-            </h1>
+            </p>
           </div>
           <p className="max-w-2xl mx-auto font-[poppins] text-gray-500 text-lg md:text-xl font-light leading-relaxed">
             Harness the power of real-time data to drive smarter decisions and accelerate your brokerage's trajectory.

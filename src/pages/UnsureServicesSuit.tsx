@@ -163,9 +163,9 @@ export default function UnsureServicesSuit() {
   return (
     <div className="overflow-x-auto rounded-lg">
       <div className="text-center font-[Duck-cry] mt-[20px] relative">
-        <h1 className="text-[3rem] tracking-[0.02em] mb-3">
+        <p className="h1-style text-[3rem] tracking-[0.02em] mb-3">
           Head to Head Comparison 
-        </h1>
+        </p>
         <p className="text-[3rem] tracking-[0.02em]">
           NuHelixX RE vs. Current Market
         </p>

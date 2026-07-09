@@ -297,10 +297,10 @@ const BrokerageExperience = ({ open = false }: { open?: boolean }) => {
       <div className="text-center mt-8 md:mt-12 lg:mt-16">
         {/* CHANGE: button hata diya — heading sirf display ke liye */}
         <div className="flex items-center justify-center gap-4 mx-auto">
-          <h1 className="font-[Duck-cry] leading-none text-[48px] sm:text-[60px] md:text-[80px] lg:text-[120px]">
+          <p className="h1-style font-[Duck-cry] leading-none text-[48px] sm:text-[60px] md:text-[80px] lg:text-[120px]">
             BROKERAGE <br />
             EXPERIENCE
-          </h1>
+          </p>
           <ChevronRight
             className={`h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 flex-shrink-0 transition-transform duration-300 ${open ? 'rotate-90' : ''}`}
           />
@@ -359,10 +359,10 @@ function AgentExperience({ open = false }: { open?: boolean }) {
         {/* CHANGE: button hata diya — heading sirf display ke liye */}
         <div className="text-center mt-[40px] lg:mt-[70px]">
           <div className="flex items-center justify-center gap-4 mx-auto">
-            <h1 className="font-[Duck-cry] leading-none text-[60px] sm:text-[80px] lg:text-[120px]">
+            <p className="h1-style font-[Duck-cry] leading-none text-[60px] sm:text-[80px] lg:text-[120px]">
               AGENT <br />
               EXPERIENCE
-            </h1>
+            </p>
             <ChevronRight
               className={`h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 flex-shrink-0 transition-transform duration-300 ${open ? 'rotate-90' : ''}`}
             />
@@ -430,10 +430,10 @@ const ClientExperience = ({ open = false }: { open?: boolean }) => {
           <div className="text-center mt-[40px] lg:mt-[70px]">
             {/* CHANGE: button hata diya — heading sirf display ke liye */}
             <div className="flex items-center justify-center gap-4 mx-auto">
-              <h1 className="font-[Duck-cry] leading-none text-[60px] sm:text-[80px] lg:text-[120px]">
+              <p className="h1-style font-[Duck-cry] leading-none text-[60px] sm:text-[80px] lg:text-[120px]">
                 CLIENT <br />
                 EXPERIENCE
-              </h1>
+              </p>
               <ChevronRight
                 className={`h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 flex-shrink-0 transition-transform duration-300 ${open ? 'rotate-90' : ''}`}
               />

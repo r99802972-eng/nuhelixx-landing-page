@@ -275,9 +275,9 @@ function HeroSection() {
                   <div className="relative">
                     <div className="flex items-start gap-4 xl:gap-8">
                       <div className="flex-1 leading-[180px]">
-                        <h1 className="text-[80px] flex justify-center font-[Duck-cry] xl:text-[200px] font-black tracking-[8px] text-[#1F1F1F] mb-2 xl:mb-4">
+                        <p className="h1-style text-[80px] flex justify-center font-[Duck-cry] xl:text-[200px] font-black tracking-[8px] text-[#1F1F1F] mb-2 xl:mb-4">
                           The DNA of Every
-                        </h1>
+                        </p>
 
                         <div className="flex items-start justify-between xl:gap-8">
                           <h2 className="text-[80px] xl:text-[200px] font-[Duck-cry] text-[#1F1F1F] tracking-[8px] font-black">
@@ -479,9 +479,10 @@ function HeroSection() {
               <div className="px-4 sm:px-6 md:px-8 py-8 md:py-12">
                 {/* Main Headline */}
                 <div className="mb-8 md:mb-12">
-                  <h1 className="text-[36px] sm:text-[48px] md:text-[64px] font-[Duck-cry] font-black leading-tight tracking-tight text-[#1F1F1F] text-center">
+                  <h1 className="sr-only">AI Real Estate CRM &amp; Brokerage Software | NuHelixX RE</h1>
+                  <p className="h1-style text-[36px] sm:text-[48px] md:text-[64px] font-[Duck-cry] font-black leading-tight tracking-tight text-[#1F1F1F] text-center">
                     The DNA of Every<br />Deal in Action
-                  </h1>
+                  </p>
                 </div>
 
                 {/* Introduction Text */}
