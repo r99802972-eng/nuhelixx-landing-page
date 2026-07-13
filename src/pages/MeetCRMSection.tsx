@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { BarChart3, Home, MessageSquare, Mic, Search, Users, Sparkles } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import dashboardImage from "../assets/Dashboard.png";
+import dashboardImage from "../assets/dashboard_image.png";
 import BackgroundOrnaments from "./components/BackgroundOrnaments";
 
 gsap.registerPlugin(ScrollTrigger);
