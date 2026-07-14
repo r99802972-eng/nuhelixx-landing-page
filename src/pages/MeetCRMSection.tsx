@@ -45,7 +45,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         defaults: { ease: "power2.inOut" },
         paused: true,
         repeat: 1,
-        repeatDelay: 3,
+        repeatDelay: 7,
       });
 
       tl.call(() => {
