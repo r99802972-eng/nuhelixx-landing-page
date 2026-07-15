@@ -74,12 +74,12 @@ function HeroSection() {
         gsap.set(layer3.current, { x: 0, rotation: 2 });
         gsap.set(layer4.current, { x: 0, y: 0, rotation: -3 });
         gsap.set(cardRef.current, { x: 0, y: 0 });
-        gsap.set(costDescRef.current, { x: 0, y: 300, opacity: 0 });
+        gsap.set(costDescRef.current, { x: 0, y: 380, opacity: 0 });
         gsap.set(stackRef.current, { x: 0, scale: 1, y: 0 });
 
         const cardSpacing = 290;
         const horizontalDistance = window.innerWidth;
-        const totalScrollHeight = window.innerHeight * 8;
+        const totalScrollHeight = window.innerHeight * 10; // Adjust this value based on how much you want to scroll
 
         const master = gsap.timeline({ paused: true });
 
@@ -123,7 +123,7 @@ function HeroSection() {
         master.to(
           heroContentRef.current,
           {
-            y: -600,
+            y: -window.innerHeight,
             transitionTimingFunction: "power1.out",
             ease: "power1.out",
           },
@@ -160,12 +160,12 @@ function HeroSection() {
         );
         master.to(
           layer4.current,
-          { y: 300, rotation: 0, zIndex: 0, ease: "power1.out" },
+          { y: 380, rotation: 0, zIndex: 0, ease: "power1.out" },
           tile4Delay
         );
         master.to(
           costDescRef.current,
-          { x: 300, opacity: 1, duration: 0.75, ease: "power2.out" },
+          { x: 300, y: 380, opacity: 1, duration: 0.75, ease: "power2.out" },
           descRevealDelay
         );
 
@@ -290,10 +290,10 @@ function HeroSection() {
                             {/* Layer 1 - AI in our DNA */}
                             <div
                               ref={layer1}
-                              className="absolute w-[200px] h-[300px] left-[10px] xl:w-[280px] xl:h-[340px] rounded-[28px] bg-white border border-gray-100 transform rotate-[4deg] shadow-xl z-0 overflow-hidden group flex flex-col items-start p-6 text-left"
+                              className="absolute w-[200px] h-[310px] left-[10px] xl:w-[280px] xl:h-[350px] rounded-[28px] bg-white border border-gray-100 transform rotate-[4deg] shadow-xl z-0 overflow-hidden group flex flex-col items-start p-6 text-left"
                             >
                               {/* Icon Box */}
-                              <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-purple-50 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
+                              <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-purple-50 flex items-center justify-center mb-2 relative z-10 transition-transform group-hover:scale-110">
                                 <Cpu size={32} className="text-purple-600" />
                               </div>
 
@@ -306,11 +306,10 @@ function HeroSection() {
                                 matching. Smarter insights. Stronger
                                 connections.
                               </p>
-
-                              <div className="mt-auto w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center relative z-10 transition-colors group-hover:bg-purple-100">
+                              <div className="mt-auto mt-6 w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center relative z-10 transition-colors group-hover:bg-purple-100">
                                 <ArrowRight size={18} className="text-purple-600" />
                               </div>
-
+                              
                               {/* Watermark Icon */}
                               <div className="absolute -bottom-8 -right-8 text-purple-600 opacity-[0.12] transform rotate-12 group-hover:scale-110 transition-transform">
                                 <Cpu size={140} />
@@ -320,10 +319,10 @@ function HeroSection() {
                             {/* Layer 2 - Smart Automation */}
                             <div
                               ref={layer2}
-                              className="absolute w-[200px] h-[300px] -left-[13px] xl:w-[280px] xl:h-[340px] rounded-[24px] bg-white border border-gray-100 transform rotate-[-4deg] shadow-xl z-0 overflow-hidden group flex flex-col items-start p-6 text-left"
+                              className="absolute w-[200px] h-[310px] -left-[13px] xl:w-[280px] xl:h-[350px] rounded-[24px] bg-white border border-gray-100 transform rotate-[-4deg] shadow-xl z-0 overflow-hidden group flex flex-col items-start p-6 text-left"
                             >
                               {/* Icon Box */}
-                              <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-[#84B900]/10 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
+                              <div className="w-14 h-14 xl:w-20 xl:h-20 rounded-2xl bg-[#84B900]/10 flex items-center justify-center mb-2 relative z-10 transition-transform group-hover:scale-110">
                                 <Zap size={32} className="text-[#84B900]" />
                               </div>
 
@@ -349,10 +348,10 @@ function HeroSection() {
                             {/* Layer 3 - Seamless Transactions */}
                             <div
                               ref={layer3}
-                              className="absolute w-[200px] h-[300px] xl:w-[280px] xl:h-[340px] rounded-[28px] bg-white border border-gray-100 transform z-0 overflow-hidden group flex flex-col items-start p-6 text-left"
+                              className="absolute w-[200px] h-[310px] xl:w-[280px] xl:h-[350px] rounded-[28px] bg-white border border-gray-100 transform z-0 overflow-hidden group flex flex-col items-start p-6 text-left"
                             >
                               {/* Icon Box */}
-                              <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-teal-50 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
+                              <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-teal-50 flex items-center justify-center mb-2 relative z-10 transition-transform group-hover:scale-110">
                                 <RotateCw size={32} className="text-teal-600" />
                               </div>
 
@@ -366,7 +365,7 @@ function HeroSection() {
                                 experience.
                               </p>
 
-                              <div className="mt-auto w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center relative z-10 transition-colors group-hover:bg-teal-100">
+                              <div className="mt-auto mt-6 w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center relative z-10 transition-colors group-hover:bg-teal-100">
                                 <ArrowRight size={18} className="text-teal-600" />
                               </div>
 
@@ -379,7 +378,7 @@ function HeroSection() {
                             {/* Layer 4 - Cost (Original Image Look) */}
                             <div
                               ref={layer4}
-                              className="absolute w-[200px] h-[200px] xl:w-[280px] xl:h-[280px] rounded-3xl overflow-hidden shadow-xl transform z-0"
+                              className="absolute w-[200px] h-[120px] xl:w-[280px] xl:h-[210px] rounded-3xl overflow-hidden shadow-xl transform z-0"
                             >
                               <div className="w-full h-full relative">
                                 <img
@@ -387,15 +386,17 @@ function HeroSection() {
                                   alt="Cost savings"
                                   className="w-full h-full object-cover"
                                 />
-                                <div className="absolute bottom-4 xl:bottom-8 left-4 xl:left-6 text-white text-left">
-                                  <div className="text-3xl xl:text-5xl font-bold mb-1">
-                                    Cost
-                                  </div>
-                                  <div className="text-sm xl:text-lg font-medium">
-                                    Save-time-and
-                                  </div>
-                                  <div className="text-sm xl:text-lg font-medium">
-                                    money
+                                {/* Dark overlay */}
+                                <div className="absolute inset-0 bg-black/30" />
+                                {/* Dollar icon top-left */}
+                                <div className="absolute top-4 xl:top-5 left-4 xl:left-5 w-9 h-9 xl:w-11 xl:h-11 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                                  <DollarSign size={18} className="text-white xl:w-5 xl:h-5" />
+                                </div>
+                                {/* Text bottom-left */}
+                                <div className="absolute bottom-4 xl:bottom-6 left-4 xl:left-5 text-white text-left">
+                                  <div className="text-xl xl:text-3xl font-bold mb-1">Cost</div>
+                                  <div className="text-xs xl:text-sm font-medium leading-snug">
+                                    Save time.<br />Save money.<br />Increase profit.
                                   </div>
                                 </div>
                               </div>
@@ -404,7 +405,7 @@ function HeroSection() {
                             {/* Main Card - Data & Insights */}
                             <div
                               ref={cardRef}
-                              className="w-[200px] h-[300px] xl:w-[280px] xl:h-[340px] rounded-3xl overflow-hidden relative shadow-xl z-20"
+                              className="w-[200px] h-[310px] xl:w-[280px] xl:h-[350px] rounded-3xl overflow-hidden relative shadow-xl z-20"
                             >
                               <div className="w-full h-full relative">
                                 <img
@@ -458,7 +459,7 @@ function HeroSection() {
                       </div>
                     </div>
 
-                    <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mt-8 md:mt-12 gap-8">
+                    <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mt-0 gap-8">
                       <div className="flex items-center xl:relative xl:-top-[220px] gap-3">
                         <ArrowDown size={20} className="text-[#006CFF] md:w-6 md:h-6" />
                         <span className="text-base font-[600] md:text-lg text-[#006CFF]">
@@ -488,9 +489,9 @@ function HeroSection() {
                 </div>
 
                 {/* Desktop Headline */}
-                <div ref={headlineRef} className="transform-gpu opacity-[0] -mt-40 xl:-ml-10">
+                <div ref={headlineRef} className="transform-gpu opacity-[0] -mt-28 xl:-ml-10">
                   <div>
-                    <span className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-[Duck-cry] leading-none font-[580]">
+                    <span className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-[Duck-cry] leading-none font-[570]">
                       One <br />
                       Subscription. <br />
                       <div className="text-[#006CFF] flex gap-2 sm:gap-4 items-center leading-none">
@@ -551,7 +552,7 @@ function HeroSection() {
               {/* Phase 1: One Subscription Headline */}
               <div className="px-4 sm:px-6 md:px-8 py-12 md:py-16">
                 <div ref={mobileHeadlineRef} className="mb-12 md:mb-20">
-                  <h2 className="text-[40px] sm:text-[56px] md:text-[72px] font-[Duck-cry] font-[600] leading-tight text-[#1F1F1F] text-center">
+                  <h2 className="text-[40px] sm:text-[56px] md:text-[72px] font-[Duck-cry] font-[100] leading-tight text-[#1F1F1F] text-center">
                     One<br />
                     Subscription.<br />
                     <span className="flex items-center justify-center gap-2 md:gap-4">
@@ -669,10 +670,26 @@ function HeroSection() {
                   </div>
 
                   {/* Cost Description */}
-                  <div className="mobile-card w-full bg-[#84B900] shadow-xl rounded-[28px] p-8 sm:p-10 md:p-14">
-                    <p className="font-[poppins] font-light text-base sm:text-lg md:text-3xl leading-tight">
-                      NuHelixX RE saves both time and money by replacing multiple tools with one platform. Data being entered once and AI handling training, tagging, and follow-ups, agents cut hours of admin work every week — turning wasted time into more revenue and measurable cost savings.
-                    </p>
+                  <div className="mobile-card w-full bg-white border border-[#E5EDFF] shadow-[0_20px_40px_rgba(59,130,246,0.06),0_8px_16px_rgba(0,0,0,0.02)] rounded-[32px] p-6 sm:p-8 flex items-center gap-6">
+                    {/* Left icons */}
+                    <div className="flex flex-col items-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#1D4ED8] shadow-[0_8px_20px_rgba(59,130,246,0.3)] flex items-center justify-center">
+                        <Clock size={18} className="text-white" />
+                      </div>
+                      <div className="w-[1.5px] h-6 bg-[#3B82F6]/30 my-2" />
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#6366F1] to-[#4F46E5] shadow-[0_8px_20px_rgba(79,70,229,0.3)] flex items-center justify-center">
+                        <DollarSign size={18} className="text-white" />
+                      </div>
+                    </div>
+                    {/* Text content */}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-sans font-bold text-gray-900 text-lg sm:text-xl mb-2 tracking-tight">
+                        Work less. Achieve more.
+                      </h3>
+                      <p className="font-sans font-normal text-sm sm:text-base leading-relaxed text-slate-600">
+                        NuHelixX RE replaces multiple tools with one intelligent platform. Enter data once, let AI handle the rest — from training and tagging to follow-ups and admin. Save hours every week and turn that time into more revenue.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
