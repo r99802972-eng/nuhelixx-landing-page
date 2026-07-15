@@ -1,4 +1,4 @@
-import { ArrowUpRight, ChevronDown, ArrowDown, Cpu, Zap, RotateCw } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ArrowDown, Cpu, Zap, RotateCw, Clock, DollarSign, ArrowRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,8 +7,10 @@ export const navLock = { active: false };
 export const heroScrollTriggerRef: { current: ScrollTrigger | null } = { current: null };
 
 import data_insights_bg from "../assets/data_insights_bg.png";
+import dashboard_img from "../assets/dashboard_image.png";
 import cost_savings_bg from "../assets/cost_savings_bg.png";
 import { OurServices } from "./OurServices";
+import DashboardIllustration from "./components/DashboardIllustration";
 import BackgroundOrnaments from "./components/BackgroundOrnaments";
 
 export function Bracket({
@@ -284,18 +286,18 @@ function HeroSection() {
                             Deal
                           </h2>
 
-                          <div className="relative flex" ref={stackRef}>
+                          <div className="relative flex mt-16" ref={stackRef}>
                             {/* Layer 1 - AI in our DNA */}
                             <div
                               ref={layer1}
-                              className="absolute w-[200px] h-[240px] left-[10px] xl:w-[280px] xl:h-[280px] rounded-[28px] bg-white border border-gray-100 transform rotate-[4deg] shadow-xl z-0 overflow-hidden group flex flex-col items-center p-6 text-center"
+                              className="absolute w-[200px] h-[300px] left-[10px] xl:w-[280px] xl:h-[340px] rounded-[28px] bg-white border border-gray-100 transform rotate-[4deg] shadow-xl z-0 overflow-hidden group flex flex-col items-start p-6 text-left"
                             >
                               {/* Icon Box */}
                               <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-purple-50 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
                                 <Cpu size={32} className="text-purple-600" />
                               </div>
 
-                              <h2 className="font-[Duck-cry] tracking-tight leading-[1.2] xl:text-[2.2rem] mb-3 text-gray-900 relative z-10">
+                              <h2 className="font-sans font-bold text-base xl:text-xl tracking-tight leading-snug mb-3 text-gray-900 relative z-10">
                                 AI in our DNA
                               </h2>
                               <p className="font-[poppins] font-normal text-xs xl:text-sm leading-relaxed text-gray-500 relative z-10">
@@ -304,6 +306,10 @@ function HeroSection() {
                                 matching. Smarter insights. Stronger
                                 connections.
                               </p>
+
+                              <div className="mt-auto w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center relative z-10 transition-colors group-hover:bg-purple-100">
+                                <ArrowRight size={18} className="text-purple-600" />
+                              </div>
 
                               {/* Watermark Icon */}
                               <div className="absolute -bottom-8 -right-8 text-purple-600 opacity-[0.12] transform rotate-12 group-hover:scale-110 transition-transform">
@@ -314,14 +320,14 @@ function HeroSection() {
                             {/* Layer 2 - Smart Automation */}
                             <div
                               ref={layer2}
-                              className="absolute w-[200px] h-[240px] -left-[13px] xl:w-[280px] xl:h-[280px] rounded-[24px] bg-white border border-gray-100 transform rotate-[-4deg] shadow-xl z-0 overflow-hidden group flex flex-col items-center p-6 text-center"
+                              className="absolute w-[200px] h-[300px] -left-[13px] xl:w-[280px] xl:h-[340px] rounded-[24px] bg-white border border-gray-100 transform rotate-[-4deg] shadow-xl z-0 overflow-hidden group flex flex-col items-start p-6 text-left"
                             >
                               {/* Icon Box */}
                               <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-[#84B900]/10 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
                                 <Zap size={32} className="text-[#84B900]" />
                               </div>
 
-                              <h2 className="font-[Duck-cry] tracking-tight leading-[1.2] xl:text-[2.2rem] mb-3 text-gray-900 relative z-10">
+                              <h2 className="font-sans font-bold text-base xl:text-xl tracking-tight leading-snug mb-3 text-gray-900 relative z-10">
                                 Smart Automation
                               </h2>
                               <p className="font-[poppins] font-normal text-xs xl:text-sm leading-relaxed text-gray-500 relative z-10">
@@ -329,6 +335,10 @@ function HeroSection() {
                                 learns your habits, prioritizes tasks, and keeps
                                 your pipeline on track. Less admin. More sales.
                               </p>
+
+                              <div className="mt-auto w-10 h-10 rounded-full bg-[#84B900]/10 flex items-center justify-center relative z-10 transition-colors group-hover:bg-[#84B900]/20">
+                                <ArrowRight size={18} className="text-[#84B900]" />
+                              </div>
 
                               {/* Watermark Icon */}
                               <div className="absolute -bottom-8 -right-8 text-[#006CFF] opacity-[0.12] transform -rotate-12 group-hover:scale-110 transition-transform">
@@ -339,14 +349,14 @@ function HeroSection() {
                             {/* Layer 3 - Seamless Transactions */}
                             <div
                               ref={layer3}
-                              className="absolute w-[200px] h-[240px] xl:w-[280px] xl:h-[280px] rounded-[28px] bg-white border border-gray-100 transform z-0 overflow-hidden group flex flex-col items-center p-6 text-center"
+                              className="absolute w-[200px] h-[300px] xl:w-[280px] xl:h-[340px] rounded-[28px] bg-white border border-gray-100 transform z-0 overflow-hidden group flex flex-col items-start p-6 text-left"
                             >
                               {/* Icon Box */}
                               <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-2xl bg-teal-50 flex items-center justify-center mb-4 relative z-10 transition-transform group-hover:scale-110">
                                 <RotateCw size={32} className="text-teal-600" />
                               </div>
 
-                              <h2 className="font-[Duck-cry] tracking-tight leading-[1.2] xl:text-[2.2rem] mb-3 text-gray-900 relative z-10">
+                              <h2 className="font-sans font-bold text-base xl:text-xl tracking-tight leading-snug mb-3 text-gray-900 relative z-10">
                                 Seamless Transactions
                               </h2>
                               <p className="font-[poppins] font-normal text-xs xl:text-sm leading-relaxed text-gray-500 relative z-10">
@@ -355,6 +365,10 @@ function HeroSection() {
                                 clarity, confidence, and a smoother client
                                 experience.
                               </p>
+
+                              <div className="mt-auto w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center relative z-10 transition-colors group-hover:bg-teal-100">
+                                <ArrowRight size={18} className="text-teal-600" />
+                              </div>
 
                               {/* Watermark Icon */}
                               <div className="absolute -bottom-8 -right-8 text-teal-600 opacity-[0.2] transform rotate-45 group-hover:scale-110 transition-transform">
@@ -390,7 +404,7 @@ function HeroSection() {
                             {/* Main Card - Data & Insights */}
                             <div
                               ref={cardRef}
-                              className="w-[200px] h-[200px] xl:w-[280px] xl:h-[280px] rounded-3xl overflow-hidden relative shadow-xl z-20"
+                              className="w-[200px] h-[300px] xl:w-[280px] xl:h-[340px] rounded-3xl overflow-hidden relative shadow-xl z-20"
                             >
                               <div className="w-full h-full relative">
                                 <img
@@ -409,11 +423,31 @@ function HeroSection() {
                             {/* Cost Description */}
                             <div
                               ref={costDescRef}
-                              className="absolute top-0 left-0 xl:left-4 w-[200px] xl:w-[800px] bg-[#84B900] shadow-[0_20px_40px_rgba(0,0,0,0.15),0_8px_16px_rgba(0,0,0,0.1)] rounded-2xl p-4 xl:p-8 z-[-1] opacity-0 text-left"
+                              className="absolute top-0 left-0 xl:left-4 w-[200px] xl:w-[800px] bg-white border border-[#E5EDFF] shadow-[0_20px_40px_rgba(59,130,246,0.06),0_8px_16px_rgba(0,0,0,0.02)] rounded-[32px] p-6 xl:p-8 z-[-1] opacity-0 text-left flex items-center gap-6 xl:gap-8"
                             >
-                              <p className="font-[poppins] font-light text-xs xl:text-xl leading-relaxed tracking-wide">
-                                NuHelixX RE saves both time and money by replacing multiple tools with one platform. Data being entered once and AI handling training, tagging, and follow-ups, agents cut hours of admin work every week — turning wasted time into more revenue and measurable cost savings.
-                              </p>
+                              {/* Left icons */}
+                              <div className="flex flex-col items-center flex-shrink-0">
+                                <div className="w-8 h-8 xl:w-12 xl:h-12 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#1D4ED8] shadow-[0_8px_20px_rgba(59,130,246,0.3)] flex items-center justify-center">
+                                  <Clock size={16} className="text-white xl:w-5 xl:h-5" />
+                                </div>
+                                <div className="w-[1.5px] h-4 xl:h-8 bg-[#3B82F6]/30 my-1 xl:my-2" />
+                                <div className="w-8 h-8 xl:w-12 xl:h-12 rounded-full bg-gradient-to-br from-[#6366F1] to-[#4F46E5] shadow-[0_8px_20px_rgba(79,70,229,0.3)] flex items-center justify-center">
+                                  <DollarSign size={16} className="text-white xl:w-5 xl:h-5" />
+                                </div>
+                              </div>
+                              {/* Text content */}
+                              <div className="flex-1 min-w-0">
+                                <h3 className="font-sans font-bold text-gray-900 text-sm xl:text-3xl mb-1 xl:mb-2 tracking-tight">
+                                  Work less. Achieve more.
+                                </h3>
+                                <p className="font-sans font-normal text-[11px] xl:text-[15px] leading-relaxed text-slate-600">
+                                  NuHelixX RE replaces multiple tools with one intelligent platform. Enter data once, let AI handle the rest — from training and tagging to follow-ups and admin. Save hours every week and turn that time into more revenue.
+                                </p>
+                              </div>
+                              {/* Right illustration */}
+                              <div className="hidden xl:flex flex-shrink-0 items-center justify-center w-56 h-36 rounded-xl overflow-visible">
+                                <DashboardIllustration />
+                              </div>
                             </div>
                           </div>
 
@@ -454,7 +488,7 @@ function HeroSection() {
                 </div>
 
                 {/* Desktop Headline */}
-                <div ref={headlineRef} className="transform-gpu opacity-[0] -mt-14 xl:-ml-10">
+                <div ref={headlineRef} className="transform-gpu opacity-[0] -mt-40 xl:-ml-10">
                   <div>
                     <span className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-[Duck-cry] leading-none font-[580]">
                       One <br />
@@ -541,12 +575,15 @@ function HeroSection() {
                     <div className="w-20 h-20 rounded-2xl bg-purple-50 flex items-center justify-center mb-6 relative z-10">
                       <Cpu size={40} className="text-purple-600" />
                     </div>
-                    <h3 className="text-3xl font-[Duck-cry] tracking-tight mb-6 text-gray-900 relative z-10">
+                    <h3 className="text-2xl font-sans font-bold tracking-tight mb-4 text-gray-900 relative z-10">
                       AI in our DNA
                     </h3>
                     <p className="font-[poppins] font-normal text-base leading-relaxed text-gray-500 relative z-10">
                       NuHelixX RE is AI-first — built with intelligence at its core. Automation drives every step: real-time lead scoring, smart follow-ups, and behavior-based property matching.
                     </p>
+                    <div className="mt-auto pt-6 w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center relative z-10">
+                      <ArrowRight size={20} className="text-purple-600" />
+                    </div>
                     {/* Watermark */}
                     <div className="absolute -bottom-10 -right-10 text-purple-600 opacity-[0.15] transform rotate-12">
                       <Cpu size={180} />
@@ -558,12 +595,15 @@ function HeroSection() {
                     <div className="w-20 h-20 rounded-2xl bg-[#84B900]/10 flex items-center justify-center mb-6 relative z-10">
                       <Zap size={40} className="text-[#84B900]" />
                     </div>
-                    <h3 className="text-3xl font-[Duck-cry] tracking-tight mb-6 text-gray-900 relative z-10">
+                    <h3 className="text-2xl font-sans font-bold tracking-tight mb-4 text-gray-900 relative z-10">
                       Smart Automation
                     </h3>
                     <p className="font-[poppins] font-normal text-base leading-relaxed text-gray-500 relative z-10">
                       NuHelixX RE automates the busywork — from tagging leads to scheduling follow-ups. Its AI learns your habits, prioritizes tasks, and keeps your pipeline on track. Less admin.
                     </p>
+                    <div className="mt-auto pt-6 w-12 h-12 rounded-full bg-[#84B900]/10 flex items-center justify-center relative z-10">
+                      <ArrowRight size={20} className="text-[#84B900]" />
+                    </div>
                     {/* Watermark */}
                     <div className="absolute -bottom-10 -right-10 text-[#006CFF] opacity-[0.25] transform -rotate-12">
                       <Zap size={180} />
@@ -575,12 +615,15 @@ function HeroSection() {
                     <div className="w-20 h-20 rounded-2xl bg-teal-50 flex items-center justify-center mb-6 relative z-10">
                       <RotateCw size={40} className="text-teal-600" />
                     </div>
-                    <h3 className="text-3xl font-[Duck-cry] tracking-tight mb-6 text-gray-900 relative z-10">
+                    <h3 className="text-2xl font-sans font-bold tracking-tight mb-4 text-gray-900 relative z-10">
                       Seamless Transactions
                     </h3>
                     <p className="font-[poppins] font-normal text-base leading-relaxed text-gray-500 relative z-10">
                       Manage offers, inspections, and closings in one dashboard. Stay on top of deadlines, documents, and deals — effortlessly. NuHelixX RE gives you clarity and confidence.
                     </p>
+                    <div className="mt-auto pt-6 w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center relative z-10">
+                      <ArrowRight size={20} className="text-teal-600" />
+                    </div>
                     {/* Watermark */}
                     <div className="absolute -bottom-10 -right-10 text-teal-600 opacity-[0.25] transform rotate-45">
                       <RotateCw size={180} />
