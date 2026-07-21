@@ -74,7 +74,7 @@ function Item({ title, text }: { title: string; text: string }) {
   return (
     <div className="mb-4">
       <h4 
-        className="text-4xl font-bold mb-2.5"
+        className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2.5"
         style={{ 
           color: '#212529',
           fontFamily: 'Barlow, sans-serif'
@@ -83,7 +83,7 @@ function Item({ title, text }: { title: string; text: string }) {
         {title}
       </h4>
       <p 
-        className="text-xl mb-4"
+        className="text-base sm:text-lg lg:text-xl mb-4"
         style={{ 
           color: '#212529',
           fontFamily: '"Averta Demo", sans-serif',

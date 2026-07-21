@@ -510,7 +510,7 @@ function HeroSection() {
             </div>
 
             {/* ==================== MOBILE & TABLET CONTENT ==================== */}
-            <div className="lg:hidden pt-20">
+            <div className="lg:hidden pt-16 sm:pt-18">
               <div className="px-4 sm:px-6 md:px-8 py-8 md:py-12">
                 {/* Main Headline */}
                 <div className="mb-8 md:mb-12">

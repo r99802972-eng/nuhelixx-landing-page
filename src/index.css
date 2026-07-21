@@ -34,11 +34,6 @@ body::-webkit-scrollbar {
     min-height: 44px;
   }
   
-  /* Optimize animations for mobile */
-  * {
-    transition-duration: 0.2s !important;
-  }
-  
   /* Reduce motion for better performance */
   @media (prefers-reduced-motion: reduce) {
     * {

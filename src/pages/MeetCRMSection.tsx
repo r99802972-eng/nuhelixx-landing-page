@@ -229,7 +229,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
         </p>
 
         {/* Main container for the searchbar UI - Fixed height to prevent layout shift */}
-        <div className="relative w-full flex flex-col items-center mt-10 min-h-[450px] sm:min-h-[580px] lg:min-h-[750px]">
+        <div className="relative w-full flex flex-col items-center mt-10 min-h-[320px] sm:min-h-[450px] lg:min-h-[750px]">
           <div className="w-full flex flex-col items-center transition-all duration-500 max-w-[900px]">
 
             {/* Simple Search Bar UI - New Inspiration Style */}

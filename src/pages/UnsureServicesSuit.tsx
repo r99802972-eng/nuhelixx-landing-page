@@ -161,12 +161,12 @@ export default function UnsureServicesSuit() {
   };
 
   return (
-    <div className="overflow-x-auto rounded-lg">
-      <div className="text-center font-[Duck-cry] mt-[20px] relative">
-        <p className="h1-style text-[3rem] tracking-[0.02em] mb-3">
+    <div className="overflow-x-auto rounded-lg -mx-4 sm:mx-0">
+      <div className="text-center font-[Duck-cry] mt-[20px] relative px-4">
+        <p className="h1-style text-[2rem] sm:text-[3rem] tracking-[0.02em] mb-3">
           Head to Head Comparison 
         </p>
-        <p className="text-[3rem] tracking-[0.02em]">
+        <p className="text-[2rem] sm:text-[3rem] tracking-[0.02em]">
           NuHelixX RE vs. Current Market
         </p>
    <button
@@ -180,7 +180,7 @@ export default function UnsureServicesSuit() {
   <span className="whitespace-nowrap">Download PDF</span>
 </button>
       </div>
-      <table id="comparison-table" className="w-full border-collapse mt-[50px] font-[poppins]">
+      <table id="comparison-table" className="w-full border-collapse mt-[50px] font-[poppins] min-w-[600px]">
         <thead>
           <tr>
             <th className="w-1/5 border border-gray-200 p-4 text-left font-semibold text-sm">Feature / Capability</th>

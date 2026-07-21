@@ -154,7 +154,7 @@ function Item({
   return (
     <div className="mb-4">
       <h4 
-        className="text-4xl font-bold mb-4"
+        className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4"
         style={{ 
           color: '#212529',
           fontFamily: 'Barlow, sans-serif'
@@ -164,7 +164,7 @@ function Item({
       </h4>
       {description && (
         <p 
-          className="text-xl mb-3"
+          className="text-base sm:text-lg lg:text-xl mb-3"
           style={{ 
             color: '#212529',
             fontFamily: '"Averta Demo", sans-serif',
@@ -179,7 +179,7 @@ function Item({
           {points.map((point, index) => (
             <li 
               key={index}
-              className="text-xl"
+              className="text-base sm:text-lg lg:text-xl"
               style={{ 
                 color: '#212529',
                 fontFamily: '"Averta Demo", sans-serif',
@@ -194,7 +194,7 @@ function Item({
       )}
       {footer && (
         <p 
-          className="text-xl mt-2"
+          className="text-base sm:text-lg lg:text-xl mt-2"
           style={{ 
             color: '#212529',
             fontFamily: '"Averta Demo", sans-serif',

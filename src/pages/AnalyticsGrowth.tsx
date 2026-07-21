@@ -136,7 +136,7 @@ const AnalyticsGrowth = () => {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-24">
-          <div className="font-[Duck-cry] mt-[150px]">
+          <div className="font-[Duck-cry] mt-[40px] md:mt-[100px] lg:mt-[150px]">
             <p className="h1-style text-6xl md:text-[5.5rem] font-[Duck-cry] text-[#1F1F1F] mb-8 leading-[0.9] tracking-tight">
               Analytics & Growth 
             </p>
