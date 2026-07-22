@@ -132,7 +132,7 @@ function ServiceItem({ service }: { service: Service }) {
   return (
     <div>
       {/* CRM row */}
-      <div ref={containerRef} onClick={handleContainerClick} className={`relative border-t min-h-[160px] h-auto lg:h-[200px] lg:max-h-[280px] last:border-b overflow-hidden py-6 lg:py-14 px-4 ${service.section ? "cursor-pointer transition-colors" : ""}`}>
+      <div ref={containerRef} onClick={handleContainerClick} className={`relative border-t last:border-b overflow-hidden py-4 lg:py-14 px-4 ${service.section ? "cursor-pointer transition-colors" : ""}`}>
         {/* Mobile */}
         <div className="flex lg:hidden items-center gap-3 md:gap-4 bg-white/5 p-3 md:p-4 rounded-lg">
           <div className="w-20 md:w-28 flex-shrink-0">
@@ -217,7 +217,7 @@ export function OurServices() {
 
         <UnsureServicesSuit />
 
-        <div className="mt-16 md:mt-32 lg:mt-52 flex flex-col justify-center">
+        <div className="mt-8 lg:mt-52 flex flex-col justify-center">
           {services.map((s) => (
             <ServiceItem key={s.id} service={s} />
           ))}

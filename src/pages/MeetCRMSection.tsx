@@ -195,7 +195,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
 
       <section
         ref={sectionRef}
-        className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-12 text-center sm:px-6 lg:pt-16"
+        className="relative z-10 mx-auto flex w-full flex-col items-center px-4 pt-6 sm:pt-8 lg:pt-16 text-center sm:px-6"
       >
         {/* Top Banner Pill */}
         <div className="mb-8 flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-4 py-1.5 shadow-sm backdrop-blur-sm">
@@ -228,8 +228,8 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
           The Complete Real Estate Workflow. One Platform.
         </p>
 
-        {/* Main container for the searchbar UI - Fixed height to prevent layout shift */}
-        <div className="relative w-full flex flex-col items-center mt-10 min-h-[320px] sm:min-h-[450px] lg:min-h-[750px]">
+        {/* Main container for the searchbar UI */}
+        <div className="relative w-full flex flex-col items-center mt-6 lg:mt-10 lg:min-h-[750px]">
           <div className="w-full flex flex-col items-center transition-all duration-500 max-w-[900px]">
 
             {/* Simple Search Bar UI - New Inspiration Style */}
@@ -289,13 +289,13 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
 
 
 
-        <div ref={bottomContentRef} className="mt-12 flex flex-col items-center">
+        <div ref={bottomContentRef} className="flex flex-col items-center">
           <span className="text-[11px] font-black tracking-[0.2em] uppercase text-[#006CFF] mb-4">PLATFORM</span>
           <h3 className="font-['Duck-cry'] uppercase leading-[0.9] tracking-[-0.02em] text-[#111111] transition-all duration-500 text-[2.5rem] sm:text-[4rem] lg:text-[6.5rem] mb-8">
             The Future of CRM <br className="hidden sm:block" /> is <span className="text-[#006CFF]">Here</span>
           </h3>
 
-          <div className="flex flex-col gap-4 text-center mb-16">
+          <div className="flex flex-col gap-4 text-center mb-8 md:mb-12 lg:mb-16">
             <p className="mx-auto text-gray-400 max-w-[600px] text-[15px] sm:text-[17px] leading-relaxed">
               We’ve decoded the DNA of your traditional software stack and re-engineered it into a unified, evolutionary platform.
             </p>
@@ -320,7 +320,7 @@ export function MeetCRMSection({ autoplayOnReveal }: MeetCRMSectionProps) {
             ))}
           </div>
 
-          <p className="mt-16 font-medium text-gray-400 text-center text-[15px] sm:text-[17px] max-w-[600px]">
+          <p className="mt-6 lg:mt-16 font-medium text-gray-400 text-center text-[15px] sm:text-[17px] max-w-[600px]">
             Simply tell the platform what you want to accomplish and <span className="font-bold text-[#111111]">NuHelixX RE</span> intelligently handles the rest.
           </p>
         </div>

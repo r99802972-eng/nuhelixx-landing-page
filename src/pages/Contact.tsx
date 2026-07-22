@@ -1,10 +1,9 @@
 import { useState, useRef } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
-// import { Bracket } from "./HeroSection";
+// import ReCAPTCHA from "react-google-recaptcha";
 import contact_house_hero from "../assets/contact_house_hero.png";
 
 export default function Contact() {
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const recaptchaRef = useRef(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -19,30 +18,18 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (recaptchaRef.current) {
-      const token = await recaptchaRef.current.executeAsync();
-      
-      if (!token) {
-        alert('reCAPTCHA verification failed. Please try again.');
-        return;
-      }
-      
-      console.log('Form submitted with reCAPTCHA token', token);
-      console.log('Form data:', formData);
-      
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        companyName: "",
-        websiteUrl: "",
-        teamSize: "",
-        jobTitle: "",
-        additionalNotes: "",
-      });
-    }
+    console.log('Form submitted:', formData);
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      companyName: "",
+      websiteUrl: "",
+      teamSize: "",
+      jobTitle: "",
+      additionalNotes: "",
+    });
   };
 
   const handleChange = (
@@ -234,14 +221,7 @@ export default function Contact() {
                   ></textarea>
                 </div>
 
-                {/* reCAPTCHA */}
-                <div className="flex justify-center">
-                  <ReCAPTCHA
-                    ref={recaptchaRef}
-                    size="invisible"
-                    sitekey="YOUR_RECAPTCHA_SITE_KEY_HERE"
-                  />
-                </div>
+                {/* reCAPTCHA removed — add valid site key when ready */}
 
              <div className="w-full flex justify-center items-center">
                  <button 

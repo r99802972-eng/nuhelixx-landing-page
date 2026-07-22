@@ -126,7 +126,7 @@ const AnalyticsGrowth = () => {
   }, []);
 
   return (
-    <section id="analytics-growth" className="relative py-32 bg-[#f5f5f5] overflow-hidden">
+    <section id="analytics-growth" className="relative bg-[#f5f5f5] overflow-hidden">
       {/* Background ambient glows */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
         <div className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] bg-[#84B900]/10 rounded-full blur-[100px]" />
@@ -135,8 +135,8 @@ const AnalyticsGrowth = () => {
 
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-24">
-          <div className="font-[Duck-cry] mt-[40px] md:mt-[100px] lg:mt-[150px]">
+        <div className="text-center mb-8 md:mb-16 lg:mb-24">
+          <div className="font-[Duck-cry] mt-0">
             <p className="h1-style text-6xl md:text-[5.5rem] font-[Duck-cry] text-[#1F1F1F] mb-8 leading-[0.9] tracking-tight">
               Analytics & Growth 
             </p>
@@ -147,14 +147,14 @@ const AnalyticsGrowth = () => {
         </div>
 
         {/* Marquee Section */}
-        <div className="relative mb-36 mt-12 overflow-hidden">
+        <div className="relative mb-12 md:mb-24 lg:mb-36 mt-6 md:mt-8 lg:mt-12 overflow-hidden">
           {/* Masking gradients */}
           <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#f5f5f5] to-transparent z-20 pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#f5f5f5] to-transparent z-20 pointer-events-none" />
 
           <div 
             ref={marqueeRef} 
-            className="flex w-fit py-10"
+            className="flex w-fit "
           >
             {/* Set 1 */}
             <div className="flex gap-8 px-4">

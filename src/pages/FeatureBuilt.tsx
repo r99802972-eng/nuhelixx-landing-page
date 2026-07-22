@@ -5,13 +5,13 @@ import { ChevronRight } from "lucide-react"
 export default function TechnologyInnovation() {
   const [open, setOpen] = useState(false)
   return (
-    <section className="w-full py-16 mt-16 px-0">
+    <section className="w-full px-0">
       <div className="w-full px-0">
         {/* CLICKABLE HEADING */}
         <div className="flex flex-col items-center">
           <button
             onClick={() => setOpen(!open)}
-            className="flex w-full items-center justify-center gap-4"
+            className="flex w-full items-center justify-center gap-5 pb-8"
           >
           <p 
   className="h1-style text-center mb-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[70px]"
